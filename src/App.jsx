@@ -12,12 +12,14 @@ import { ShipmentsPage } from "./Pages/ShipmentsPage.jsx";
 import { PaymentsPage } from "./Pages/PaymentsPage.jsx";
 import { TrolleyPage } from "./Pages/TrolleyPage.jsx";
 import { UserProfilePage } from "./Pages/UserProfilePage.jsx";
+import { RegisterPage } from "./Pages/RegisterPage.jsx";
 
 const App = () => {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/login" element={<LoginPage />} />
+      <Route path="/register" element={<RegisterPage />} />
       <Route path="/offers" element={<OffersPage />} />
       <Route path="/orders" element={<OrdersPage />} />
       <Route path="/products" element={<ProductsPage />} />

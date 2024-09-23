@@ -1,3 +1,23 @@
+# LUNEVA_SHOP
+
+## Tienda online de ventas de jabones
+
+## Descripciòn
+
+Donde podremos vender jabones gestionados en nuestra tienda online para poder realizar ventas en nuestra tienda.
+Podremos gestionar las ofertas donde podremos activar y desactivar, pagos, envios, las ordenes para su envio posteriormente.
+Realizar pedidos, agregar productos para su venta y realizar compras.
+
+## Tecnologías utilizadas
+
+- React: Para construir la interfaz de usuario interactiva.
+- Vite: Para la interfaz de usuario.
+- NodeJS: Para manejar el estado global de el backend.
+- CSS: Para los estilos de la interfaz de usuario.
+- Joi: Para manejar los errores del frontend y backend.
+- React-ruter-dom: Para manejar las rutas.
+- Sweetalert2: Para alertas para el usuario.
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
