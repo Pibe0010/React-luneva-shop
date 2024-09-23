@@ -1,3 +1,9 @@
+import { MainLayout } from "../Layout/MainLayout.jsx";
+
 export const HomePage = () => {
-  return <div>HomePage</div>;
+  return (
+    <MainLayout>
+      <div>HomePage</div>
+    </MainLayout>
+  );
 };
