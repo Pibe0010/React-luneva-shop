@@ -2,7 +2,8 @@ import { useContext, useEffect } from "react";
 import { AuthContext } from "../Context/AutContext.jsx";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import { Navbar } from "../Components/Navbar/Navbar.jsx";
+import { Header } from "../Components/Header/Header.jsx";
+import "./MainLayout.css";
 
 export const MainLayout = ({ children }) => {
   const { user } = useContext(AuthContext);
@@ -31,7 +32,7 @@ export const MainLayout = ({ children }) => {
 
   return (
     <div className="main-layout-container">
-      <Navbar />
+      <Header className="navbar-layout" />
       <main className="main-leyout">{children}</main>
     </div>
   );

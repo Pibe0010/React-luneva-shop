@@ -1,0 +1,188 @@
+.btn-cart,
+.navli,
+.aNav {
+  all: unset;
+  box-sizing: border-box;
+}
+
+.cartNavContainer {
+  cursor: pointer;
+}
+
+#dropdown {
+  max-width: 220px;
+  width: 100%;
+  background-color: #13214e;
+  position: relative;
+}
+
+/* DROPDOWN/SUBMENU ITEMS AND TOGGLES */
+.navLink {
+  cursor: default;
+  justify-content: end;
+}
+
+.dropdown-toggle,
+.nameBar {
+  width: 100%;
+}
+
+:is(.nameBar):first-child {
+  border-top-right-radius: inherit;
+  border-top-left-radius: inherit;
+}
+:is(.nameBar):last-child {
+  border-bottom-right-radius: inherit;
+  border-bottom-left-radius: inherit;
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown-toggle.open > i {
+  rotate: 180deg;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.menuCartNav {
+  display: flex;
+  flex-direction: column;
+  background-color: #3f3f3f;
+  border-radius: 5px;
+  padding: 5px 10px;
+  position: absolute;
+  z-index: 3;
+  right: 0;
+  top: 76px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+.menuCartNav {
+  width: 160px;
+  translate: -10px 0;
+  transition: 0.25s ease;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+}
+.menuCartNav.open {
+  visibility: visible;
+  opacity: 1;
+  translate: -10px 12px;
+}
+
+.cartNav {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  justify-content: center;
+  transition: 0.25s ease;
+}
+
+.nameCartNav {
+  font-size: 1rem;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.btn-cartNav {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 0.5rem;
+  letter-spacing: 1px;
+  text-align: end;
+  text-decoration: none;
+  font-size: 1rem;
+  width: 100%;
+
+  margin: 0.2rem 0.2rem 0.2rem 1rem;
+  margin-right: 0;
+  margin-left: 0;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.iconCartNav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+}
+
+/* Efecto
+
+/* Definir la animación de boing */
+.btn-cartNav:hover .iconCartNavLogout {
+  animation: boing 0.5s infinite alternate;
+}
+
+@keyframes boing {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+}
+
+.btn-cartNav:hover {
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-cartNav:active {
+  transform: scale(0.97);
+  transition: transform 0.05s ease;
+  opacity: 0.9;
+}
+
+.btn-cartNav {
+  position: relative;
+}
+
+.btn-cart.clicked {
+  transform: scale(0.97);
+  transition: transform 0.05s ease;
+}
+
+.btn-cart.clicked:active {
+  transform: scale(1);
+}
+
+@media screen and (min-width: 600px) {
+  .nameCartNav {
+    font-size: 1.3rem;
+  }
+
+  .roleProfileNav {
+    font-size: 0.9rem;
+  }
+
+  .menuCartNav {
+    width: 240px;
+    translate: -10px 0;
+  }
+
+  .menuCartNav.open {
+    translate: -10px 16px;
+  }
+
+  .cartNav {
+    width: 25px;
+    height: 25px;
+  }
+
+  .btn-cartNav {
+    font-size: 1.3rem;
+  }
+}
