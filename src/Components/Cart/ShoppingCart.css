@@ -1,5 +1,5 @@
 .btn-cart,
-.navli,
+.navCartli,
 .aNav {
   all: unset;
   box-sizing: border-box;
@@ -17,21 +17,21 @@
 }
 
 /* DROPDOWN/SUBMENU ITEMS AND TOGGLES */
-.navLink {
+.navCartLink {
   cursor: default;
   justify-content: end;
 }
 
 .dropdown-toggle,
-.nameBar {
+.nameCart {
   width: 100%;
 }
 
-:is(.nameBar):first-child {
+:is(.nameCart):first-child {
   border-top-right-radius: inherit;
   border-top-left-radius: inherit;
 }
-:is(.nameBar):last-child {
+:is(.nameCart):last-child {
   border-bottom-right-radius: inherit;
   border-bottom-left-radius: inherit;
 }
@@ -63,13 +63,29 @@
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
-}
-.menuCartNav {
   width: 160px;
   translate: -10px 0;
-  transition: 0.25s ease;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
 }
+
+.btnCart-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnCart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  position: absolute;
+  top: 1;
+  bottom: 0;
+  margin: 10px;
+}
+
 .menuCartNav.open {
   visibility: visible;
   opacity: 1;
@@ -89,6 +105,9 @@
   font-size: 1rem;
   color: #ffffff;
   font-weight: bold;
+  top: 0;
+  bottom: 0;
+  position: absolute;
 }
 
 .btn-cartNav {
@@ -101,13 +120,13 @@
   text-decoration: none;
   font-size: 1rem;
   width: 100%;
-
   margin: 0.2rem 0.2rem 0.2rem 1rem;
   margin-right: 0;
   margin-left: 0;
   color: #ffffff;
   cursor: pointer;
   transition: all 0.3s ease;
+  position: relative;
 }
 
 .iconCartNav {
@@ -125,16 +144,6 @@
   animation: boing 0.5s infinite alternate;
 }
 
-@keyframes boing {
-  0%,
-  100% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(5px);
-  }
-}
-
 .btn-cartNav:hover {
   transition: all 0.3s ease;
   text-decoration: none;
@@ -144,10 +153,6 @@
   transform: scale(0.97);
   transition: transform 0.05s ease;
   opacity: 0.9;
-}
-
-.btn-cartNav {
-  position: relative;
 }
 
 .btn-cart.clicked {
@@ -161,15 +166,15 @@
 
 @media screen and (min-width: 600px) {
   .nameCartNav {
-    font-size: 1.3rem;
-  }
-
-  .roleProfileNav {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .menuCartNav {
-    width: 240px;
+    width: 260px;
+    height: 420px;
     translate: -10px 0;
   }
 
@@ -178,8 +183,8 @@
   }
 
   .cartNav {
-    width: 25px;
-    height: 25px;
+    width: 29px;
+    height: 29px;
   }
 
   .btn-cartNav {

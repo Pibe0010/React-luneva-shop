@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./ShoppingCart.css";
+import { ButtonCart } from "../Buttons/ButtonCart/ButtonCart.jsx";
 
 export const ShoppingCart = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,8 +33,14 @@ export const ShoppingCart = () => {
       </button>
 
       <ul className={`menuCartNav ${isOpen ? "open" : ""}`}>
-        <li className="nameBar navli navLink" key="nameBar">
-          <p className="nameCartNav">carrito vacio</p>
+        <li className="nameCart navCartli navCartLink" key="nameCart">
+          <div className="btnCart-container">
+            <p className="nameCartNav"> Carrito vacio</p>
+            <div className="btnCart">
+              <ButtonCart className="btnSell" name="Comprar" />
+              <ButtonCart className="btnClear" name="Vaciar " />
+            </div>
+          </div>
         </li>
       </ul>
     </nav>

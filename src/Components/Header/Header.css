@@ -51,6 +51,23 @@
 
 .hamburger {
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.menu {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.menuScreen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .hamburger input {
@@ -98,7 +115,17 @@
   }
   .hamburger svg {
     display: block;
+    margin-right: 2px;
   }
+
+  .menu {
+    display: flex;
+  }
+
+  .menuScreen {
+    display: none;
+  }
+
   .nav {
     opacity: 0;
     visibility: hidden;
@@ -110,9 +137,9 @@
     top: 90px;
     right: 0;
     background-color: #3f3f3f;
-    padding: 2rem;
+    padding: 1rem;
     box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
-    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
     width: 170px;
   }
