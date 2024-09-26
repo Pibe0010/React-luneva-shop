@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useRole } from "../../Context/AutContext.jsx";
-import "./Header.css";
 import { NavLinks } from "../NavLinks/NavLinks.jsx";
 import { ProfileNav } from "../Profile/ProfileNav.jsx";
 import { ShoppingCart } from "../Cart/ShoppingCart.jsx";
+import "./Header.css";
 
 export const Header = () => {
   const role = useRole();
@@ -15,6 +15,7 @@ export const Header = () => {
     setMenuOpen((old) => !old);
   };
 
+  // Detectar el tamaño de la pantalla y ajustar el estado 'isMobile'
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 1026);
@@ -24,6 +25,7 @@ export const Header = () => {
     return () => window.removeEventListener("resize", handleResize);
   });
 
+  // Controlar el overflow del cuerpo del documento cuando se abre el menú móvil
   useEffect(() => {
     if (menuOpen && isMobile) {
       document.body.style.overflow = "hidden";
@@ -32,6 +34,7 @@ export const Header = () => {
     }
   }, [menuOpen, isMobile]);
 
+  // Añadir clases condicionalmente para manejar la visibilidad de menús
   const addMenuOpen = menuOpen ? "openMenu" : "";
   const addClassMenu = menuOpen ? "visible" : "";
 
@@ -41,11 +44,16 @@ export const Header = () => {
         <img className="logo" src="/img/logo.png" alt="Logo luneva shop" />
       </a>
       <label className="hamburger" htmlFor="menuToggle">
+        <div className="menu">
+          <ProfileNav />
+          <ShoppingCart />
+        </div>
         <input
           type="checkbox"
           id="menuToggle"
+          checked={menuOpen}
+          onChange={openMenuToggle}
           className={`closeMenu ${addMenuOpen}`}
-          onClick={openMenuToggle}
         />
         <svg viewBox="0 0 32 32">
           <path
@@ -69,21 +77,26 @@ export const Header = () => {
             url="/products"
             onClick={openMenuToggle}
           />
-          <NavLinks
-            className="link"
-            name="LOGIN"
-            url="/login"
-            onClick={openMenuToggle}
-          />
+
           <NavLinks
             className="link"
             name="REGISTRARSE"
             url="/register"
             onClick={openMenuToggle}
           />
+
+          <NavLinks
+            className="link"
+            name="LOGIN"
+            url="/login"
+            onClick={openMenuToggle}
+          />
+
           {role === "admin" && <></>}
-          <ProfileNav />
-          <ShoppingCart />
+          <div className="menuScreen">
+            <ProfileNav />
+            <ShoppingCart />
+          </div>
         </ul>
       </nav>
     </header>
