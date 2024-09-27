@@ -13,6 +13,8 @@ import { PaymentsPage } from "./Pages/PaymentsPage.jsx";
 import { TrolleyPage } from "./Pages/TrolleyPage.jsx";
 import { UserProfilePage } from "./Pages/UserProfilePage.jsx";
 import { RegisterPage } from "./Pages/RegisterPage.jsx";
+import { CreateOffertPage } from "./Pages/CreateOffertPage.jsx";
+import { CreateProductPage } from "./Pages/CreateProductPage.jsx";
 
 const App = () => {
   return (
@@ -21,8 +23,10 @@ const App = () => {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/offers" element={<OffersPage />} />
+      <Route path="/create-offer" element={<CreateOffertPage />} />
       <Route path="/orders" element={<OrdersPage />} />
       <Route path="/products" element={<ProductsPage />} />
+      <Route path="/create-product" element={<CreateProductPage />} />
       <Route path="/tickets" element={<TicketPurchasesPage />} />
       <Route path="/address" element={<ShippingAddressPage />} />
       <Route path="/shipment" element={<ShipmentsPage />} />

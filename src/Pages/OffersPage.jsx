@@ -1,3 +1,9 @@
+import { MainLayout } from "../Layout/MainLayout.jsx";
+
 export const OffersPage = () => {
-  return <div>OffersPage</div>;
+  return (
+    <MainLayout>
+      <div>OffersPage</div>
+    </MainLayout>
+  );
 };

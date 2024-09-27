@@ -1,3 +1,9 @@
+import { MainLayout } from "../Layout/MainLayout.jsx";
+
 export const ProductsPage = () => {
-  return <div>ProductsPage</div>;
+  return (
+    <MainLayout>
+      <div>ProductsPage</div>
+    </MainLayout>
+  );
 };

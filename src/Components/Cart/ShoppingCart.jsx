@@ -2,12 +2,20 @@ import { useState } from "react";
 import "./ShoppingCart.css";
 import { ButtonCart } from "../Buttons/ButtonCart/ButtonCart.jsx";
 
-export const ShoppingCart = () => {
-  const [isOpen, setIsOpen] = useState(false);
+export const ShoppingCart = ({
+  isCartOpen,
+  setIsCartOpen,
+  setIsProfileOpen,
+  setIsMenuOpen,
+}) => {
   const [isClicked, setIsClicked] = useState(false);
 
   const toggleDropdown = () => {
-    setIsOpen(!isOpen);
+    setIsCartOpen(!isCartOpen);
+    if (!isCartOpen) {
+      setIsProfileOpen(false);
+      setIsMenuOpen(false);
+    }
   };
 
   const handleClick = () => {
@@ -19,7 +27,7 @@ export const ShoppingCart = () => {
   return (
     <nav className="cartNavContainer">
       <button
-        className={`dropdown-toggle btn-cart ${isOpen ? "open" : ""} ${isClicked ? "clicked" : ""}`}
+        className={`dropdown-toggle btn-cart ${isCartOpen ? "open" : ""} ${isClicked ? "clicked" : ""}`}
         onClick={() => {
           toggleDropdown();
           handleClick();
@@ -32,7 +40,7 @@ export const ShoppingCart = () => {
         />
       </button>
 
-      <ul className={`menuCartNav ${isOpen ? "open" : ""}`}>
+      <ul className={`menuCartNav ${isCartOpen ? "open" : ""}`}>
         <li className="nameCart navCartli navCartLink" key="nameCart">
           <div className="btnCart-container">
             <p className="nameCartNav"> Carrito vacio</p>
