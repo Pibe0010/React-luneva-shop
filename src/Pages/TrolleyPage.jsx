@@ -1,3 +1,9 @@
+import { MainLayout } from "../Layout/MainLayout.jsx";
+
 export const TrolleyPage = () => {
-  return <div>TrolleyPage</div>;
+  return (
+    <MainLayout>
+      <div>TrolleyPage</div>
+    </MainLayout>
+  );
 };

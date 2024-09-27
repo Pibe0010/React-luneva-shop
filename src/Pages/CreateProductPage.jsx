@@ -1,9 +1,9 @@
 import { MainLayout } from "../Layout/MainLayout.jsx";
 
-export const UserProfilePage = () => {
+export const CreateProductPage = () => {
   return (
     <MainLayout>
-      <div>UserProfilePage</div>;
+      <div>CreateProductPage</div>
     </MainLayout>
   );
 };

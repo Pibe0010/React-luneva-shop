@@ -1,9 +1,9 @@
 import { MainLayout } from "../Layout/MainLayout.jsx";
 
-export const UserProfilePage = () => {
+export const CreateOffertPage = () => {
   return (
     <MainLayout>
-      <div>UserProfilePage</div>;
+      <div>CReateOfertPage</div>
     </MainLayout>
   );
 };

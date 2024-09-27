@@ -1,18 +1,23 @@
 import { useEffect, useState } from "react";
 import { useRole } from "../../Context/AutContext.jsx";
-import { NavLinks } from "../NavLinks/NavLinks.jsx";
 import { ProfileNav } from "../Profile/ProfileNav.jsx";
 import { ShoppingCart } from "../Cart/ShoppingCart.jsx";
 import "./Header.css";
+import { NavbarCustomer } from "../CustomerMenu/NavbarCustomer.jsx";
+import { NavbarAdmin } from "../AdminMenu/NavbarAdmin.jsx";
 
 export const Header = () => {
   const role = useRole();
-  const [menuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1026);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Funcion para abrir el menu hamburgesa
-  const openMenuToggle = () => {
-    setMenuOpen((old) => !old);
+  // Función para abrir o cerrar el menú de hamburguesa
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+    setIsCartOpen(false); // Cierra el carrito cuando se abre el menú
+    setIsProfileOpen(false); // Cierra el perfil cuando se abre el menú
   };
 
   // Detectar el tamaño de la pantalla y ajustar el estado 'isMobile'
@@ -27,16 +32,16 @@ export const Header = () => {
 
   // Controlar el overflow del cuerpo del documento cuando se abre el menú móvil
   useEffect(() => {
-    if (menuOpen && isMobile) {
+    if (isMenuOpen && isMobile) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "auto";
     }
-  }, [menuOpen, isMobile]);
+  }, [isMenuOpen, isMobile]);
 
   // Añadir clases condicionalmente para manejar la visibilidad de menús
-  const addMenuOpen = menuOpen ? "openMenu" : "";
-  const addClassMenu = menuOpen ? "visible" : "";
+  const addMenuOpen = isMenuOpen ? "openMenu" : "";
+  const addClassMenu = isMenuOpen ? "visible" : "";
 
   return (
     <header className="header">
@@ -45,14 +50,24 @@ export const Header = () => {
       </a>
       <label className="hamburger" htmlFor="menuToggle">
         <div className="menu">
-          <ProfileNav />
-          <ShoppingCart />
+          <ProfileNav
+            isProfileOpen={isProfileOpen}
+            setIsProfileOpen={setIsProfileOpen}
+            setIsCartOpen={setIsCartOpen}
+            setIsMenuOpen={setIsMenuOpen}
+          />
+          <ShoppingCart
+            isCartOpen={isCartOpen}
+            setIsCartOpen={setIsCartOpen}
+            setIsProfileOpen={setIsProfileOpen}
+            setIsMenuOpen={setIsMenuOpen}
+          />
         </div>
         <input
           type="checkbox"
           id="menuToggle"
-          checked={menuOpen}
-          onChange={openMenuToggle}
+          checked={isMenuOpen}
+          onChange={toggleMenu}
           className={`closeMenu ${addMenuOpen}`}
         />
         <svg viewBox="0 0 32 32">
@@ -65,37 +80,21 @@ export const Header = () => {
       </label>
       <nav className={`nav ${addClassMenu}`}>
         <ul className="navList">
-          <NavLinks
-            className="link"
-            name="OFERTAS"
-            url="/offers"
-            onClick={openMenuToggle}
-          />
-          <NavLinks
-            className="link"
-            name="PRODUCTOS"
-            url="/products"
-            onClick={openMenuToggle}
-          />
-
-          <NavLinks
-            className="link"
-            name="REGISTRARSE"
-            url="/register"
-            onClick={openMenuToggle}
-          />
-
-          <NavLinks
-            className="link"
-            name="LOGIN"
-            url="/login"
-            onClick={openMenuToggle}
-          />
-
-          {role === "admin" && <></>}
+          {role === "admin" && <NavbarAdmin toggleMenu={toggleMenu} />}
+          <NavbarCustomer toggleMenu={toggleMenu} />
           <div className="menuScreen">
-            <ProfileNav />
-            <ShoppingCart />
+            <ProfileNav
+              isProfileOpen={isProfileOpen}
+              setIsProfileOpen={setIsProfileOpen}
+              setIsCartOpen={setIsCartOpen}
+              setIsMenuOpen={setIsMenuOpen}
+            />
+            <ShoppingCart
+              isCartOpen={isCartOpen}
+              setIsCartOpen={setIsCartOpen}
+              setIsProfileOpen={setIsProfileOpen}
+              setIsMenuOpen={setIsMenuOpen}
+            />
           </div>
         </ul>
       </nav>

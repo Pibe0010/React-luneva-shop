@@ -1,3 +1,9 @@
+import { MainLayout } from "../Layout/MainLayout.jsx";
+
 export const TicketPurchasesPage = () => {
-  return <div>Ticket_purchasesPage</div>;
+  return (
+    <MainLayout>
+      <div>Ticket_purchasesPage</div>
+    </MainLayout>
+  );
 };

@@ -7,12 +7,16 @@ import { LogoutButton } from "./LogoutButton.jsx";
 const URL = import.meta.env.VITE_URL;
 import "./ProfileNav.css";
 
-export const ProfileNav = () => {
+export const ProfileNav = ({
+  isProfileOpen,
+  setIsProfileOpen,
+  setIsCartOpen,
+  setIsMenuOpen,
+}) => {
   const token = useUser();
   const setUser = useSetUser();
   const userInfo = useUserInfo();
   const [userData, setUserData] = useState(null);
-  const [isOpen, setIsOpen] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
 
   useEffect(() => {
@@ -27,7 +31,11 @@ export const ProfileNav = () => {
   }, [token, userInfo]);
 
   const toggleDropdown = () => {
-    setIsOpen(!isOpen);
+    setIsProfileOpen(!isProfileOpen);
+    if (!isProfileOpen) {
+      setIsCartOpen(false);
+      setIsMenuOpen(false);
+    }
   };
 
   const handleClick = () => {
@@ -45,7 +53,7 @@ export const ProfileNav = () => {
   return (
     <nav className="profileNavContainer">
       <button
-        className={`dropdown-toggle btn-profile ${isOpen ? "open" : ""} ${isClicked ? "clicked" : ""}`}
+        className={`dropdown-toggle btn-profile ${isProfileOpen ? "open" : ""} ${isClicked ? "clicked" : ""}`}
         onClick={() => {
           toggleDropdown();
           handleClick();
@@ -65,7 +73,7 @@ export const ProfileNav = () => {
         )}
       </button>
 
-      <ul className={`menuProfileNav ${isOpen ? "open" : ""}`}>
+      <ul className={`menuProfileNav ${isProfileOpen ? "open" : ""}`}>
         {userData && (
           <li className="nameBar navli navLink" key="nameBar">
             <p className="nameProfileNav">
