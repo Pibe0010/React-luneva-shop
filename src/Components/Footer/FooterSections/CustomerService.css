@@ -1,0 +1,22 @@
+.customerService-container {
+  margin-bottom: 1rem;
+}
+
+.customerService-title {
+  font-size: 1.3rem;
+  color: #ffffff;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.helpCenter,
+.termsSale,
+.shippingDelivery,
+.returnPolicy {
+  font-size: 0.9rem;
+  color: #ffffff;
+  opacity: 0.8;
+  line-height: 2.5rem;
+  margin-bottom: 1rem;
+  text-decoration: none;
+}

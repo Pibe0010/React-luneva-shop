@@ -1,0 +1,34 @@
+.aboutContainer {
+  margin: 0.5rem;
+}
+
+.aboutTitle {
+  font-size: 1.3rem;
+  color: #ffffff;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.aboutText {
+  font-size: 0.9rem;
+  color: #ffffff;
+  opacity: 0.8;
+  line-height: 1.5rem;
+  margin-bottom: 0.5rem;
+  width: 30rem;
+}
+
+.aboutContactTitle {
+  font-size: 1.3rem;
+  color: #ffffff;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.aboutContactEmail {
+  font-size: 0.9rem;
+  color: #ffffff;
+  opacity: 0.8;
+  line-height: 1.5rem;
+  margin-bottom: 0.5rem;
+}

@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { Header } from "../Components/Header/Header.jsx";
 import "./MainLayout.css";
+import { Footer } from "../Components/Footer/Footer.jsx";
 
 export const MainLayout = ({ children }) => {
   const { user } = useContext(AuthContext);
@@ -34,6 +35,7 @@ export const MainLayout = ({ children }) => {
     <div className="main-layout-container">
       <Header className="navbar-layout" />
       <main className="main-leyout">{children}</main>
+      <Footer className="footer-layout" />
     </div>
   );
 };
