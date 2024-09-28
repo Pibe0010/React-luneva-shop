@@ -15,6 +15,12 @@ import { UserProfilePage } from "./Pages/UserProfilePage.jsx";
 import { RegisterPage } from "./Pages/RegisterPage.jsx";
 import { CreateOffertPage } from "./Pages/CreateOffertPage.jsx";
 import { CreateProductPage } from "./Pages/CreateProductPage.jsx";
+import { TermsOfSalePage } from "./Pages/FooterPages/TermsOfSalePage.jsx";
+import { ShippingAndDeliveryPage } from "./Pages/FooterPages/ShippingAndDeliveryPage.jsx";
+import { ReturnPolicyPage } from "./Pages/FooterPages/ReturnPolicyPage.jsx";
+import { ContactPage } from "./Pages/FooterPages/ContactPage.jsx";
+import { SalePage } from "./Pages/FooterPages/SalePage.jsx";
+import { HelpCenterPage } from "./Pages/FooterPages/HelpCenterPage.jsx";
 
 const App = () => {
   return (
@@ -33,6 +39,13 @@ const App = () => {
       <Route path="/payment" element={<PaymentsPage />} />
       <Route path="/trolley" element={<TrolleyPage />} />
       <Route path="/profile" element={<UserProfilePage />} />
+
+      <Route path="/help-center" element={<HelpCenterPage />} />
+      <Route path="/terms-sale" element={<TermsOfSalePage />} />
+      <Route path="/shipping-delivery" element={<ShippingAndDeliveryPage />} />
+      <Route path="/return-policy" element={<ReturnPolicyPage />} />
+      <Route path="/contact" element={<ContactPage />} />
+      <Route path="/sale" element={<SalePage />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );

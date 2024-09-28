@@ -1,0 +1,21 @@
+.singUpForOffer-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0.5rem;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.singUpForOffer-title {
+  font-size: 1.3rem;
+  color: #ffffff;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+  width: 30rem;
+}
+
+.singUpForOffer-button {
+  margin-bottom: 0.2rem;
+}
