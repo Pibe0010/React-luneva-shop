@@ -21,6 +21,8 @@ import { ReturnPolicyPage } from "./Pages/FooterPages/ReturnPolicyPage.jsx";
 import { ContactPage } from "./Pages/FooterPages/ContactPage.jsx";
 import { SalePage } from "./Pages/FooterPages/SalePage.jsx";
 import { HelpCenterPage } from "./Pages/FooterPages/HelpCenterPage.jsx";
+import { ForgotPassword } from "./Pages/ForgotPassword.jsx";
+import { UserLicenseAgreement } from "./Pages/UserLicenseAgreement.jsx";
 
 const App = () => {
   return (
@@ -39,6 +41,9 @@ const App = () => {
       <Route path="/payment" element={<PaymentsPage />} />
       <Route path="/trolley" element={<TrolleyPage />} />
       <Route path="/profile" element={<UserProfilePage />} />
+
+      <Route path="/forgot-password" element={<ForgotPassword />} />
+      <Route path="/license-agreement" element={<UserLicenseAgreement />} />
 
       <Route path="/help-center" element={<HelpCenterPage />} />
       <Route path="/terms-sale" element={<TermsOfSalePage />} />
