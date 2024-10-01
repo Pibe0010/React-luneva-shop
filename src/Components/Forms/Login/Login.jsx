@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./Login.css";
 import { loginSchema } from "../../../Schema/Error/AuthSchema.js";
 import { Link } from "react-router-dom";
+import { EyePassword } from "../../EyePassword/EyePassword.jsx";
 
 export const Login = ({ onSubmit }) => {
   const [email, setEmail] = useState("");
@@ -57,18 +58,21 @@ export const Login = ({ onSubmit }) => {
               required
             />
           </label>
-          <label htmlFor="password">
-            <input
-              placeholder="Password"
-              id="password"
-              name="password"
-              type="password"
-              className="input"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </label>
+          <div className="input-container">
+            <label htmlFor="password">
+              <input
+                placeholder="Password"
+                id="password"
+                name="password"
+                type="password"
+                className="input"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+              <EyePassword idInput="password" />
+            </label>
+          </div>
           <span className="forgot-password">
             <Link to="/forgot-password">Has olvidado tu contraseña ?</Link>
           </span>
