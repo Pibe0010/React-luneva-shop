@@ -23,6 +23,7 @@ import { SalePage } from "./Pages/FooterPages/SalePage.jsx";
 import { HelpCenterPage } from "./Pages/FooterPages/HelpCenterPage.jsx";
 import { ForgotPassword } from "./Pages/ForgotPassword.jsx";
 import { UserLicenseAgreement } from "./Pages/UserLicenseAgreement.jsx";
+import { ResetPassword } from "./Pages/ResetPassword.jsx";
 
 const App = () => {
   return (
@@ -44,6 +45,10 @@ const App = () => {
 
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/license-agreement" element={<UserLicenseAgreement />} />
+      <Route
+        path="/user/reset-password/:registration_code"
+        element={<ResetPassword />}
+      />
 
       <Route path="/help-center" element={<HelpCenterPage />} />
       <Route path="/terms-sale" element={<TermsOfSalePage />} />
