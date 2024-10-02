@@ -24,6 +24,8 @@ import { HelpCenterPage } from "./Pages/FooterPages/HelpCenterPage.jsx";
 import { ForgotPassword } from "./Pages/ForgotPassword.jsx";
 import { UserLicenseAgreement } from "./Pages/UserLicenseAgreement.jsx";
 import { ResetPassword } from "./Pages/ResetPassword.jsx";
+import { CustomersPage } from "./Pages/CustomersPage.jsx";
+import { ActivateAccount } from "./Pages/activateAccount.jsx";
 
 const App = () => {
   return (
@@ -34,6 +36,7 @@ const App = () => {
       <Route path="/offers" element={<OffersPage />} />
       <Route path="/create-offer" element={<CreateOffertPage />} />
       <Route path="/orders" element={<OrdersPage />} />
+      <Route path="/customers" element={<CustomersPage />} />
       <Route path="/products" element={<ProductsPage />} />
       <Route path="/create-product" element={<CreateProductPage />} />
       <Route path="/tickets" element={<TicketPurchasesPage />} />
@@ -42,14 +45,16 @@ const App = () => {
       <Route path="/payment" element={<PaymentsPage />} />
       <Route path="/trolley" element={<TrolleyPage />} />
       <Route path="/profile" element={<UserProfilePage />} />
-
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/license-agreement" element={<UserLicenseAgreement />} />
       <Route
         path="/user/reset-password/:registration_code"
         element={<ResetPassword />}
       />
-
+      <Route
+        path="/activate-account/:registration_code"
+        element={<ActivateAccount />}
+      />
       <Route path="/help-center" element={<HelpCenterPage />} />
       <Route path="/terms-sale" element={<TermsOfSalePage />} />
       <Route path="/shipping-delivery" element={<ShippingAndDeliveryPage />} />
