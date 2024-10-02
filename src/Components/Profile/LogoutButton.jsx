@@ -11,7 +11,7 @@ export const LogoutButton = ({ setUser }) => {
     setUser("");
 
     // Redirigir a la página de inicio de sesión
-    navigate("/");
+    navigate("/login");
   };
 
   return (

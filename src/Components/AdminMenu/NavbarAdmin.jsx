@@ -12,6 +12,12 @@ export const NavbarAdmin = ({ toggleMenu }) => {
       </NavIconLinks>
       <NavLinks
         className="link"
+        name="CLIENTES"
+        url="/customers"
+        onClick={toggleMenu}
+      />
+      <NavLinks
+        className="link"
         name="ÓRDENES"
         url="/orders"
         onClick={toggleMenu}
