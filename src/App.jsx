@@ -26,6 +26,7 @@ import { UserLicenseAgreement } from "./Pages/UserLicenseAgreement.jsx";
 import { ResetPassword } from "./Pages/ResetPassword.jsx";
 import { CustomersPage } from "./Pages/CustomersPage.jsx";
 import { ActivateAccount } from "./Pages/activateAccount.jsx";
+import "./Styles/Pages/GeneralsFroms.css";
 
 const App = () => {
   return (
