@@ -178,7 +178,7 @@
   }
 
   .menuProfileNav {
-    width: 150px;
+    width: 180px;
     translate: -10px 0;
   }
 
@@ -192,6 +192,6 @@
   }
 
   .btn-perfilNav {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 }

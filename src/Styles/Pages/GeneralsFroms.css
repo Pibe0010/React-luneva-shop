@@ -1,0 +1,156 @@
+/* Estilo tamaño de todos los ol */
+#shipment_container {
+  max-width: 750px;
+}
+
+#user_container,
+#customer_container {
+  max-width: 900rem;
+}
+
+#product_container,
+#invoice_container {
+  max-width: 1000px;
+}
+
+#payment_container {
+  max-width: 850px;
+}
+
+#visit_container {
+  max-width: 900px;
+}
+
+#sale_container {
+  max-width: 1100px;
+}
+
+#note_container {
+  max-width: 1200px;
+}
+
+.mainContainer {
+  padding: 10px 15px;
+}
+
+.mainTitle {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.mainNav {
+  width: 480px;
+  display: grid;
+  grid-template-columns: 1fr auto auto auto auto auto;
+  align-items: center;
+  margin: 0 auto;
+  column-gap: 20px;
+}
+
+.main_olist {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style-type: none;
+}
+
+.main_ilist {
+  max-width: 500px;
+  padding: 10px 15px;
+  margin: 10px 0 15px 0;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.noResult {
+  font-size: 1rem;
+  padding: 8px 8px;
+  border: none;
+  background-color: transparent;
+  color: #13214e;
+  width: 100%;
+}
+
+/* Boton de crear */
+.mainCreateBtn {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+}
+
+.mainCreateBtn:hover {
+  scale: 1.05;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.mainCreateBtn:hover {
+  background-color: transparent;
+  scale: 1.1;
+  transition: all 0.3s ease;
+}
+
+.mainUpdateBtn {
+  width: auto;
+  height: 32px;
+  font-size: 1rem;
+  padding: 5px 10px;
+}
+
+.main_actions {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.imgCreateBtn {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+#btnUserCreate:hover {
+  background-color: transparent;
+  scale: 1.1;
+  transition: all 0.3s ease;
+}
+
+/* Clases para el Estado Activo e Inactivo */
+.active {
+  color: green;
+  font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 600;
+}
+
+.inactive {
+  color: red;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 600px) {
+  #user_nav {
+    width: 320px;
+    grid-template-columns: 1fr auto auto auto;
+  }
+
+  .mainInsideSub {
+    font-size: 0.85rem;
+  }
+
+  .groupSearch {
+    max-width: 180px;
+    font-size: 1rem;
+  }
+
+  .checkbox-wrapper-35 {
+    display: none;
+  }
+}
