@@ -1,0 +1,94 @@
+/* From Uiverse.io by javierBarroso */
+/* Hide the default checkbox */
+.checkBox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.label {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.checkBox-container {
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: #888;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: relative;
+  top: 25px;
+  left: 40px;
+  height: 25px;
+  width: 25px;
+  background-color: #999898;
+  border-radius: 50px;
+  transition-duration: 0.5s;
+  overflow: hidden;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkBox-container input:checked ~ .checkmark {
+  background-color: #49be5c;
+  box-shadow: 0 0px 10px #49be5cdc;
+}
+
+.checkBox-container .off {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  transition-duration: 0.5s;
+}
+
+.checkBox-container .on {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  transform: translateY(25px);
+  transition-duration: 0.5s;
+}
+
+.checkBox-container .on::before {
+  content: "";
+  height: 23px;
+  width: 20px;
+  border-radius: 50px;
+  background-color: transparent;
+  border: #ffffff solid 2px;
+  transition-duration: 0.2s;
+  position: absolute;
+  transform: translate(2.5px, 2.5px);
+}
+
+.checkBox-container .off::before {
+  content: "";
+  height: 15px;
+  width: 3px;
+  background-color: #fff;
+  transition-duration: 0.2s;
+  position: absolute;
+  transform: translate(-1.5px, -7.5px);
+  left: 50%;
+  top: 50%;
+}
+
+.checkBox-container input:checked ~ .checkmark .on {
+  transform: translateX(0%);
+}
+
+.checkBox-container input:checked ~ .checkmark .off {
+  transform: translateY(-100%);
+}

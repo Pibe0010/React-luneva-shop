@@ -10,7 +10,7 @@ export const Footer = () => {
       <figure className="footer-logo-container">
         <img
           className="footer-logo"
-          src="/img/logo.png"
+          src="/img/luneva.png"
           alt="Logo luneva shop"
         />
       </figure>

@@ -82,18 +82,13 @@
   border: none;
   padding: 0;
   background-color: transparent;
-}
-
-.mainCreateBtn:hover {
-  scale: 1.05;
   transition: all 0.3s ease;
-  cursor: pointer;
 }
 
 .mainCreateBtn:hover {
-  background-color: transparent;
   scale: 1.1;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .mainUpdateBtn {
