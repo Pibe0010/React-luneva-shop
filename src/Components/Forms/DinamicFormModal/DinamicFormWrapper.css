@@ -1,0 +1,10 @@
+.addProductBtn {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.addProductBtn:hover {
+  transform: scale(1.1);
+  transition: all 0.3s;
+}

@@ -46,7 +46,7 @@ export const Header = () => {
   return (
     <header className="header">
       <a href="/">
-        <img className="logo" src="/img/logo.png" alt="Logo luneva shop" />
+        <img className="logo" src="/img/luneva.png" alt="Logo luneva shop" />
       </a>
       <label className="hamburger" htmlFor="menuToggle">
         <div className="menu">

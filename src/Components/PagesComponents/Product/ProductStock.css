@@ -1,0 +1,16 @@
+.product-logo {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 45rem;
+  height: 45rem;
+  padding: 10px 15px;
+  visibility: visible;
+  transform: translate(5%, -50%);
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+  position: relative;
+}
