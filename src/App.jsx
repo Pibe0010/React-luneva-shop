@@ -13,7 +13,6 @@ import { PaymentsPage } from "./Pages/PaymentsPage.jsx";
 import { TrolleyPage } from "./Pages/TrolleyPage.jsx";
 import { UserProfilePage } from "./Pages/UserProfilePage.jsx";
 import { RegisterPage } from "./Pages/RegisterPage.jsx";
-import { CreateOffertPage } from "./Pages/CreateOffertPage.jsx";
 import { CreateProductPage } from "./Pages/CreateProductPage.jsx";
 import { TermsOfSalePage } from "./Pages/FooterPages/TermsOfSalePage.jsx";
 import { ShippingAndDeliveryPage } from "./Pages/FooterPages/ShippingAndDeliveryPage.jsx";
@@ -35,7 +34,6 @@ const App = () => {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/offers" element={<OffersPage />} />
-      <Route path="/create-offer" element={<CreateOffertPage />} />
       <Route path="/orders" element={<OrdersPage />} />
       <Route path="/customers" element={<CustomersPage />} />
       <Route path="/products" element={<ProductsPage />} />
