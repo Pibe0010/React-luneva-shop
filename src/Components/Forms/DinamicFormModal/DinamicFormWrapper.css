@@ -1,4 +1,5 @@
-.addProductBtn {
+.addProductBtn,
+.addOfferBtn {
   border: none;
   cursor: pointer;
   background-color: transparent;
@@ -7,4 +8,9 @@
 .addProductBtn:hover {
   transform: scale(1.1);
   transition: all 0.3s;
+}
+
+.iconOffer {
+  width: 27px;
+  height: 27px;
 }

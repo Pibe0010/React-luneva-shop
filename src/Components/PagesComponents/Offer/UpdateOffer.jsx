@@ -3,17 +3,12 @@ import { DinamicFormWrapper } from "../../Forms/DinamicFormModal/DinamicFormWrap
 import { useUser } from "../../../Context/AutContext.jsx";
 const URL = import.meta.env.VITE_URL;
 
-export const UpdateProduct = ({
-  id,
-  productData,
-  onUpdateProduct,
-  formTypes,
-}) => {
+export const UpdateOffer = ({ offerData, formTypes, onUpdateOffer, id }) => {
   const token = useUser();
 
-  const handleButtonUpdateProduct = async (formData) => {
+  const handleButtonUpdateOffer = async (formData) => {
     try {
-      const response = await fetch(`${URL}/product/update/${id}`, {
+      const response = await fetch(`${URL}/offers/update/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -24,9 +19,9 @@ export const UpdateProduct = ({
 
       if (response.ok) {
         const responseData = await response.json();
-        console.log("Producto actualizado correctamente", responseData);
+        console.log("Oferta actualizado correctamente", responseData);
 
-        onUpdateProduct(responseData.data);
+        onUpdateOffer(responseData.data);
 
         const Toast = Swal.mixin({
           toast: true,
@@ -42,21 +37,21 @@ export const UpdateProduct = ({
 
         Toast.fire({
           icon: "success",
-          title: "Producto actualizado con éxito!",
+          title: "Oferta actualizado con éxito!",
         });
       } else {
         const errorData = await response.json();
-        console.error("El producto no ha podido ser actualizado:", errorData);
+        console.error("La oferta no ha podido ser actualizado:", errorData);
       }
     } catch (error) {
-      console.error("Error durante la actualización del producto:", error);
+      console.error("Error durante la actualización de la oferta:", error);
     }
   };
 
   return (
     <DinamicFormWrapper
-      productData={productData}
-      onSubmit={handleButtonUpdateProduct}
+      productData={offerData}
+      onSubmit={handleButtonUpdateOffer}
       formTypes={formTypes}
     />
   );

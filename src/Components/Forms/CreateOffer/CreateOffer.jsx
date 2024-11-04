@@ -6,14 +6,10 @@ const URL = import.meta.env.VITE_URL;
 
 export const CreateOffer = ({ onAddOffer, token }) => {
   const [reload, setReload] = useState(false);
-  const [products, setProducts] = useState("");
-  console.log(products);
+  const [offer, setOffer] = useState("");
   const [discount_rate, setDiscount_rate] = useState("");
-  console.log(discount_rate);
   const [start_date, setStart_date] = useState("");
-  console.log(start_date);
   const [ending_date, setEnding_date] = useState("");
-  console.log(ending_date);
   const [errorMessages, setErrorMessages] = useState("");
   const [showModal, setShowModal] = useState(false);
 
@@ -31,9 +27,9 @@ export const CreateOffer = ({ onAddOffer, token }) => {
 
       if (response.ok) {
         const responseData = await response.json();
-        console.log("Producto creado sastifactorio:", responseData.message);
+        console.log("Oferta creado sastifactorio:", responseData.message);
         onAddOffer(responseData.data);
-        console.log("Producto agregado a la lista:", responseData.data);
+        console.log("Oferta agregado a la lista:", responseData.data);
 
         const Toast = Swal.mixin({
           toast: true,
@@ -95,7 +91,7 @@ export const CreateOffer = ({ onAddOffer, token }) => {
 
     // Datos a validar
     const data = {
-      ID_product: products,
+      ID_product: offer,
       discount_rate,
       start_date,
       ending_date,
@@ -114,7 +110,7 @@ export const CreateOffer = ({ onAddOffer, token }) => {
     handleCreateProductSubmit(data);
 
     // Limpio los campos
-    setProducts("");
+    setOffer("");
     setDiscount_rate("");
     setStart_date("");
     setEnding_date("");
@@ -132,10 +128,11 @@ export const CreateOffer = ({ onAddOffer, token }) => {
 
   return (
     <>
-      <button onClick={handleClickOpen} className="addProductBtn">
+      <button onClick={handleClickOpen} className="addOfferBtn">
         <img
-          src="/Icons/AddProduct-copy.svg"
-          alt="Icono de actualizar producto"
+          className="iconOffer"
+          src="/Icons/offer-svgrepo-com.svg"
+          alt="Icono de crear oferta"
         />
       </button>
 
@@ -145,8 +142,8 @@ export const CreateOffer = ({ onAddOffer, token }) => {
             <div className="createProduct-heading">Crear Oferta</div>
             <form className="createProduct-form" onSubmit={handleSubmit}>
               <CreateOfferForm
-                products={products}
-                setProducts={setProducts}
+                products={offer}
+                setProducts={setOffer}
                 discount_rate={discount_rate}
                 setDiscount_rate={setDiscount_rate}
                 start_date={start_date}
