@@ -64,6 +64,7 @@ export const ProductListTable = ({
                     id={product.ID_product}
                     onUpdateProduct={onUpdateProduct}
                     productData={product}
+                    formTypes="product"
                   />
                   <DeleteGenericModal
                     id={product.ID_product}

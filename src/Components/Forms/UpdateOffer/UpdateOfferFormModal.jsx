@@ -1,45 +1,15 @@
-import { useUser } from "../../../Context/AutContext.jsx";
-import { useUnsignedProductOffer } from "../../../Hooks/PagesHooks/useUnsignedProductOffer.js";
 import { Inputdate } from "../../Inputs/inputdate.jsx";
 
-export const CreateOfferForm = ({
-  products,
-  setProducts,
+export const UpdateOfferFormModal = ({
   discount_rate,
   setDiscount_rate,
   start_date,
   setStart_date,
   ending_date,
   setEnding_date,
-  reload,
 }) => {
-  const token = useUser();
-  const unsignedProduct = useUnsignedProductOffer(token, reload);
-
   return (
     <>
-      <div className="input-container">
-        <label htmlFor="ID_product">
-          <select
-            id="ID_product"
-            name="ID_product"
-            type="select"
-            className="createProduct-input"
-            onChange={(e) => setProducts(e.target.value)}
-            value={products}
-            required
-          >
-            <option value="" disabled>
-              Selecciona un Jabon
-            </option>
-            {unsignedProduct?.map((product) => (
-              <option key={product.ID_product} value={product.ID_product}>
-                {product.name}
-              </option>
-            ))}
-          </select>
-        </label>
-      </div>
       <div className="input-container">
         <label htmlFor="discount_rate">
           <input
@@ -47,10 +17,9 @@ export const CreateOfferForm = ({
             id="discount_rate"
             name="discount_rate"
             type="number"
-            className="createProduct-input"
-            value={discount_rate}
+            className="updateOffer-input"
             onChange={(e) => setDiscount_rate(e.target.value)}
-            required
+            value={discount_rate}
           />
         </label>
       </div>
@@ -63,10 +32,10 @@ export const CreateOfferForm = ({
                 setStart_date(dateArray[0].toLocaleDateString("en-CA"));
               }
             }}
-            className="createProduct-input"
+            className="updateOffer-input"
             name="start_date"
             id="start_date"
-            placeholder="Fecha inicio"
+            placeholder={start_date}
           />
         </label>
       </div>
@@ -79,10 +48,10 @@ export const CreateOfferForm = ({
                 setEnding_date(dateArray[0].toLocaleDateString("en-CA"));
               }
             }}
-            className="createProduct-input"
+            className="updateOffer-input"
             id="ending_date"
             name="ending_date"
-            placeholder="Fecha final"
+            placeholder={ending_date}
           />
         </label>
       </div>

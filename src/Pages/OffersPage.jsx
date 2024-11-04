@@ -23,6 +23,7 @@ export const OffersPage = () => {
     activeOffer,
     updateOffer,
   } = useOfferList(token);
+  console.log(filteredOfferList);
 
   const [isListView, setIsListView] = useState(() => window.innerWidth <= 860);
 
@@ -70,9 +71,9 @@ export const OffersPage = () => {
                 <li key={offer.ID_offer} id="element_offer_container">
                   <OfferList
                     offer={offer}
-                    updateCustomer={updateOffer}
-                    deleteCustomer={deleteOffer}
-                    activeCustomer={activeOffer}
+                    updateOffer={updateOffer}
+                    deleteOffer={deleteOffer}
+                    activeOffer={activeOffer}
                   />
                 </li>
               ))
@@ -82,10 +83,10 @@ export const OffersPage = () => {
           </ol>
         ) : (
           <OfferListTable
-            customer={filteredOfferList}
-            updateCustomer={updateOffer}
-            deleteCustomer={deleteOffer}
-            activeCustomer={activeOffer}
+            offer={filteredOfferList}
+            updateOffer={updateOffer}
+            deleteOffer={deleteOffer}
+            activeOffer={activeOffer}
           />
         )}
       </section>

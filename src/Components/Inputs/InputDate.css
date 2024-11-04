@@ -1,0 +1,25 @@
+.flatpickr-calendar {
+  width: 330px; /* Cambia el ancho del calendario */
+  max-width: 100%;
+  background-color: #f9f9f9; /* Fondo personalizado */
+  border: 2px solid #13214e;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.flatpickr-calendar .flatpickr-day {
+  font-size: 1.2rem; /* Cambia el tamaño del texto del día */
+}
+
+/* Cambia el color de fondo al pasar sobre un día */
+.flatpickr-calendar .flatpickr-day:hover {
+  background-color: #13214e; /* Fondo al pasar */
+  color: #ffffff; /* Texto blanco al pasar */
+}
+
+.flatpickr-calendar .flatpickr-prev-month,
+.flatpickr-calendar .flatpickr-next-month {
+  font-size: 1.5rem; /* Tamaño del texto de los botones de mes */
+  padding: 8px;
+  color: #13214e;
+}

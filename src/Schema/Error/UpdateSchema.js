@@ -13,3 +13,9 @@ export const updateProductSchema = joi.object({
   image_two: imgSchema.optional(),
   image_three: imgSchema.optional(),
 });
+
+export const updateOfferSchema = joi.object({
+  discount_rate: joi.string().optional().messages(joiErrorMessages),
+  start_date: joi.string().optional().messages(joiErrorMessages),
+  ending_date: joi.string().optional().messages(joiErrorMessages),
+});
