@@ -17,7 +17,7 @@ Realizar pedidos, agregar productos para su venta y realizar compras.
 - Joi: Para manejar los errores del frontend y backend.
 - React-ruter-dom: Para manejar las rutas.
 - Sweetalert2: Para alertas para el usuario.
-- React-flatpickr: Para manejar las fechas.
+- React-flatpicker: Para manejar las fechas.
 
 # React + Vite
 

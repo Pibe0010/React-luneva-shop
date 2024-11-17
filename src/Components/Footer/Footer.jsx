@@ -7,13 +7,9 @@ import "./Footer.css";
 export const Footer = () => {
   return (
     <section className="footer-container">
-      <figure className="footer-logo-container">
-        <img
-          className="footer-logo"
-          src="/img/luneva.png"
-          alt="Logo luneva shop"
-        />
-      </figure>
+      <div className="footer-logo-container">
+        <p className="footer-logo">Luneva Shop</p>
+      </div>
       <section className="footer-section">
         <AboutShop />
         <CustomerService />

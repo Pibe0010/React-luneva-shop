@@ -4,7 +4,7 @@
   flex-direction: column;
   margin: 0.5rem;
   gap: 1rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 2rem;
 }
 
 .singUpForOffer-title {
@@ -18,4 +18,5 @@
 
 .singUpForOffer-button {
   margin-bottom: 0.2rem;
+  margin-left: 10px;
 }
