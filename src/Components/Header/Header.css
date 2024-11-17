@@ -9,10 +9,14 @@
   z-index: 9;
 }
 .logo {
-  width: 4rem;
-  height: 4rem;
+  display: flex;
+  align-items: center;
+  font-size: 2.2rem;
   margin-left: 10px;
-  object-fit: cover;
+  margin-bottom: 10px;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+  font-family: cursive;
 }
 .navList {
   display: flex;
@@ -23,12 +27,17 @@
   gap: 2.5rem;
 }
 
-.navList li .link {
+.navList li .link,
+.link-offer {
   text-decoration: none;
   color: #ffffff;
   font-size: 16px;
   font-weight: 900;
   transition: 0.6s;
+}
+
+.link-offer img {
+  margin-top: 3px;
 }
 .navList li a:hover {
   transition: 0.6s;

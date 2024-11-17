@@ -9,6 +9,10 @@ import { ToggleMode } from "../Components/NavPages/ToggleMode.jsx";
 import { CreateOffer } from "../Components/Forms/CreateOffer/CreateOffer.jsx";
 import { OfferList } from "../Components/PagesComponents/Offer/OfferList.jsx";
 import { OfferListTable } from "../Components/PagesComponents/Offer/OfferListTable.jsx";
+import { StatusOfferController } from "../Components/PagesComponents/Offer/StatusOfferController.jsx";
+import { UpdateOffer } from "../Components/PagesComponents/Offer/UpdateOffer.jsx";
+import { DeleteOfferModal } from "../Components/PagesComponents/Offer/DeleteOfferModal.jsx";
+import { MoreOffer } from "../Components/PagesComponents/Offer/MoreOffer.jsx";
 
 export const OffersPage = () => {
   const token = useUser();
@@ -75,6 +79,26 @@ export const OffersPage = () => {
                     deleteOffer={deleteOffer}
                     activeOffer={activeOffer}
                   />
+                  <span id="product_actions" className="main_actions">
+                    <MoreOffer offer={offer} />
+                    <StatusOfferController
+                      id={offer.ID_offer}
+                      isActive={offer.active}
+                      activeOffer={activeOffer}
+                      token={token}
+                    />
+                    <UpdateOffer
+                      id={offer.ID_offer}
+                      onUpdateOffer={updateOffer}
+                      offerData={offer}
+                      formTypes="offer"
+                    />
+                    <DeleteOfferModal
+                      id={offer.ID_offer}
+                      onDelete={deleteOffer}
+                      token={token}
+                    />
+                  </span>
                 </li>
               ))
             ) : (

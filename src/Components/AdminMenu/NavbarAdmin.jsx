@@ -4,7 +4,7 @@ import { NavLinks } from "../NavLinks/NavLinks.jsx";
 export const NavbarAdmin = ({ toggleMenu }) => {
   return (
     <>
-      <NavIconLinks className="link" url="/offers" onClick={toggleMenu}>
+      <NavIconLinks className="link-offer" url="/offers" onClick={toggleMenu}>
         <img src="/Icons/offer-svgrepo-com.svg" alt="Agregar oferta" />
       </NavIconLinks>
       <NavIconLinks className="link" url="/create-product" onClick={toggleMenu}>
