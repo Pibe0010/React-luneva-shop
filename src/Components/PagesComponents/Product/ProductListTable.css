@@ -1,7 +1,7 @@
 .productTable-container {
   display: flex;
   justify-content: space-between;
-  width: 100vw;
+  width: 100%;
   position: relative;
 }
 #btnProductCreate {
