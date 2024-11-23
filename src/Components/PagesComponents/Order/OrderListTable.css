@@ -1,0 +1,129 @@
+.orderTable {
+  width: 100rem;
+  border-radius: 8px;
+  padding: 10px 15px;
+  margin-top: 15px;
+  margin-left: 13.4rem;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+}
+
+.orderTableHead {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+  font-weight: bold;
+  text-align: start;
+  column-gap: 10px;
+  font-size: 1.2rem;
+}
+
+.orderTableBody {
+  display: flex;
+  flex-direction: column;
+}
+
+.orderTableBodyRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 0;
+  column-gap: 10px;
+  font-size: 1.1rem;
+  height: 45px;
+  border-bottom: 1px solid #eee;
+}
+
+.orderTableBodyRow:hover {
+  background-color: #eee;
+}
+
+/* Puedes ajustar los estilos adicionales según sea necesario */
+
+.orderTableHeadRowRef,
+.orderTableBodyRowRef {
+  width: 110px;
+}
+
+.orderTableHeadRowName,
+.orderTableBodyRowName {
+  width: 110px;
+}
+
+.orderTableHeadRowName {
+  padding-left: 33px;
+}
+
+.orderTableHeadRowEmail,
+.orderTableBodyRowEmail {
+  width: 120px;
+}
+
+.orderTableHeadRowEmail {
+  padding-left: 30px;
+}
+
+.orderTableHeadRowProduct,
+.orderTableBodyRowProduct {
+  width: 100px;
+}
+
+.orderTableHeadRowProduct {
+  padding-left: 23px;
+}
+
+.orderTableHeadRowPrice,
+.orderTableBodyRowPrice {
+  width: 100px;
+}
+
+.orderTableHeadRowPrice {
+  padding-left: 19px;
+}
+
+.orderTableHeadRowCuantity,
+.orderTableBodyRowCuantity {
+  width: 100px;
+}
+
+.orderTableBodyRowCuantity {
+  padding-left: 20px;
+}
+
+.orderTableHeadRowStatus,
+.orderTableBodyRowStatus {
+  width: 90px;
+}
+
+.orderTableHeadRowStatus {
+  padding-left: 8px;
+}
+
+.orderTableHeadRowCreate,
+.orderTableBodyRowCreate {
+  width: 120px;
+}
+
+.orderTableHeadRowCreate {
+  padding-left: 3px;
+}
+
+.orderTableBodyRowStatus {
+  font-weight: 600;
+}
+
+.orderTableHeadRowActions,
+.orderTableBodyRowActions {
+  width: 150px;
+}
+
+.orderTableHeadRowActions {
+  padding-left: 15px;
+}
+
+.orderTableBodyRowActions {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
