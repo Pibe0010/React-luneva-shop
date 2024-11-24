@@ -8,11 +8,11 @@ import { SortPage } from "../Components/NavPages/SortPage.jsx";
 import { ToggleMode } from "../Components/NavPages/ToggleMode.jsx";
 import { OrderList } from "../Components/PagesComponents/Order/OrderList.jsx";
 import { MoreOrder } from "../Components/PagesComponents/Order/MoreOrder.jsx";
-import { StatusOrderController } from "../Components/PagesComponents/Order/StatusOrderController.jsx";
-import { UpdateOrder } from "../Components/PagesComponents/Order/UpdateOrder.jsx";
+/* import { StatusOrderController } from "../Components/PagesComponents/Order/StatusOrderController.jsx"; */
+/* import { UpdateOrder } from "../Components/PagesComponents/Order/UpdateOrder.jsx"; */
 import { DeleteOrderModal } from "../Components/PagesComponents/Order/DeleteOrderModal.jsx";
 import { OrderListTable } from "../Components/PagesComponents/Order/OrderListTable.jsx";
-import { CreateOrder } from "../Components/Forms/CreateOrder/CreateOrder.jsx";
+/* import { CreateOrder } from "../Components/Forms/CreateOrder/CreateOrder.jsx"; */
 
 export const OrdersPage = () => {
   const token = useUser();
@@ -22,7 +22,6 @@ export const OrdersPage = () => {
     handleSearch,
     handleFilterChange,
     handleSortChange,
-    addOrder,
     deleteOrder,
     activeOrder,
     updateOrder,
@@ -42,8 +41,10 @@ export const OrdersPage = () => {
   }, []);
 
   const filterOptions = [
-    { label: "Activo", value: "1" },
-    { label: "Inactivo", value: "0" },
+    { label: "Pendiente", value: "earring" },
+    { label: "Enviado", value: "sent" },
+    { label: "Entregado", value: "delivered" },
+    { label: "Cancelado", value: "cancelled" },
   ];
 
   const sortOptions = [
@@ -56,10 +57,10 @@ export const OrdersPage = () => {
   ];
   return (
     <MainLayout>
-      <section id="offer_container" className="mainContainer">
+      <section id="order_container" className="mainContainer">
         <nav id="user_nav" className="mainNav">
           <SearchPage onSearch={handleSearch} />
-          <CreateOrder onAddOffer={addOrder} token={token} />
+          {/* <CreateOrder onAddOffer={addOrder} token={token} /> */}
           <FilterPage options={filterOptions} onChange={handleFilterChange} />
           <SortPage options={sortOptions} onSort={handleSortChange} />
           <ToggleMode
@@ -71,7 +72,7 @@ export const OrdersPage = () => {
           <ol id="offer_list" className="main_olist">
             {filteredOrderList.length > 0 ? (
               filteredOrderList.map((order) => (
-                <li key={order.ID_order} id="element_offer_container">
+                <li key={order.ID_order} id="element_order_container">
                   <OrderList
                     order={order}
                     updateOrder={updateOrder}
@@ -79,19 +80,19 @@ export const OrdersPage = () => {
                     activeOrder={activeOrder}
                   />
                   <span id="product_actions" className="main_actions">
-                    <MoreOrder offer={order} />
-                    <StatusOrderController
+                    <MoreOrder order={order} />
+                    {/* <StatusOrderController
                       id={order.ID_order}
                       isActive={order.active}
                       activeOrder={activeOrder}
                       token={token}
-                    />
+                    /> 
                     <UpdateOrder
                       id={order.ID_order}
                       onUpdateOrder={updateOrder}
                       offerData={order}
                       formTypes="order"
-                    />
+                    />*/}
                     <DeleteOrderModal
                       id={order.ID_order}
                       onDelete={deleteOrder}

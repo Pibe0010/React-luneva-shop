@@ -97,17 +97,8 @@ export const useOrderList = (token) => {
 
     if (selectedFilters.length > 0) {
       filtered = listOrder.filter((order) => {
-        let activeFilter = true;
-
-        if (selectedFilters.includes("1") && selectedFilters.includes("0")) {
-          activeFilter = true; // Muestra tanto activos como inactivos
-        } else if (selectedFilters.includes("1")) {
-          activeFilter = order.active;
-        } else if (selectedFilters.includes("0")) {
-          activeFilter = !order.active;
-        }
-
-        return activeFilter;
+        // Verifica si el estado del pedido coincide con algún filtro seleccionado
+        return selectedFilters.includes(order.status);
       });
     }
 
@@ -140,11 +131,17 @@ export const useOrderList = (token) => {
       case "ref-desc":
         sortedList.sort((a, b) => b.ref_PR.localeCompare(a.ref_PR));
         break;
-      case "stock-asc":
-        sortedList.sort((a, b) => a.Stock - b.Stock);
+      case "discount-asc":
+        sortedList.sort((a, b) => a.product_discount - b.product_discount);
         break;
-      case "stock-desc":
-        sortedList.sort((a, b) => b.Stock - a.Stock);
+      case "discount-desc":
+        sortedList.sort((a, b) => b.product_discount - a.product_discount);
+        break;
+      case "price-asc":
+        sortedList.sort((a, b) => a.price - b.price);
+        break;
+      case "price-desc":
+        sortedList.sort((a, b) => b.total_price - a.price);
         break;
       default:
         break;
