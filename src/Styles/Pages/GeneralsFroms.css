@@ -130,6 +130,27 @@
   font-weight: 600;
 }
 
+/* Clases para el estado  */
+.orderTableBodyRowStatus.earring {
+  color: royalblue;
+  font-weight: 600;
+}
+
+.orderTableBodyRowStatus.sent {
+  color: green;
+  font-weight: 600;
+}
+
+.orderTableBodyRowStatus.delivered {
+  color: grey;
+  font-weight: 600;
+}
+
+.orderTableBodyRowStatus.cancelled {
+  color: red;
+  font-weight: 600;
+}
+
 @media screen and (max-width: 600px) {
   #user_nav {
     width: 320px;

@@ -88,6 +88,15 @@
 }
 
 .orderTableBodyRowCuantity {
+  padding-left: 15px;
+}
+
+.orderTableHeadRowDiscount,
+.orderTableBodyRowDiscount {
+  width: 100px;
+}
+
+.orderTableBodyRowDiscount {
   padding-left: 20px;
 }
 
