@@ -30,12 +30,6 @@ export const NavbarAdmin = ({ toggleMenu }) => {
       />
       <NavLinks
         className="link"
-        name="DIRECCIONES"
-        url="/address"
-        onClick={toggleMenu}
-      />
-      <NavLinks
-        className="link"
         name="ENVÍOS"
         url="/shipment"
         onClick={toggleMenu}

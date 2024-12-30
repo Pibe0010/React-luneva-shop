@@ -2,33 +2,33 @@ import { useEffect, useState } from "react";
 import { ToastAlert } from "../../Components/Alerts/ToastAlert.jsx";
 const URL = import.meta.env.VITE_URL;
 
-export const useOrderList = (token) => {
-  const [listOrder, setListOrder] = useState([]);
-  const [initialOrderList, setInitialOrderList] = useState([]);
-  const [filteredOrderList, setFilteredOrderList] = useState([]);
+export const useTicketList = (token) => {
+  const [listTickets, setListTickets] = useState([]);
+  const [initialTicketsList, setInitialTicketsList] = useState([]);
+  const [filteredTicketsList, setFilteredTicketsList] = useState([]);
   const [selectedFilters, setSelectedFilters] = useState([]);
   const [sortOption, setSortOption] = useState(null);
 
   useEffect(() => {
-    getOrderList();
+    getTicketList();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [token]);
 
   useEffect(() => {
     applyFilters();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedFilters, listOrder]);
+  }, [selectedFilters, listTickets]);
 
   useEffect(() => {
-    if (filteredOrderList.length > 0) {
-      sortUsers(filteredOrderList);
+    if (filteredTicketsList.length > 0) {
+      sortUsers(filteredTicketsList);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sortOption]);
 
-  const getOrderList = async () => {
+  const getTicketList = async () => {
     try {
-      const response = await fetch(`${URL}/order/list`, {
+      const response = await fetch(`${URL}/ticket/list`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -38,18 +38,18 @@ export const useOrderList = (token) => {
 
       if (response.ok) {
         const responseData = await response.json();
-        setListOrder(responseData.data);
-        setInitialOrderList(responseData.data);
-        setFilteredOrderList(responseData.data);
+        setListTickets(responseData.data);
+        setInitialTicketsList(responseData.data);
+        setFilteredTicketsList(responseData.data);
       } else {
         const errorData = await response.json();
         console.error("Error al obtener la lista:", errorData);
       }
     } catch (error) {
-      console.error("Error al obtener la lista de ordenes:", error);
+      console.error("Error al obtener la lista de tickets:", error);
       ToastAlert.fire({
         icon: "error",
-        title: "Error al obtener la lista de ordenes",
+        title: "Error al obtener la lista de tickets",
       });
     }
   };
@@ -57,7 +57,7 @@ export const useOrderList = (token) => {
   const handleSearch = async (searchTerm) => {
     try {
       const response = await fetch(
-        `${URL}/order/search?searchTerm=${searchTerm}`,
+        `${URL}/ticket/search?searchTerm=${searchTerm}`,
         {
           method: "GET",
           headers: {
@@ -70,8 +70,8 @@ export const useOrderList = (token) => {
       if (response.ok) {
         const responseData = await response.json();
         console.log("Busqueda exitosa:", responseData);
-        setListOrder(responseData.data);
-        setFilteredOrderList(responseData.data);
+        setListTickets(responseData.data);
+        setFilteredTicketsList(responseData.data);
       } else {
         const errorData = await response.json();
         console.error("Búsqueda fallida:", errorData);
@@ -88,27 +88,27 @@ export const useOrderList = (token) => {
   const handleSortChange = (option) => {
     setSortOption(option ? option.value : null);
     if (!option) {
-      setFilteredOrderList([...initialOrderList]);
+      setFilteredTicketsList([...initialTicketsList]);
     }
   };
 
   const applyFilters = () => {
-    let filtered = listOrder;
+    let filtered = listTickets;
 
     if (selectedFilters.length > 0) {
-      filtered = listOrder.filter((order) => {
-        // Verifica si el estado del pedido coincide con algún filtro seleccionado
-        return selectedFilters.includes(order.status);
+      filtered = listTickets.filter((ticket) => {
+        // Verifica si coincide con algún filtro seleccionado
+        return selectedFilters.includes(ticket.status);
       });
     }
 
-    setFilteredOrderList(filtered);
+    setFilteredTicketsList(filtered);
     sortUsers(filtered);
   };
 
   const sortUsers = (list) => {
     if (!sortOption) {
-      setFilteredOrderList(list);
+      setFilteredTicketsList(list);
       return;
     }
 
@@ -131,95 +131,95 @@ export const useOrderList = (token) => {
       case "ref-desc":
         sortedList.sort((a, b) => b.ref_OR.localeCompare(a.ref_OR));
         break;
-      case "discount_rate-asc":
-        sortedList.sort((a, b) => a.discount_rate - b.discount_rate);
+      case "product_amount-asc":
+        sortedList.sort((a, b) => a.product_amount - b.product_amount);
         break;
-      case "discount_rate-desc":
-        sortedList.sort((a, b) => b.discount_rate - a.discount_rate);
+      case "product_amount-desc":
+        sortedList.sort((a, b) => b.product_amount - a.product_amount);
         break;
       case "price-asc":
         sortedList.sort((a, b) => a.price - b.price);
         break;
       case "price-desc":
-        sortedList.sort((a, b) => b.price - a.price);
+        sortedList.sort((a, b) => b.total_price - a.price);
         break;
       default:
         break;
     }
 
-    setFilteredOrderList(sortedList);
+    setFilteredTicketsList(sortedList);
   };
 
-  const addOrder = async () => {
+  const addTicket = async () => {
     try {
-      await getOrderList();
+      await getTicketList();
     } catch (error) {
-      console.error("Error al agregar una orden:", error);
+      console.error("Error al agregar un ticket:", error);
       ToastAlert.fire({
         icon: "error",
-        title: "Error al agregar una orden",
+        title: "Error al agregar un ticket",
       });
     }
   };
 
-  const deleteOrder = async (ID_order) => {
+  const deleteTicket = async (ID_ticket) => {
     try {
-      setListOrder((prevOrder) =>
-        prevOrder.filter((order) => order.ID_order !== ID_order)
+      setListTickets((prevOrder) =>
+        prevOrder.filter((ticket) => ticket.ID_ticket !== ID_ticket)
       );
-      await getOrderList();
+      await getTicketList();
     } catch (error) {
-      console.error("Error al eliminar la orden:", error);
+      console.error("Error al eliminar la ticket:", error);
       ToastAlert.fire({
         icon: "error",
-        title: "Error al eliminar la orden",
+        title: "Error al eliminar la ticket",
       });
     }
   };
 
-  const updateOrder = async (updatedOrder) => {
-    setListOrder((prevList) =>
-      prevList.map((order) =>
-        order.ID_order === updatedOrder.ID_order
-          ? { ...order, ...updatedOrder }
-          : order
+  const updateTicket = async (updatedTicket) => {
+    setListTickets((prevList) =>
+      prevList.map((ticket) =>
+        ticket.ID_ticket === updatedTicket.ID_ticket
+          ? { ...ticket, ...updatedTicket }
+          : ticket
       )
     );
 
-    setFilteredOrderList((prevList) =>
-      prevList.map((order) =>
-        order.ID_order === updatedOrder.ID_order
-          ? { ...order, ...updatedOrder }
-          : order
+    setFilteredTicketsList((prevList) =>
+      prevList.map((ticket) =>
+        ticket.ID_ticket === updatedTicket.ID_ticket
+          ? { ...ticket, ...updatedTicket }
+          : ticket
       )
     );
-    await getOrderList();
+    await getTicketList();
   };
 
-  const activeOrder = (ID_order) => {
-    setListOrder((prevList) =>
-      prevList.map((order) =>
-        order.ID_order === ID_order
-          ? { ...order, active: !order.active }
-          : order
+  const activeTicket = (ID_ticket) => {
+    setListTickets((prevList) =>
+      prevList.map((ticket) =>
+        ticket.ID_ticket === ID_ticket
+          ? { ...ticket, active: !ticket.active }
+          : ticket
       )
     );
-    setFilteredOrderList((prevList) =>
-      prevList.map((order) =>
-        order.ID_order === ID_order
-          ? { ...order, active: !order.active }
-          : order
+    setFilteredTicketsList((prevList) =>
+      prevList.map((ticket) =>
+        ticket.ID_ticket === ID_ticket
+          ? { ...ticket, active: !ticket.active }
+          : ticket
       )
     );
   };
   return {
-    filteredOrderList,
+    filteredTicketsList,
     handleSearch,
     handleFilterChange,
     handleSortChange,
-    addOrder,
-    deleteOrder,
-    updateOrder,
-    activeOrder,
+    addTicket,
+    deleteTicket,
+    updateTicket,
+    activeTicket,
   };
 };

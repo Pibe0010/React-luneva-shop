@@ -8,11 +8,8 @@ import { SortPage } from "../Components/NavPages/SortPage.jsx";
 import { ToggleMode } from "../Components/NavPages/ToggleMode.jsx";
 import { OrderList } from "../Components/PagesComponents/Order/OrderList.jsx";
 import { MoreOrder } from "../Components/PagesComponents/Order/MoreOrder.jsx";
-/* import { StatusOrderController } from "../Components/PagesComponents/Order/StatusOrderController.jsx"; */
-/* import { UpdateOrder } from "../Components/PagesComponents/Order/UpdateOrder.jsx"; */
 import { DeleteOrderModal } from "../Components/PagesComponents/Order/DeleteOrderModal.jsx";
 import { OrderListTable } from "../Components/PagesComponents/Order/OrderListTable.jsx";
-/* import { CreateOrder } from "../Components/Forms/CreateOrder/CreateOrder.jsx"; */
 
 export const OrdersPage = () => {
   const token = useUser();
@@ -54,13 +51,14 @@ export const OrdersPage = () => {
     { label: "Descuento (DSC)", value: "discount-desc" },
     { label: "Pricio (ASC)", value: "price-asc" },
     { label: "Pricio (DSC)", value: "price-desc" },
+    { label: "Ref (ASC)", value: "ref-asc" },
+    { label: "Ref (DSC)", value: "ref-desc" },
   ];
   return (
     <MainLayout>
       <section id="order_container" className="mainContainer">
         <nav id="user_nav" className="mainNav">
           <SearchPage onSearch={handleSearch} />
-          {/* <CreateOrder onAddOffer={addOrder} token={token} /> */}
           <FilterPage options={filterOptions} onChange={handleFilterChange} />
           <SortPage options={sortOptions} onSort={handleSortChange} />
           <ToggleMode
@@ -81,18 +79,6 @@ export const OrdersPage = () => {
                   />
                   <span id="product_actions" className="main_actions">
                     <MoreOrder order={order} />
-                    {/* <StatusOrderController
-                      id={order.ID_order}
-                      isActive={order.active}
-                      activeOrder={activeOrder}
-                      token={token}
-                    /> 
-                    <UpdateOrder
-                      id={order.ID_order}
-                      onUpdateOrder={updateOrder}
-                      offerData={order}
-                      formTypes="order"
-                    />*/}
                     <DeleteOrderModal
                       id={order.ID_order}
                       onDelete={deleteOrder}
