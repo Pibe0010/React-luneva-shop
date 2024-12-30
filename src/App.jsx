@@ -7,7 +7,6 @@ import { OffersPage } from "./Pages/OffersPage.jsx";
 import { OrdersPage } from "./Pages/OrdersPage.jsx";
 import { ProductsPage } from "./Pages/ProductsPage.jsx";
 import { TicketPurchasesPage } from "./Pages/TicketPurchasesPage.jsx";
-import { ShippingAddressPage } from "./Pages/ShippingAddressPage.jsx";
 import { ShipmentsPage } from "./Pages/ShipmentsPage.jsx";
 import { PaymentsPage } from "./Pages/PaymentsPage.jsx";
 import { TrolleyPage } from "./Pages/TrolleyPage.jsx";
@@ -39,7 +38,6 @@ const App = () => {
       <Route path="/products" element={<ProductsPage />} />
       <Route path="/create-product" element={<CreateProductPage />} />
       <Route path="/tickets" element={<TicketPurchasesPage />} />
-      <Route path="/address" element={<ShippingAddressPage />} />
       <Route path="/shipment" element={<ShipmentsPage />} />
       <Route path="/payment" element={<PaymentsPage />} />
       <Route path="/trolley" element={<TrolleyPage />} />
