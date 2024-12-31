@@ -1,0 +1,106 @@
+.updateOffer-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+}
+
+.update-container {
+  width: 400px;
+  background: rgb(63, 63, 63);
+  border-radius: 40px;
+  padding: 25px 35px;
+  border: 1px solid rgb(0, 0, 0);
+  box-shadow: rgba(3, 3, 3, 0.878) 0px 30px 30px -20px;
+  margin: 10px;
+}
+
+.updateOfferheading {
+  text-align: center;
+  font-weight: 900;
+  font-size: 30px;
+  color: white;
+}
+
+.updateOffer-form {
+  margin-top: 0;
+}
+
+.updateOffer-form .updateOffer-input {
+  width: 100%;
+  background: white;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 20px;
+  margin-top: 25px;
+  box-shadow: #fcfcfc 0px 10px 10px -5px;
+  border-inline: 2px solid transparent;
+  font-size: 1.3rem;
+}
+
+.updateOffer-form .updateOffer-input::-moz-placeholder {
+  color: rgb(170, 170, 170);
+}
+
+.updateOffer-form .updateOffer-input::placeholder {
+  color: rgb(170, 170, 170);
+}
+
+.updateOffer-form .updateOffer-input:focus {
+  outline: none;
+  border-inline: 2px solid white;
+}
+
+.updateOffer-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.updateOffer-form .updateOffer-button {
+  display: block;
+  width: 50%;
+  font-weight: bold;
+  background-color: rgba(95, 103, 255, 0.133);
+  color: white;
+  box-shadow:
+    0px 10px 10px rgb(187, 188, 253) inset,
+    0px 5px 10px rgba(5, 5, 5, 0.212),
+    0px -10px 10px rgba(54, 61, 255, 0.119) inset;
+  padding-block: 14px;
+  margin: 25px auto;
+  border-radius: 20px;
+  border: none;
+  transition: all 0.2s ease-in-out;
+  font-size: 1rem;
+}
+
+.updateOffer-form .updateOffer-button:hover {
+  transform: scale(1.03);
+  box-shadow:
+    0px 10px 10px rgb(187, 188, 253) inset,
+    0px 5px 10px rgba(5, 5, 5, 0.212),
+    0px -10px 10px rgba(54, 61, 255, 0.119) inset;
+}
+
+.updateOffer-form .updateOffer-button:active {
+  transform: scale(0.95);
+  box-shadow: rgba(255, 255, 255, 0.878) 0px 15px 10px -10px;
+}
+
+.updateOffer-error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: red;
+}

@@ -131,7 +131,8 @@
 }
 
 /* Clases para el estado  */
-.orderTableBodyRowStatus.earring {
+.orderTableBodyRowStatus.earring,
+.orderTableBodyRowStatus.pending {
   color: royalblue;
   font-weight: 600;
 }
