@@ -19,3 +19,11 @@ export const updateOfferSchema = joi.object({
   start_date: joi.string().optional().messages(joiErrorMessages),
   ending_date: joi.string().optional().messages(joiErrorMessages),
 });
+
+export const updateShipmentSchema = joi.object({
+  status: joi
+    .string()
+    .valid("pending", "sent", "delivered", "cancelled")
+    .required()
+    .messages(joiErrorMessages),
+});
