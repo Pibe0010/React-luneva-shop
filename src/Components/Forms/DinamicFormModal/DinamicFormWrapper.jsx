@@ -3,6 +3,7 @@ import { DinamicFormModal } from "../UpdateProduct/DinamicFormModal.jsx";
 import { DinamicOfferFormModal } from "../UpdateOffer/DinamicOfferFormModal.jsx";
 import "./DinamicFormWrapper.css";
 import { DinamicShipmentFormModal } from "../updateShipment/DinamicShipmentFormModal.jsx";
+import { DinamicPaymentFormModal } from "../UpdatePayment/DinamicPaymentFormModal.jsx";
 
 export const DinamicFormWrapper = ({
   productData,
@@ -22,6 +23,9 @@ export const DinamicFormWrapper = ({
       setShowModal(true);
     } else if (formType === "shipment") {
       setFormType("shipment");
+      setShowModal(true);
+    } else if (formType === "payment") {
+      setFormType("payment");
       setShowModal(true);
     } else {
       setFormType();
@@ -63,6 +67,16 @@ export const DinamicFormWrapper = ({
 
       {showModal && formType === "shipment" && (
         <DinamicShipmentFormModal
+          onSubmit={onSubmit}
+          show={showModal}
+          productData={productData}
+          onClose={handleCloseModal}
+          reload={reload}
+        />
+      )}
+
+      {showModal && formType === "payment" && (
+        <DinamicPaymentFormModal
           onSubmit={onSubmit}
           show={showModal}
           productData={productData}
