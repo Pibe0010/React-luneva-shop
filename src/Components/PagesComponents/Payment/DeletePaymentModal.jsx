@@ -1,8 +1,8 @@
 import Swal from "sweetalert2";
 const URL = import.meta.env.VITE_URL;
 
-export const DeleteOrderModal = ({ onDelete, id, token }) => {
-  const handleOrderDelete = async () => {
+export const DeletePaymentModal = ({ onDelete, id, token }) => {
+  const handlePaymentDelete = async () => {
     const confirmButtonText = onDelete ? "Eliminar" : "Cancelar";
     const confirmButtonColor = onDelete ? "#dc3545" : "#28a745";
     const confirmationMessage = onDelete
@@ -22,7 +22,7 @@ export const DeleteOrderModal = ({ onDelete, id, token }) => {
 
     if (confirmed.isConfirmed) {
       try {
-        const response = await fetch(`${URL}/order/delete/${id}`, {
+        const response = await fetch(`${URL}/payment/delete/${id}`, {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",
@@ -65,7 +65,7 @@ export const DeleteOrderModal = ({ onDelete, id, token }) => {
         } else {
           Swal.fire({
             icon: "error",
-            text: "La orden no ha sido cancelada",
+            text: "El pago no ha sido cancelada",
           });
         }
       } catch (error) {
@@ -77,10 +77,9 @@ export const DeleteOrderModal = ({ onDelete, id, token }) => {
       }
     }
   };
-
   return (
     <div>
-      <button className="delete-btn" onClick={handleOrderDelete}>
+      <button className="delete-btn" onClick={handlePaymentDelete}>
         <img
           className="delete-icon"
           src="/Icons/cancel.svg"

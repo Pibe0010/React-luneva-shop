@@ -1,0 +1,182 @@
+.paymentTable {
+  width: 100rem;
+  border-radius: 8px;
+  padding: 10px 15px;
+  margin-top: 15px;
+  margin-left: 13.4rem;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+}
+
+.paymentTableHead {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+  font-weight: bold;
+  text-align: start;
+  column-gap: 10px;
+  font-size: 1.2rem;
+}
+
+.paymentTableBody {
+  display: flex;
+  flex-direction: column;
+}
+
+.paymentTableBodyRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 0;
+  column-gap: 10px;
+  font-size: 1.1rem;
+  height: 45px;
+  border-bottom: 1px solid #eee;
+}
+
+.paymentTableBodyRow:hover {
+  background-color: #eee;
+}
+
+/* Puedes ajustar los estilos adicionales según sea necesario */
+
+.paymentTableHeadRowRef,
+.paymentTableBodyRowRef {
+  width: 130px;
+}
+
+.paymentTableHeadRowName,
+.paymentTableBodyRowName {
+  width: 150px;
+}
+
+.paymentTableHeadRowName {
+  padding-left: 53px;
+}
+
+.paymentTableHeadRowProduct,
+.paymentTableBodyRowProduct {
+  width: 120px;
+}
+
+.paymentTableHeadRowProduct {
+  padding-left: 43px;
+}
+
+.paymentTableHeadRowCuantity,
+.paymentTableBodyRowCuantity {
+  width: 100px;
+}
+
+.paymentTableHeadRowCuantity {
+  padding-left: 29px;
+}
+
+.paymentTableBodyRowCuantity {
+  padding-left: 15px;
+}
+
+.paymentTableHeadRowPrice,
+.paymentTableBodyRowPrice {
+  width: 100px;
+}
+
+.paymentTableHeadRowPrice {
+  padding-left: 39px;
+}
+
+.paymentTableHeadRowPayment,
+.paymentTableBodyRowPayment {
+  width: 100px;
+}
+
+.paymentTableHeadRowPayment {
+  padding-left: 35px;
+}
+
+.paymentTableHeadRowIva,
+.paymentTableBodyRowIva {
+  width: 100px;
+}
+
+.paymentTableHeadRowIva {
+  padding-left: 31px;
+}
+
+.paymentTableBodyRowIva {
+  padding-right: 30px;
+}
+
+.paymentTableHeadRowTotal,
+.paymentTableBodyRowTotal {
+  width: 110px;
+}
+
+.paymentTableHeadRowTotal {
+  padding-left: 26px;
+}
+
+.paymentTableHeadRowMethod,
+.paymentTableBodyRowMethod {
+  width: 120px;
+}
+
+.paymentTableHeadRowMethod {
+  padding-left: 27px;
+}
+
+.paymentTableHeadRowStatus,
+.paymentTableBodyRowStatus {
+  width: 100px;
+}
+
+.paymentTableHeadRowStatus {
+  padding-left: 25px;
+}
+
+.paymentTableBodyRowStatus {
+  font-weight: 600;
+}
+
+.paymentTableHeadRowCreate,
+.paymentTableBodyRowCreate {
+  width: 120px;
+}
+
+.paymentTableHeadRowCreate {
+  padding-left: 24px;
+}
+
+.paymentTableBodyRowCreate {
+  padding-left: 15px;
+}
+
+.paymentTableHeadRowUpdate,
+.paymentTableBodyRowUpdate {
+  width: 120px;
+}
+
+.paymentTableHeadRowUpdate {
+  padding-left: 27px;
+}
+
+.paymentTableBodyRowUpdate {
+  padding-left: 17px;
+}
+
+.paymentTableHeadRowActions,
+.paymentTableBodyRowActions {
+  width: 150px;
+}
+
+.paymentTableHeadRowActions {
+  padding-left: 45px;
+}
+
+.paymentTableBodyRowActions {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding-left: 10px;
+}

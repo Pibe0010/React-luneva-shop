@@ -137,7 +137,8 @@
   font-weight: 600;
 }
 
-.orderTableBodyRowStatus.sent {
+.orderTableBodyRowStatus.sent,
+.orderTableBodyRowStatus.paid {
   color: green;
   font-weight: 600;
 }
