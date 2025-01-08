@@ -1,0 +1,115 @@
+/* From Uiverse.io by MuhammadHasann */
+.card-init-info {
+  --black: #18181b;
+  --white: #fff;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2.8rem;
+  width: 100%;
+  height: 500px;
+  background-color: var(--black);
+  border-radius: 15px;
+}
+
+.card-init-info::before {
+  content: "";
+  position: absolute;
+  top: 7rem;
+  right: 4rem;
+  width: 1.25rem;
+  aspect-ratio: 1 / 1;
+  background-color: var(--white);
+  border-radius: 9999px;
+}
+
+.card-init-info::after {
+  content: "";
+  position: absolute;
+  top: 7.75rem;
+  right: 1.1rem;
+  width: 3rem;
+  aspect-ratio: 1 / 1;
+  background-color: var(--white);
+  border-radius: 9999px;
+}
+
+.card-init-info .card-init-carousel {
+  position: absolute;
+  left: 0;
+
+  animation: carousel 15s infinite var(--carousel_direction, normal) linear;
+}
+
+.card-init-info .card-init-carousel[data-direction="right"] {
+  --carousel_direction: reverse;
+}
+.card-init-info .card-init-carousel[data-position="top"] {
+  top: 0.75rem;
+}
+.card-init-info .card-init-carousel[data-position="bottom"] {
+  bottom: 0.75rem;
+}
+
+.card-init-info .card-init-carousel .card-init-carousel__text {
+  font-size: 2.5rem;
+  color: #b5b5b5;
+  text-wrap: nowrap;
+}
+
+@keyframes carousel {
+  from {
+    transform: translate(0);
+  }
+  to {
+    transform: translate(-10%);
+  }
+}
+
+.card-init-info .crad-init-image {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.25rem;
+  margin-bottom: 0.5rem;
+  width: fit-content;
+  aspect-ratio: 1 / 1;
+  border-radius: 0.25rem;
+}
+
+.card-init-info .crad-init-image img {
+  fill: white;
+  position: absolute;
+  top: 14.15rem;
+  right: -1.5rem;
+  width: 4rem;
+}
+
+.card-init-info .crad-init-image .card-init-logo {
+  content: "";
+  position: absolute;
+  top: 17.5rem;
+  right: -2.5rem;
+  width: 1.5rem;
+}
+
+.card-init-info .card-init-title {
+  position: relative;
+  z-index: 10;
+  font-size: 3.5rem;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.card-init-info .card-init-paragraph {
+  position: relative;
+  z-index: 10;
+  padding-right: 0.25rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #aaaaaa;
+}
