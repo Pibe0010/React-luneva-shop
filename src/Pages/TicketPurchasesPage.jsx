@@ -66,7 +66,7 @@ export const TicketPurchasesPage = () => {
         </nav>
         {isListView ? (
           <ol id="offer_list" className="main_olist">
-            {filteredTicketsList.length > 0 ? (
+            {filteredTicketsList && filteredTicketsList.length > 0 ? (
               filteredTicketsList.map((ticket) => (
                 <li key={ticket.ID_ticket} id="element_ticket_container">
                   <TicketList

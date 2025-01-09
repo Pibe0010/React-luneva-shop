@@ -11,6 +11,20 @@ export const ProductList = ({ product, search }) => {
   const [direction, setDirection] = useState("right");
   const itemsPerPage = 4;
 
+  if (!product || !Array.isArray(product)) {
+    return (
+      <section className="product-list">
+        <h2 className="home-product-card-title">Jabònes</h2>
+        <SearchBar onSearch={search} />
+        <div className="products">
+          <div className="noResult-card-product">
+            El producto no se ha encontrado...
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   const indexOfLastProduct = currentPage * itemsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - itemsPerPage;
   const currentProducts = product.slice(
@@ -65,7 +79,7 @@ export const ProductList = ({ product, search }) => {
               alt="Anterior"
             />
           </button>
-          {currentProducts.length > 0 ? (
+          {currentProducts && currentProducts.length > 0 ? (
             currentProducts.map((itemProduct) => (
               <Card
                 key={itemProduct.ID_product}
