@@ -2,6 +2,7 @@
 
 .home-container {
   width: 100%;
+  max-width: 1895px;
   margin: 0 auto;
   padding: 5px 4rem;
   display: flex;
@@ -40,7 +41,6 @@
 
 .home-text {
   color: #fff;
-
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   border: 1px solid #ffffff;
@@ -51,7 +51,6 @@
 .home-title {
   font-size: 3.5rem;
   margin-bottom: 10px;
-
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
 }
 
@@ -129,7 +128,7 @@
 }
 
 .home-offer-title {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 4.4vw, 2.5rem);
   margin-bottom: 30px;
   margin-top: 40px;
 }
@@ -157,14 +156,14 @@
 
 .home-card-title {
   margin: 0 0 10px;
-  font-size: 2.8rem;
+  font-size: clamp(1.7rem, 3vw, 2.8rem);
   color: #fff;
 }
 
 .home-offer-description {
   margin: 0 0 15px;
   color: #fff;
-  font-size: 1.2rem;
+  font-size: clamp(1.2rem, 3vw, 1.2rem);
   font-weight: bold;
 }
 
@@ -175,14 +174,14 @@
 }
 
 .home-offer-price-current {
-  font-size: 1.5rem;
+  font-size: clamp(1.6rem, 3vw, 1.5rem);
   font-weight: bold;
   color: #fff;
   margin-right: 10px;
 }
 
 .home-offer-price-discounted {
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 3vw, 1.1rem);
   color: #0ab03f;
 }
 
@@ -213,7 +212,7 @@
 }
 
 .home-product-card-title {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 4.4vw, 2.5rem);
   margin-bottom: 30px;
   margin-top: 7rem;
 }
@@ -223,8 +222,9 @@
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 2rem;
-  padding: 4rem;
   width: 100%;
+  height: 600px;
+  max-width: 1895px;
   border: 1px solid #212121;
   border-radius: 15px;
   box-shadow:
@@ -237,9 +237,9 @@
 
 .card-product-container {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  margin: 0 auto;
   gap: 1.5rem;
   transition:
     transform 5s ease-in-out,
@@ -295,7 +295,7 @@
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   background: transparent;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
 .pagination-button.active {
@@ -311,17 +311,17 @@
 
 .prev-btn,
 .next-btn {
-  position: relative;
-  margin: 0 5px;
-  padding: 5px 10px;
+  margin-left: 10px;
   border-style: none;
   cursor: pointer;
-  font-size: 1em;
   background: transparent;
 }
 
 .noResult-card-product {
-  margin-left: 37rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 45rem;
   color: #fff;
   font-size: 1.3rem;
   font-weight: bold;
@@ -332,7 +332,7 @@
 }
 
 .store-info-title {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 4.4vw, 2.5rem);
   margin-bottom: 30px;
   margin-top: 2rem;
 }
@@ -343,7 +343,7 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 5rem;
-  margin: 7rem;
+  margin: 7rem 0;
 }
 
 .info-card {
@@ -365,12 +365,12 @@
 }
 
 .product-info-title {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 4.4vw, 2.5rem);
   margin-bottom: 30px;
 }
 
 .product-info-paragraph {
-  font-size: 1.5rem;
+  font-size: clamp(1.3rem, 2.4vw, 1.5rem);
   font-weight: bold;
   display: flex;
   align-items: center;
@@ -396,7 +396,7 @@
 
 .product-info li {
   margin-bottom: 4px;
-  font-size: 1.1rem;
+  font-size: clamp(1.3rem, 1vw, 1.1rem);
   font-weight: bold;
 }
 
@@ -448,4 +448,166 @@
   cursor: pointer;
 }
 
-/* Button Styles */
+@media (max-width: 750px) {
+  .home-container {
+    width: 720px;
+    height: auto;
+  }
+
+  .home-offer-card {
+    height: 360px;
+  }
+
+  .home-offer-image {
+    width: 270px;
+    height: 360px;
+  }
+
+  .home-offer-prices {
+    margin-bottom: 8px;
+  }
+
+  .product-list {
+    margin-bottom: 40px;
+    margin-top: 0;
+  }
+
+  .home-product-card-title {
+    margin-top: 5rem;
+  }
+
+  .home-search-bar {
+    width: 50%;
+  }
+
+  .products {
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 0;
+  }
+
+  .noResult-card-product {
+    margin-left: 0;
+  }
+
+  .info-cards {
+    margin: 4rem 0;
+  }
+
+  .product-info-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .product-info-logo {
+    width: 240px;
+  }
+}
+
+@media (max-width: 450px) {
+  .home-container {
+    width: 410px;
+    height: auto;
+    padding: 5px;
+    margin: 0 1px;
+  }
+
+  .home-offer-title {
+    margin-top: 0;
+  }
+
+  .home-offer-card {
+    height: 550px;
+    flex-direction: column;
+  }
+
+  .home-offer-content {
+    width: 100%;
+  }
+
+  .home-offer-image {
+    width: 100%;
+    height: 220px;
+  }
+
+  .home-offer-prices {
+    margin-bottom: 8px;
+  }
+
+  .product-list {
+    margin-bottom: 40px;
+    margin-top: 0;
+  }
+
+  .pagination {
+    position: relative;
+  }
+  .pagination-button {
+    padding: 0;
+  }
+
+  .prev-btn,
+  .next-btn {
+    display: flex;
+    margin-left: 0;
+    flex-direction: column;
+    position: absolute;
+    top: 0.4rem;
+    bottom: 0;
+  }
+  .next-btn {
+    right: 7rem;
+    z-index: 5;
+  }
+  .prev-btn {
+    left: 8rem;
+    z-index: 8;
+  }
+  .prev-btn,
+  .next-btn,
+  img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .home-product-card-title {
+    margin-top: 13rem;
+  }
+
+  .home-search-bar {
+    width: 90%;
+  }
+
+  .products {
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 0;
+    position: relative;
+  }
+
+  .noResult-card-product {
+    margin-left: 0;
+  }
+
+  .info-cards {
+    margin: 0;
+  }
+
+  .product-info-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .product-info-paragraph {
+    margin: 30px 0;
+  }
+
+  .product-info-logo {
+    width: 250px;
+  }
+}

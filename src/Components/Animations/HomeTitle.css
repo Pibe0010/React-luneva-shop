@@ -54,7 +54,7 @@
 }
 
 .card-init-info .card-init-carousel .card-init-carousel__text {
-  font-size: 2.5rem;
+  font-size: clamp(1.7rem, 1.5vw, 2.5rem);
   color: #b5b5b5;
   text-wrap: nowrap;
 }
@@ -70,7 +70,7 @@
 
 .card-init-info .crad-init-image {
   position: relative;
-  z-index: 10;
+  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -99,17 +99,51 @@
 
 .card-init-info .card-init-title {
   position: relative;
-  z-index: 10;
-  font-size: 3.5rem;
+  z-index: 1;
+  font-size: clamp(2.3rem, 3.5vw, 3.5rem);
   color: #ffffff;
   font-weight: bold;
 }
 
 .card-init-info .card-init-paragraph {
   position: relative;
-  z-index: 10;
+  z-index: 1;
   padding-right: 0.25rem;
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 1.5vw, 1.5rem);
   font-weight: bold;
   color: #aaaaaa;
+}
+@media (max-width: 750px) {
+  .card-init-info .crad-init-image img {
+    top: 20.15rem;
+    right: -1.5rem;
+  }
+
+  .card-init-info .crad-init-image .card-init-logo {
+    top: 23.5rem;
+    right: -2.5rem;
+  }
+}
+@media (max-width: 450px) {
+  .card-init-info {
+    padding: 1.7rem;
+  }
+  .card-init-info::before {
+    top: 4.8rem;
+    right: 3rem;
+  }
+
+  .card-init-info::after {
+    top: 5.75rem;
+    right: 0.2rem;
+  }
+  .card-init-info .crad-init-image img {
+    top: 23.15rem;
+    right: -1.5rem;
+  }
+
+  .card-init-info .crad-init-image .card-init-logo {
+    top: 25.8rem;
+    right: -2.5rem;
+  }
 }

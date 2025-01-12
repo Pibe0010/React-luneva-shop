@@ -70,7 +70,7 @@ export const ShipmentsPage = () => {
           <ol id="offer_list" className="main_olist">
             {filteredShipmentList.length > 0 ? (
               filteredShipmentList.map((shipment) => (
-                <li key={shipment.ID_Shipment} id="element_order_container">
+                <li key={shipment.ID_shipment} id="element_order_container">
                   <ShipmentList
                     shipment={shipment}
                     updateShipment={updateShipment}

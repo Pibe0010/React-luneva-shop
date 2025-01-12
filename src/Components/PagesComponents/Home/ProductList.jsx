@@ -1,15 +1,52 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Card } from "../../Card/Card.jsx";
 import { SearchBar } from "./SearchBar.jsx";
 import defaultProduct from "/Icons/imageProduct.svg";
-
+import { NextBtn } from "../../Buttons/NextBtn/NextBtn.jsx";
+import { PrevBtn } from "../../Buttons/PrevBtn/PrevBtn.jsx";
 const URL = import.meta.env.VITE_URL;
 
 export const ProductList = ({ product, search }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [isAnimating, setIsAnimating] = useState(false);
   const [direction, setDirection] = useState("right");
-  const itemsPerPage = 4;
+  const [itemsPerPage, setItemsPerPage] = useState(4);
+  const [isViewNumPages, setIsViewNumPages] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 860) {
+        setItemsPerPage(1);
+        setIsMobile(false);
+        setIsViewNumPages(false);
+      } else {
+        setItemsPerPage(4);
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleResizeMobile = () => {
+      if (window.innerWidth <= 450) {
+        setItemsPerPage(1);
+        setIsViewNumPages(true);
+        setIsMobile(true);
+      }
+    };
+
+    handleResizeMobile(); // Ejecutar al inicio para configurar según el tamaño actual
+    window.addEventListener("resize", handleResizeMobile);
+    return () => {
+      window.removeEventListener("resize", handleResizeMobile);
+    };
+  }, []);
 
   if (!product || !Array.isArray(product)) {
     return (
@@ -45,7 +82,8 @@ export const ProductList = ({ product, search }) => {
   };
 
   const addNextProducts = () => {
-    if (currentPage === 4) return;
+    const totalPages = Math.ceil(product.length / itemsPerPage);
+    if (currentPage >= totalPages) return;
     handlePageChange(currentPage + 1, "right");
   };
 
@@ -64,6 +102,7 @@ export const ProductList = ({ product, search }) => {
       <h2 className="home-product-card-title">Jabònes</h2>
       <SearchBar onSearch={search} />
       <div className="products">
+        {!isMobile && <PrevBtn addPrevProducts={addPrevProducts} />}
         <div
           className={`card-product-container ${
             isAnimating
@@ -73,12 +112,6 @@ export const ProductList = ({ product, search }) => {
               : ""
           }`}
         >
-          <button className="prev-btn" onClick={addPrevProducts}>
-            <img
-              src="/Icons/arrow_back_ios_45dp_434343_FILL0_wght400_GRAD0_opsz48.svg"
-              alt="Anterior"
-            />
-          </button>
           {currentProducts && currentProducts.length > 0 ? (
             currentProducts.map((itemProduct) => (
               <Card
@@ -101,26 +134,38 @@ export const ProductList = ({ product, search }) => {
             </div>
           )}
         </div>
-        <button className="next-btn" onClick={addNextProducts}>
-          <img
-            src="/Icons/arrow_forward_ios_45dp_434343_FILL0_wght400_GRAD0_opsz48.svg"
-            alt="Siguiente"
+        {!isMobile && <NextBtn addNextProducts={addNextProducts} />}
+      </div>
+      {isViewNumPages === false ? (
+        <div className="pagination">
+          {pageNumbers.map((number) => (
+            <button
+              key={number}
+              className={`pagination-button ${currentPage === number ? "active" : ""}`}
+              onClick={() =>
+                handlePageChange(
+                  number,
+                  number > currentPage ? "right" : "left"
+                )
+              }
+            >
+              {number}
+            </button>
+          ))}
+        </div>
+      ) : (
+        <div className="pagination">
+          <PrevBtn
+            addPrevProducts={addPrevProducts}
+            disabled={currentPage === 1}
           />
-        </button>
-      </div>
-      <div className="pagination">
-        {pageNumbers.map((number) => (
-          <button
-            key={number}
-            className={`pagination-button ${currentPage === number ? "active" : ""}`}
-            onClick={() =>
-              handlePageChange(number, number > currentPage ? "right" : "left")
-            }
-          >
-            {number}
-          </button>
-        ))}
-      </div>
+          <button className="pagination-button active">{currentPage}</button>
+          <NextBtn
+            addNextProducts={addNextProducts}
+            disabled={currentPage === Math.ceil(product.length / itemsPerPage)}
+          />
+        </div>
+      )}
     </section>
   );
 };
