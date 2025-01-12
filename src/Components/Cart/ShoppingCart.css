@@ -191,3 +191,15 @@
     font-size: 1.3rem;
   }
 }
+
+@media (max-width: 450px) {
+  .menuCartNav {
+    right: 1rem;
+    top: 4.5rem;
+    height: 360px;
+    width: 230px;
+  }
+  .nameCartNav {
+    top: 10rem;
+  }
+}

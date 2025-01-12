@@ -3,14 +3,14 @@
 }
 
 .aboutTitle {
-  font-size: 1.3rem;
+  font-size: clamp(1.3rem, 3.5vw, 1.5rem);
   color: #ffffff;
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
 
 .aboutText {
-  font-size: 0.9rem;
+  font-size: clamp(0.9rem, 3vw, 1.1rem);
   color: #ffffff;
   opacity: 0.8;
   line-height: 1.5rem;
@@ -19,16 +19,32 @@
 }
 
 .aboutContactTitle {
-  font-size: 1.3rem;
+  font-size: clamp(1.3rem, 3vw, 1.5rem);
   color: #ffffff;
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
 
 .aboutContactEmail {
-  font-size: 0.9rem;
+  font-size: clamp(0.9rem, 3vw, 1.1rem);
   color: #ffffff;
   opacity: 0.8;
   line-height: 1.5rem;
   margin-bottom: 0.5rem;
+}
+
+@media (max-width: 1026px) {
+  .aboutContainer {
+    width: 100%;
+    margin-left: 7rem;
+  }
+}
+@media (max-width: 450px) {
+  .aboutContainer {
+    width: 100%;
+    margin-left: 1rem;
+  }
+  .aboutText {
+    width: 24rem;
+  }
 }

@@ -1,6 +1,6 @@
 .offer-timer {
   margin-bottom: 15px;
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 1.7vw, 1.1rem);
   color: #f1f1f1;
 }
 

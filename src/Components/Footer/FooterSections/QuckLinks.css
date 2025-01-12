@@ -3,7 +3,7 @@
 }
 
 .quckLinks-title {
-  font-size: 1.3rem;
+  font-size: clamp(1.3rem, 3.5vw, 1.5rem);
   color: #ffffff;
   font-weight: bold;
   margin-bottom: 0.5rem;
@@ -13,10 +13,23 @@
 .shopFooter,
 .contactFooter,
 .saleFooter {
-  font-size: 0.9rem;
+  font-size: clapm(0.9rem, 3vw, 1.1rem);
   color: #ffffff;
   opacity: 0.8;
   line-height: 2.5rem;
   margin-bottom: 1rem;
   text-decoration: none;
+}
+@media (max-width: 1026px) {
+  .quckLinks-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-right: 3rem;
+  }
+}
+@media (max-width: 450px) {
+  .quckLinks-container {
+    margin-right: 0;
+  }
 }

@@ -8,10 +8,10 @@
   top: 0;
   z-index: 9;
 }
-.logo {
+.header .logo {
   display: flex;
   align-items: center;
-  font-size: 2.2rem;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
   margin-left: 10px;
   margin-bottom: 10px;
   color: #ffffff;
@@ -21,7 +21,7 @@
 .navList {
   display: flex;
   align-items: center;
-  margin-right: 2rem;
+  margin-right: 1rem;
   list-style: none;
   cursor: pointer;
   gap: 2.5rem;
@@ -31,7 +31,7 @@
 .link-offer {
   text-decoration: none;
   color: #ffffff;
-  font-size: 16px;
+  font-size: clamp(13px, 4vw, 1rem);
   font-weight: 900;
   transition: 0.6s;
 }
@@ -159,5 +159,24 @@
   .navList {
     align-items: end;
     flex-direction: column;
+    margin-right: 0;
+  }
+}
+@media (max-width: 450px) {
+  .hamburger {
+    width: 45%;
+  }
+  .nav {
+    right: 1rem;
+    top: 84px;
+  }
+  .navList {
+    margin-right: 0;
+  }
+  .menuProfileNav {
+    right: 1rem;
+    top: 74px;
+    height: 100px;
+    gap: 10px;
   }
 }
