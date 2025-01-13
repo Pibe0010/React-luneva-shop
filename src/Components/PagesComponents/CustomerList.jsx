@@ -1,9 +1,7 @@
-/* import { useUser } from "../../Context/AutContext.jsx"; */
 import { MoreInfo } from "../InfoModal/MoreInfo.jsx";
 import "./CustomerList.css";
 
 export const CustomerList = ({ customer }) => {
-  /* const token = useUser(); */
   const nameComplete = `${customer.user_name} ${customer.last_name}`;
   const active = customer.active ? "Activo" : "Inactivo";
   const activeColor = customer.active ? "green" : "red";
@@ -41,17 +39,17 @@ export const CustomerList = ({ customer }) => {
 
   return (
     <>
-      <div id="element_customer_subtitle" className="mainInsideSub">
-        <p className="refTitle">Nombre: {nameComplete}</p>
+      <div id="element_customer_subtitle" className="mainCustomer-insideSub">
+        <p className="refProductTitle">Nombre: {nameComplete}</p>
       </div>
 
-      <p className="mainInsideSub">
+      <p className="mainCustomer-insideSub">
         <strong>Email: </strong> {customer.email}
       </p>
-      <p className="mainInsideSub">
+      <p className="mainCustomer-insideSub">
         <strong>Teléfono: </strong> {customer.phone}
       </p>
-      <p className="mainInsideSub">
+      <p className="mainCustomer-insideSub">
         <strong>Estado: </strong>{" "}
         <span className={activeClass}>
           {customer.active ? "Activo" : "Inactivo"}

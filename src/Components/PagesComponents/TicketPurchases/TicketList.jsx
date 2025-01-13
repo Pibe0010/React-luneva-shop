@@ -6,23 +6,23 @@ export const TicketList = ({ ticket }) => {
 
   return (
     <>
-      <div id="element_ticket_subtitle" className="mainInsideSub">
-        <p className="refTitle">Ref_OR: {ticket.ref_OR}</p>
+      <div id="element_ticket_subtitle" className="mainTicketInsideSub">
+        <p className="refTicketTitle">Ref_OR: {ticket.ref_OR}</p>
       </div>
-      <p className="mainInsideSub">
+      <p className="mainTicketInsideSub">
         <strong>Nombre: </strong> {nameComplete}
       </p>
-      <p className="mainInsideSub">
+      <p className="mainTicketInsideSub">
         <strong>Producto: </strong> {ticket.name}
       </p>
 
-      <p className="mainInsideSub">
+      <p className="mainTicketInsideSub">
         <strong>Precio: </strong> {ticket.price} €
       </p>
-      <p className="mainInsideSub">
+      <p className="mainTicketInsideSub">
         <strong>Cantidad: </strong> {ticket.product_amount} u
       </p>
-      <p className="mainInsideSub">
+      <p className="mainTicketInsideSub">
         <strong>Creado: </strong>{" "}
         {GetNormalizaDate(ticket.createdAt).toLocaleDateString()}
       </p>
