@@ -30,7 +30,12 @@
 }
 
 .mainContainer {
+  display: flex;
+  flex-direction: column;
   padding: 10px 15px;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .mainTitle {
@@ -44,7 +49,7 @@
   display: grid;
   grid-template-columns: 1fr auto auto auto auto auto;
   align-items: center;
-  margin: 0 auto;
+  margin: 1rem auto;
   column-gap: 20px;
 }
 
@@ -59,6 +64,7 @@
 
 .main_ilist {
   max-width: 500px;
+  width: 300px;
   padding: 10px 15px;
   margin: 10px 0 15px 0;
   background-color: #ffffff;
@@ -100,7 +106,7 @@
 
 .main_actions {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
 }
 

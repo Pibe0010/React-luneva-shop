@@ -1,6 +1,6 @@
 #element_offer_container {
   width: 350px;
-  height: 230px;
+  height: 270px;
   margin: 15px 10px 15px 0;
   padding: 20px 20px 5px 20px;
   border-radius: 8px;
@@ -34,7 +34,7 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  font-size: 1.1rem;
+  font-size: clamp(1.5rem, 3vw, 1.5rem);
   font-weight: 600;
   margin-bottom: 5px;
   padding-bottom: 10px;
@@ -49,8 +49,8 @@
   margin-bottom: 10px;
 }
 
-.mainInsideSub {
-  font-size: 1rem;
+.mainOfferInsideSub {
+  font-size: clamp(1.3rem, 3vw, 1.2rem);
   color: #555555;
   margin: 5px 0;
 }

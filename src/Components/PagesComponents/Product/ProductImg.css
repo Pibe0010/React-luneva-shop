@@ -1,39 +1,24 @@
-.title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 50.1rem;
-  right: 0;
-  bottom: 35rem;
-  font-size: 2rem;
-  font-weight: 700;
-  color: #555556;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-}
-
 .img-figure {
   display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;
-  top: 0;
-  left: 84.1rem;
+  top: 5rem;
+  left: 59.1rem;
   right: 0;
   bottom: 0;
-  width: 10rem;
+  width: 2.5rem;
 }
 
 .img-figure .img-one,
 .img-two,
 .img-tree {
-  width: 22rem;
-  height: 22rem;
+  width: 20rem;
+  height: 20rem;
   margin: 13px;
   object-fit: cover;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 10px rgba(255, 254, 254, 0.4);
 }
 
 .btn-selectProduct {
@@ -54,6 +39,29 @@
 .img-title {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #31437e;
+  color: #fff;
   margin-bottom: 0.5rem;
+}
+@media screen and (max-width: 850px) {
+  .img-figure {
+    left: 22.3rem;
+  }
+  .img-figure .img-one,
+  .img-two,
+  .img-tree {
+    width: 11.9rem;
+    height: 12rem;
+  }
+}
+@media screen and (max-width: 450px) {
+  .img-figure {
+    left: 12rem;
+    flex-direction: column;
+  }
+  .img-figure .img-one,
+  .img-two,
+  .img-tree {
+    width: 15.9rem;
+    height: 11rem;
+  }
 }

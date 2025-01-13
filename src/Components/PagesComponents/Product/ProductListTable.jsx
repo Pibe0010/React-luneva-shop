@@ -4,25 +4,15 @@ import { MoreProduct } from "./MoreProduct.jsx";
 import { StatusProductController } from "./StatusProductController.jsx";
 import { UpdateProduct } from "./UpdateProduct.jsx";
 import "./ProductListTable.css";
-import { ProductImg } from "./ProductImg.jsx";
+import { InsertImg } from "./InsertImg.jsx";
 
 export const ProductListTable = ({
   product,
   onUpdateProduct,
   onDelete,
   isActive,
-  logo,
 }) => {
   const token = useUser();
-
-  // Función para manejar el click en un producto
-  const handleProductClick = (product) => {
-    if (logo?.ID_product === product.ID_product) {
-      logo(null); // Deselecciona el producto
-    } else {
-      logo(product); // Selecciona el nuevo producto
-    }
-  };
 
   return (
     <section className="productTable-container">
@@ -38,11 +28,7 @@ export const ProductListTable = ({
         <div id="productTableBody">
           {product.length > 0 ? (
             product.map((product) => (
-              <div
-                key={product.ID_product}
-                className="productTableBodyRow"
-                onClick={() => handleProductClick(product)}
-              >
+              <div key={product.ID_product} className="productTableBodyRow">
                 <div className="productTableBodyRef">{product.ref_PR}</div>
                 <div className="productTableBodyName">{product.name}</div>
                 <div className="productTableBodyPrice">{product.price} €</div>
@@ -71,6 +57,12 @@ export const ProductListTable = ({
                     onDelete={onDelete}
                     token={token}
                   />
+                  <InsertImg
+                    id={product.ID_product}
+                    product={product}
+                    onUpdateProduct={onUpdateProduct}
+                    token={token}
+                  />
                 </div>
               </div>
             ))
@@ -79,27 +71,6 @@ export const ProductListTable = ({
           )}
         </div>
       </section>
-      <div className="product-container-img">
-        {logo === null ? (
-          <img
-            className="product-logo"
-            src="/img/luneva.png"
-            alt="Default product icon"
-          />
-        ) : (
-          product.map((product) =>
-            logo.ID_product === product.ID_product ? (
-              <div className="product-image-container" key={product.ID_product}>
-                <ProductImg
-                  id={product.ID_product}
-                  images={product}
-                  onUpdateProduct={onUpdateProduct}
-                />
-              </div>
-            ) : null
-          )
-        )}
-      </div>
     </section>
   );
 };

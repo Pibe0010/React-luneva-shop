@@ -17,19 +17,19 @@ export const ProductList = ({ product }) => {
 
   return (
     <>
-      <div id="element_customer_subtitle" className="mainInsideSub">
+      <div id="element_customer_subtitle" className="mainProductInsideSub">
         <p className="refTitle">Ref: {product.ref_PR}</p>
       </div>
-      <p className="mainInsideSub">
+      <p className="mainProductInsideSub">
         <strong>Nombre: </strong> {product.name}
       </p>
-      <p className="mainInsideSub">
+      <p className="mainProductInsideSub">
         <strong>Precio: </strong> {product.price} €
       </p>
-      <p className="mainInsideSub">
+      <p className="mainProductInsideSub">
         <strong>Stock: </strong> {product.Stock} u.
       </p>
-      <p className="mainInsideSub">
+      <p className="mainProductInsideSub">
         <strong>Estado: </strong>
         <span className={activeClass}> {traducirEstado(isActive)}</span>
       </p>

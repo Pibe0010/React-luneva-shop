@@ -20,25 +20,25 @@ export const OfferList = ({ offer }) => {
 
   return (
     <>
-      <div id="element_offer_subtitle" className="mainInsideSub">
+      <div id="element_offer_subtitle" className="mainOfferInsideSub">
         <p className="refTitle">Nombre: {nameComplete}</p>
       </div>
 
-      <p className="mainInsideSub">
+      <p className="mainOfferInsideSub">
         <strong>Precio: </strong> {offer.price} €
       </p>
-      <p className="mainInsideSub">
+      <p className="mainOfferInsideSub">
         <strong>Descuento: </strong> {offer.discount_rate} €
       </p>
-      <p className="mainInsideSub">
+      <p className="mainOfferInsideSub">
         <strong>Inicio: </strong>{" "}
         {GetNormalizaDate(offer.start_date).toLocaleDateString()}
       </p>
-      <p className="mainInsideSub">
+      <p className="mainOfferInsideSub">
         <strong>Fin: </strong>{" "}
         {GetNormalizaDate(offer.ending_date).toLocaleDateString()}
       </p>
-      <p className="mainInsideSub">
+      <p className="mainOfferInsideSub">
         <strong>Estado: </strong>{" "}
         <span className={activeClass}>{statusController(isActive)}</span>
       </p>

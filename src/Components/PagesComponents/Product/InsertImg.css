@@ -1,0 +1,118 @@
+@keyframes modal-show {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  45% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  80% {
+    opacity: 1;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes modal-hide {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+
+    transform: scale(0.4);
+  }
+}
+
+.modal-product-image-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.modal-product-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(63, 63, 63);
+  padding: 20px;
+  border-radius: 8px;
+  flex-direction: column;
+  max-width: 80rem;
+  width: 100%;
+  height: 580px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  z-index: 6;
+  margin-top: 4rem;
+}
+
+.modal-show {
+  animation: modal-show 0.3s ease forwards;
+}
+
+.modal-hide {
+  animation: modal-hide 0.2s ease forwards;
+}
+
+.modal-product-header {
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  color: #fff;
+}
+
+.modal-product-footer {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  margin-top: 20px;
+  z-index: 1;
+  width: 100%;
+}
+
+.close-modal-product-button {
+  background-color: rgba(95, 103, 255, 0.641);
+  color: white;
+  box-shadow:
+    0px 10px 10px rgb(187, 188, 253) inset,
+    0px 5px 10px rgba(5, 5, 5, 0.212),
+    0px -10px 10px rgba(54, 61, 255, 0.119) inset;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.close-modal-product-button:hover {
+  background-color: rgba(95, 103, 255, 0.999);
+  color: white;
+  box-shadow:
+    0px 10px 10px rgb(187, 188, 253) inset,
+    0px 5px 10px rgba(5, 5, 5, 0.212),
+    0px -10px 10px rgba(54, 61, 255, 0.119) inset;
+}
+@media screen and (max-width: 850px) {
+  .modal-product-content {
+    width: 90%;
+    height: 400px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .modal-product-content {
+    width: 90%;
+    height: 840px;
+  }
+}
