@@ -1,6 +1,6 @@
 #element_payment_container {
   width: 350px;
-  height: 370px;
+  height: 410px;
   margin: 15px 10px 15px 0;
   padding: 20px 20px 5px 20px;
   border-radius: 8px;
@@ -49,8 +49,8 @@
   margin-bottom: 10px;
 }
 
-.mainInsideSub {
-  font-size: 1rem;
+.mainPayInsideSub {
+  font-size: clamp(1.2rem, 3.5vw, 1.2em);
   color: #555555;
   margin: 5px 0;
 }
@@ -58,4 +58,8 @@
 .mainInsideSub strong {
   font-weight: bold;
   color: #333333;
+}
+
+.refPayTitle {
+  font-size: clamp(1.5rem, 3.5vw, 1.3em);
 }

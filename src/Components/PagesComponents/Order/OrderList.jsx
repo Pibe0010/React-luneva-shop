@@ -13,31 +13,31 @@ export const OrderList = ({ order }) => {
 
   return (
     <>
-      <div id="element_order_subtitle" className="mainInsideSub">
-        <p className="refTitle">Nombre: {nameComplete}</p>
+      <div id="element_order_subtitle" className="mainOrderInsideSub">
+        <p className="refOrderTitle">Nombre: {nameComplete}</p>
       </div>
-      <p className="mainInsideSub">
+      <p className="mainOrderInsideSub">
         <strong>E-mail: </strong> {order.email}
       </p>
-      <p className="mainInsideSub">
+      <p className="mainOrderInsideSub">
         <strong>Producto: </strong> {order.name}
       </p>
 
-      <p className="mainInsideSub">
+      <p className="mainOrderInsideSub">
         <strong>Precio: </strong> {order.price} €
       </p>
-      <p className="mainInsideSub">
+      <p className="mainOrderInsideSub">
         <strong>Cantidad: </strong> {order.product_amount} u
       </p>
-      <p className="mainInsideSub">
+      <p className="mainOrderInsideSub">
         <strong>Descuento: </strong>{" "}
         {order.product_discount ? `${order.product_discount} €` : "0 €"}
       </p>
-      <p className="mainInsideSub">
+      <p className="mainOrderInsideSub">
         <strong>Creado: </strong>{" "}
         {GetNormalizaDate(order.createdAt).toLocaleDateString()}
       </p>
-      <p className="mainInsideSub">
+      <p className="mainOrderInsideSub">
         <strong>Estado: </strong>{" "}
         <span
           className={`orderTableBodyRowStatus ${order.status.toLowerCase()}`}
