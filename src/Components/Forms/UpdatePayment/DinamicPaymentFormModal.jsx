@@ -2,7 +2,12 @@ import { useEffect, useState } from "react";
 import { UpdatePaymentFormModal } from "./UpdatePaymentFormModal.jsx";
 import { updatePaymentStatusSchema } from "../../../Schema/Error/UpdateSchema.js";
 
-export const DinamicPaymentFormModal = ({ onSubmit, onClose, productData }) => {
+export const DinamicPaymentFormModal = ({
+  onSubmit,
+  onClose,
+  productData,
+  className,
+}) => {
   const [status, setStatus] = useState("");
   const [errorMessages, setErrorMessages] = useState("");
 
@@ -56,7 +61,7 @@ export const DinamicPaymentFormModal = ({ onSubmit, onClose, productData }) => {
 
   return (
     <section className="updateOffer-container">
-      <div className="update-container">
+      <div className={`update-container ${className}`}>
         <div className="updateOffer-heading"></div>
         <form className="updateOffer-form" onSubmit={handleSubmit}>
           <UpdatePaymentFormModal status={status} setStatus={setStatus} />

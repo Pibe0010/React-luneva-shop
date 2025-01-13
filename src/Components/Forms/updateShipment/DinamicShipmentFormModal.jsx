@@ -7,6 +7,7 @@ export const DinamicShipmentFormModal = ({
   onSubmit,
   onClose,
   productData,
+  className,
 }) => {
   const [status, setStatus] = useState("");
   const [errorMessages, setErrorMessages] = useState("");
@@ -61,7 +62,7 @@ export const DinamicShipmentFormModal = ({
 
   return (
     <section className="updateOffer-container">
-      <div className="update-container">
+      <div className={`update-container ${className}`}>
         <div className="updateOffer-heading"></div>
         <form className="updateOffer-form" onSubmit={handleSubmit}>
           <UpdateShipmentFormModal status={status} setStatus={setStatus} />

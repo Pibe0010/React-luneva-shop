@@ -123,6 +123,8 @@ export const CreateProduct = ({ onAddProduct, token }) => {
     }
   }, [errorMessages]);
 
+  const animationClas = showModal ? "modal-show" : "modal-hide";
+
   return (
     <>
       <button onClick={handleClickOpen} className="addProductBtn">
@@ -134,7 +136,7 @@ export const CreateProduct = ({ onAddProduct, token }) => {
 
       {showModal && (
         <section className="createProduct-container">
-          <div className="create-container">
+          <div className={`create-container ${animationClas}`}>
             <div className="createProduct-heading">Crear Producto</div>
             <form className="createProduct-form" onSubmit={handleSubmit}>
               <CreateProductForm
