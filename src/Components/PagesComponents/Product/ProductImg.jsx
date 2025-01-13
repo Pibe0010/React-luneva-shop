@@ -6,6 +6,7 @@ const URL = import.meta.env.VITE_URL;
 
 export const ProductImg = ({ images, id, onUpdateProduct }) => {
   const token = useUser();
+  console.log(images);
 
   const handleImageUpload = async (file, imageName) => {
     const formData = new FormData();
@@ -116,7 +117,9 @@ export const ProductImg = ({ images, id, onUpdateProduct }) => {
 
   return (
     <section>
-      <h3 className="title">Imagenes del jabon {`${images.name}`}</h3>
+      <h3 className="modal-product-header">
+        Imagenes jabon de {`${images.name}`}
+      </h3>
       <div className="img-figure">
         <section className="img-section">
           <button

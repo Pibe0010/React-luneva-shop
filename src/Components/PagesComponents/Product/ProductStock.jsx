@@ -12,11 +12,10 @@ import { StatusProductController } from "./StatusProductController.jsx";
 import { UpdateProduct } from "./UpdateProduct.jsx";
 import { DeleteGenericModal } from "./DeleteGenericModal.jsx";
 import { CreateProduct } from "../../Forms/CreateProduct/CreateProduct.jsx";
-import { ProductImg } from "./ProductImg.jsx";
 import "./ProductStock.css";
+import { InsertImg } from "./InsertImg.jsx";
 
 export const ProductStock = () => {
-  const [selectedProduct, setSelectedProduct] = useState(null);
   const token = useUser();
 
   const {
@@ -29,15 +28,6 @@ export const ProductStock = () => {
     updateProduct,
     activeProduct,
   } = useProductList(token);
-
-  // Función para manejar el click en un producto
-  const handleProductClick = (product) => {
-    if (selectedProduct?.ID_product === product.ID_product) {
-      setSelectedProduct(null); // Deselecciona el producto
-    } else {
-      setSelectedProduct(product); // Selecciona el nuevo producto
-    }
-  };
 
   const [isListView, setIsListView] = useState(() => window.innerWidth <= 1060);
 
@@ -68,8 +58,6 @@ export const ProductStock = () => {
 
   const defaultSort = { label: "Ref (DSC)", value: "ref-desc" };
 
-  /*   const logoHidden = selectedProduct ? "hidden" : ""; */
-
   return (
     <section id="product_container" className="mainContainer">
       <nav id="user_nav" className="mainNav">
@@ -94,7 +82,6 @@ export const ProductStock = () => {
                 key={product.ID_product}
                 id="element_product_container"
                 className="main_ilist"
-                onClick={() => handleProductClick(product)}
               >
                 <ProductList
                   product={product}
@@ -113,10 +100,17 @@ export const ProductStock = () => {
                     id={product.ID_product}
                     onUpdateProduct={updateProduct}
                     productData={product}
+                    formTypes="product"
                   />
                   <DeleteGenericModal
                     id={product.ID_product}
                     onDelete={deleteProduct}
+                    token={token}
+                  />
+                  <InsertImg
+                    id={product.ID_product}
+                    product={product}
+                    onUpdateProduct={updateProduct}
                     token={token}
                   />
                 </span>
@@ -132,31 +126,8 @@ export const ProductStock = () => {
           onUpdateProduct={updateProduct}
           onDelete={deleteProduct}
           isActive={activeProduct}
-          logo={handleProductClick}
         />
       )}
-
-      <div className="product-image-container">
-        {selectedProduct === null ? (
-          <img
-            className="product-logo"
-            src="/img/luneva.png"
-            alt="Default product icon"
-          />
-        ) : (
-          filteredProductList.map((product) =>
-            selectedProduct.ID_product === product.ID_product ? (
-              <div className="product-image-container" key={product.ID_product}>
-                <ProductImg
-                  id={product.ID_product}
-                  images={product}
-                  onUpdateProduct={updateProduct}
-                />
-              </div>
-            ) : null
-          )
-        )}
-      </div>
     </section>
   );
 };
