@@ -37,6 +37,8 @@ export const DinamicFormWrapper = ({
     setShowModal(false);
   };
 
+  const animationClas = showModal ? "modal-show" : "modal-hide";
+
   return (
     <>
       <button onClick={handleClickOpenProduct} className="addProductBtn">
@@ -52,6 +54,7 @@ export const DinamicFormWrapper = ({
           show={showModal}
           productData={productData}
           onClose={handleCloseModal}
+          className={animationClas}
         />
       )}
 
@@ -62,6 +65,7 @@ export const DinamicFormWrapper = ({
           productData={productData}
           onClose={handleCloseModal}
           reload={reload}
+          className={animationClas}
         />
       )}
 
@@ -72,6 +76,7 @@ export const DinamicFormWrapper = ({
           productData={productData}
           onClose={handleCloseModal}
           reload={reload}
+          className={animationClas}
         />
       )}
 
@@ -82,6 +87,7 @@ export const DinamicFormWrapper = ({
           productData={productData}
           onClose={handleCloseModal}
           reload={reload}
+          className={animationClas}
         />
       )}
     </>

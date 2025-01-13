@@ -3,7 +3,12 @@ import { updateOfferSchema } from "../../../Schema/Error/UpdateSchema.js";
 import { UpdateOfferFormModal } from "./UpdateOfferFormModal.jsx";
 import "./DinamicOfferFormModal.css";
 
-export const DinamicOfferFormModal = ({ onSubmit, onClose, productData }) => {
+export const DinamicOfferFormModal = ({
+  onSubmit,
+  onClose,
+  productData,
+  className,
+}) => {
   const [discount_rate, setDiscount_rate] = useState("");
   const [start_date, setStart_date] = useState("");
   const [ending_date, setEnding_date] = useState("");
@@ -64,7 +69,7 @@ export const DinamicOfferFormModal = ({ onSubmit, onClose, productData }) => {
 
   return (
     <section className="updateOffer-container">
-      <div className="update-container">
+      <div className={`update-container ${className}`}>
         <div className="updateOffer-heading"></div>
         <form className="updateOffer-form" onSubmit={handleSubmit}>
           <UpdateOfferFormModal

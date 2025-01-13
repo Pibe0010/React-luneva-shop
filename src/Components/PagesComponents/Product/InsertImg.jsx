@@ -13,6 +13,8 @@ export const InsertImg = ({ id, product, onUpdateProduct }) => {
     setShowModal(false);
   };
 
+  const animationClas = showModal ? "modal-show" : "modal-hide";
+
   return (
     <>
       <button onClick={handleClickOpen} className="insertImg">
@@ -24,7 +26,7 @@ export const InsertImg = ({ id, product, onUpdateProduct }) => {
 
       {showModal && (
         <div className="modal-product-image-container">
-          <div className="modal-product-content">
+          <div className={`modal-product-content ${animationClas}`}>
             <ProductImg
               id={id}
               images={product}

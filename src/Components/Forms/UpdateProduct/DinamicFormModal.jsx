@@ -3,7 +3,12 @@ import { updateProductSchema } from "../../../Schema/Error/UpdateSchema.js";
 import { UpdateProductFormModal } from "./UpdateProductFormModal.jsx";
 import "./DinamicFormModal.css";
 
-export const DinamicFormModal = ({ onSubmit, onClose, productData }) => {
+export const DinamicFormModal = ({
+  onSubmit,
+  onClose,
+  productData,
+  className,
+}) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
@@ -66,7 +71,7 @@ export const DinamicFormModal = ({ onSubmit, onClose, productData }) => {
 
   return (
     <section className="updateProduct-container">
-      <div className="update-container">
+      <div className={`update-container ${className}`}>
         <div className="updateProduct-heading"></div>
         <form className="updateProduct-form" onSubmit={handleSubmit}>
           <UpdateProductFormModal

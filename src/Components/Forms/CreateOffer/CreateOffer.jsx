@@ -126,6 +126,8 @@ export const CreateOffer = ({ onAddOffer, token }) => {
     }
   }, [errorMessages]);
 
+  const animationClas = showModal ? "modal-show" : "modal-hide";
+
   return (
     <>
       <button onClick={handleClickOpen} className="addOfferBtn">
@@ -138,7 +140,7 @@ export const CreateOffer = ({ onAddOffer, token }) => {
 
       {showModal && (
         <section className="createProduct-container">
-          <div className="create-container">
+          <div className={`create-container ${animationClas}`}>
             <div className="createProduct-heading">Crear Oferta</div>
             <form className="createProduct-form" onSubmit={handleSubmit}>
               <CreateOfferForm
