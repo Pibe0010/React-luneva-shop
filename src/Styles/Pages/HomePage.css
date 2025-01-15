@@ -205,6 +205,13 @@
   animation: jello-horizontal 0.9s both;
 }
 
+.not-found-offer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 570px;
+}
+
 /* Product List Styles */
 .product-list {
   margin-bottom: 40px;
@@ -315,16 +322,17 @@
   border-style: none;
   cursor: pointer;
   background: transparent;
+  opacity: 0.5;
 }
 
 .noResult-card-product {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 45rem;
   color: #fff;
   font-size: 1.3rem;
   font-weight: bold;
+  margin: 0 auto;
 }
 /* Store Info Styles */
 .store-info {
@@ -487,7 +495,7 @@
   }
 
   .noResult-card-product {
-    margin-left: 0;
+    margin: 0;
   }
 
   .info-cards {
@@ -503,6 +511,10 @@
 
   .product-info-logo {
     width: 240px;
+  }
+
+  .not-found-offer {
+    height: 450px;
   }
 }
 
@@ -609,5 +621,8 @@
 
   .product-info-logo {
     width: 250px;
+  }
+  .not-found-offer {
+    height: 650px;
   }
 }
