@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import defaultProduct from "/Icons/imageProduct.svg";
 import { Timer } from "./Timer.jsx";
+import { Loader } from "../../Animations/Loader.jsx";
 const URL = import.meta.env.VITE_URL;
 
 export const Futuredproduct = ({ products }) => {
@@ -40,7 +41,26 @@ export const Futuredproduct = ({ products }) => {
     products && products.length > 0 ? products[currentProduct] : null;
 
   if (!product) {
-    return <p>Product not available..</p>;
+    return (
+      <section className="featured-products">
+        <h2 className="home-offer-title">Ofertas Especiales</h2>
+        <div
+          className="card-container-home"
+          onMouseEnter={() => {
+            setIsPaused(true);
+            stopTimer();
+          }}
+          onMouseLeave={() => {
+            setIsPaused(false);
+            startTimer();
+          }}
+        >
+          <div className="not-found-offer">
+            <Loader />
+          </div>
+        </div>
+      </section>
+    );
   }
 
   const handleAddToCart = () => {

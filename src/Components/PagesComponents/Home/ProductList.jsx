@@ -4,71 +4,47 @@ import { SearchBar } from "./SearchBar.jsx";
 import defaultProduct from "/Icons/imageProduct.svg";
 import { NextBtn } from "../../Buttons/NextBtn/NextBtn.jsx";
 import { PrevBtn } from "../../Buttons/PrevBtn/PrevBtn.jsx";
+import { Loader } from "../../Animations/Loader.jsx";
+import { useResizeHandler } from "../../../Hooks/useResizeHandler.jsx";
 const URL = import.meta.env.VITE_URL;
 
-export const ProductList = ({ product, search }) => {
+export const ProductList = ({ product = [], search }) => {
+  const { itemsPerPage, isMobile, isViewNumPages } = useResizeHandler();
   const [currentPage, setCurrentPage] = useState(1);
   const [isAnimating, setIsAnimating] = useState(false);
   const [direction, setDirection] = useState("right");
-  const [itemsPerPage, setItemsPerPage] = useState(4);
-  const [isViewNumPages, setIsViewNumPages] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [showNotFound, setShowNotFound] = useState(false);
 
+  // Control de carga y estado de productos
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth <= 860) {
-        setItemsPerPage(1);
-        setIsMobile(false);
-        setIsViewNumPages(false);
-      } else {
-        setItemsPerPage(4);
-      }
-    };
+    if (!product || !Array.isArray(product) || product.length === 0) {
+      setIsLoading(true);
+      setShowNotFound(false);
+      const timer = setTimeout(() => {
+        setIsLoading(false);
+        setShowNotFound(true);
+      }, 2000);
 
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+      return () => clearTimeout(timer);
+    } else {
+      setIsLoading(false);
+      setShowNotFound(false);
+    }
+  }, [product]);
 
-  useEffect(() => {
-    const handleResizeMobile = () => {
-      if (window.innerWidth <= 450) {
-        setItemsPerPage(1);
-        setIsViewNumPages(true);
-        setIsMobile(true);
-      }
-    };
-
-    handleResizeMobile(); // Ejecutar al inicio para configurar según el tamaño actual
-    window.addEventListener("resize", handleResizeMobile);
-    return () => {
-      window.removeEventListener("resize", handleResizeMobile);
-    };
-  }, []);
-
-  if (!product || !Array.isArray(product)) {
-    return (
-      <section className="product-list">
-        <h2 className="home-product-card-title">Jabònes</h2>
-        <SearchBar onSearch={search} />
-        <div className="products">
-          <div className="noResult-card-product">
-            El producto no se ha encontrado...
-          </div>
-        </div>
-      </section>
-    );
-  }
-
+  // Índices para la paginación
   const indexOfLastProduct = currentPage * itemsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - itemsPerPage;
-  const currentProducts = product.slice(
-    indexOfFirstProduct,
-    indexOfLastProduct
-  );
+  const currentProducts = Array.isArray(product)
+    ? product.slice(indexOfFirstProduct, indexOfLastProduct)
+    : [];
 
+  const totalPages = Array.isArray(product)
+    ? Math.ceil(product.length / itemsPerPage)
+    : 0;
+
+  // Cambio de página con animación
   const handlePageChange = (newPage, animationDirection) => {
     if (newPage !== currentPage) {
       setDirection(animationDirection);
@@ -82,88 +58,100 @@ export const ProductList = ({ product, search }) => {
   };
 
   const addNextProducts = () => {
-    const totalPages = Math.ceil(product.length / itemsPerPage);
-    if (currentPage >= totalPages) return;
-    handlePageChange(currentPage + 1, "right");
+    if (currentPage < totalPages) {
+      handlePageChange(currentPage + 1, "right");
+    }
   };
 
   const addPrevProducts = () => {
-    if (currentPage === 1) return;
-    handlePageChange(currentPage - 1, "left");
+    if (currentPage > 1) {
+      handlePageChange(currentPage - 1, "left");
+    }
   };
-
-  const pageNumbers = [];
-  for (let i = 1; i <= Math.ceil(product.length / itemsPerPage); i++) {
-    pageNumbers.push(i);
-  }
 
   return (
     <section className="product-list">
       <h2 className="home-product-card-title">Jabònes</h2>
       <SearchBar onSearch={search} />
       <div className="products">
-        {!isMobile && <PrevBtn addPrevProducts={addPrevProducts} />}
-        <div
-          className={`card-product-container ${
-            isAnimating
-              ? direction === "right"
-                ? "slide-right"
-                : "slide-left"
-              : ""
-          }`}
-        >
-          {currentProducts && currentProducts.length > 0 ? (
-            currentProducts.map((itemProduct) => (
-              <Card
-                key={itemProduct.ID_product}
-                title={itemProduct.name}
-                btnName={"Añadir al carrito"}
-                description={itemProduct.description}
-                price={itemProduct.price}
-                alt={`Jabòn de ${itemProduct.name}`}
-                src={
-                  itemProduct.image_one
-                    ? `${URL}/uploads/products/${itemProduct.ID_product}/${itemProduct.image_one}`
-                    : defaultProduct
-                }
-              />
-            ))
-          ) : (
-            <div className="noResult-card-product">
-              El producto no se ha encontrado...
-            </div>
-          )}
-        </div>
-        {!isMobile && <NextBtn addNextProducts={addNextProducts} />}
-      </div>
-      {isViewNumPages === false ? (
-        <div className="pagination">
-          {pageNumbers.map((number) => (
-            <button
-              key={number}
-              className={`pagination-button ${currentPage === number ? "active" : ""}`}
-              onClick={() =>
-                handlePageChange(
-                  number,
-                  number > currentPage ? "right" : "left"
-                )
-              }
+        {isLoading && (
+          <div className="noResult-card-product">
+            <Loader />
+          </div>
+        )}
+        {showNotFound && (
+          <div className="noResult-card-product">
+            <p>El producto no se ha encontrado...</p>
+          </div>
+        )}
+        {!isLoading && !showNotFound && (
+          <>
+            {!isMobile && <PrevBtn addPrevProducts={addPrevProducts} />}
+            <div
+              className={`card-product-container ${
+                isAnimating
+                  ? direction === "right"
+                    ? "slide-right"
+                    : "slide-left"
+                  : ""
+              }`}
             >
-              {number}
-            </button>
-          ))}
-        </div>
-      ) : (
+              {currentProducts.map((itemProduct) => (
+                <Card
+                  key={itemProduct.ID_product}
+                  title={itemProduct.name}
+                  btnName={"Añadir al carrito"}
+                  description={itemProduct.description}
+                  price={itemProduct.price}
+                  alt={`Jabòn de ${itemProduct.name}`}
+                  src={
+                    itemProduct.image_one
+                      ? `${URL}/uploads/products/${itemProduct.ID_product}/${itemProduct.image_one}`
+                      : defaultProduct
+                  }
+                />
+              ))}
+            </div>
+            {!isMobile && <NextBtn addNextProducts={addNextProducts} />}
+          </>
+        )}
+      </div>
+      {!isLoading && !showNotFound && (
         <div className="pagination">
-          <PrevBtn
-            addPrevProducts={addPrevProducts}
-            disabled={currentPage === 1}
-          />
-          <button className="pagination-button active">{currentPage}</button>
-          <NextBtn
-            addNextProducts={addNextProducts}
-            disabled={currentPage === Math.ceil(product.length / itemsPerPage)}
-          />
+          {isViewNumPages ? (
+            <>
+              <PrevBtn
+                addPrevProducts={addPrevProducts}
+                disabled={currentPage === 1}
+              />
+              <button className="pagination-button active">
+                {currentPage}
+              </button>
+              <NextBtn
+                addNextProducts={addNextProducts}
+                disabled={currentPage === totalPages}
+              />
+            </>
+          ) : (
+            Array.from({ length: totalPages }, (_, i) => i + 1).map(
+              (number) => (
+                <button
+                  key={number}
+                  className={`pagination-button ${
+                    currentPage === number ? "active" : ""
+                  }`}
+                  onClick={() =>
+                    handlePageChange(
+                      number,
+                      number > currentPage ? "right" : "left"
+                    )
+                  }
+                >
+                  {number}
+                </button>
+              )
+            )
+          )}
         </div>
       )}
     </section>
