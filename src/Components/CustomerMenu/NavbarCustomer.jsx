@@ -7,7 +7,7 @@ export const NavbarCustomer = ({ toggleMenu }) => {
       <NavLinks
         className="link"
         name="OFERTAS"
-        url="/offers"
+        url="/special-offers"
         onClick={toggleMenu}
       />
       <NavLinks

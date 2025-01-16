@@ -1,0 +1,138 @@
+.special-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.special-card-container {
+  position: relative;
+  height: auto;
+  overflow: hidden;
+}
+
+.special-offer {
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  border: 1px solid #eae9e9;
+  border-radius: 15px;
+  overflow: hidden;
+  max-width: 850px;
+  height: 490px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #18181b;
+  margin: 4rem auto;
+}
+
+.special-title {
+  font-size: clamp(2rem, 4.4vw, 2.5em);
+  margin-bottom: 30px;
+  margin-top: 40px;
+}
+
+.special-card-line-top {
+  width: 100%;
+  list-style: 1px solid #3c3c3c;
+}
+
+.special-card-image {
+  width: 400px;
+  height: 490px;
+  object-fit: cover;
+  border: 1px solid #d8d8d8;
+  border-radius: 5px;
+}
+
+.special-card-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: calc(100% - 200px);
+}
+
+.special-card-title {
+  margin: 0 0 10px;
+  font-size: clamp(2rem, 3.3vw, 3em);
+  color: #fff;
+}
+
+.special-card-description {
+  margin: 0 0 15px;
+  color: #fff;
+  font-size: clamp(1.3rem, 1vw, 1.5em);
+  font-weight: 500;
+}
+
+.special-card-prices {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.special-card-price-current {
+  font-size: clamp(1.6rem, 2vw, 1.7em);
+  font-weight: bold;
+  color: #fff;
+  margin-right: 10px;
+}
+
+.special-card-price-discounted {
+  font-size: clamp(1rem, 2vw, 1.1em);
+  color: #0ab03f;
+}
+
+.special-card-button {
+  padding: 10px 15px;
+  background-color: rgba(95, 103, 255, 0.133);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+  box-shadow:
+    0px 10px 10px rgb(187, 188, 253) inset,
+    0px 5px 10px rgba(5, 5, 5, 0.212),
+    0px -10px 10px rgba(54, 61, 255, 0.119) inset;
+}
+
+.special-card-button:hover {
+  background-color: rgba(250, 250, 250, 0.137);
+  animation: jello-horizontal 0.9s both;
+}
+
+.not-found-offer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 570px;
+}
+
+@media (max-width: 750px) {
+  .special-offer {
+    width: 520px;
+    height: 400px;
+  }
+  .special-card-image {
+    width: 220px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 450px) {
+  .special-offer-card {
+    width: 400px;
+  }
+  .special-card-image {
+    width: 220px;
+    height: 400px;
+  }
+  .special-card-content {
+    width: 400px;
+    gap: 10px;
+  }
+}

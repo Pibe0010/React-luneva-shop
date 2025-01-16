@@ -96,7 +96,7 @@ export const Futuredproduct = ({ products }) => {
             className="home-offer-image"
           />
           <div className="home-offer-content">
-            <h2 className="home-card-title">{product.name}</h2>
+            <h2 className="home-card-title">Jabòn de {product.name}</h2>
             <p className="home-offer-description">{product.description}</p>
             <div className="home-offer-prices">
               <span className="home-offer-price-current">
