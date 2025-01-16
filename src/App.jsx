@@ -25,6 +25,7 @@ import { ResetPassword } from "./Pages/ResetPassword.jsx";
 import { CustomersPage } from "./Pages/CustomersPage.jsx";
 import { ActivateAccount } from "./Pages/activateAccount.jsx";
 import "./Styles/Pages/GeneralsFroms.css";
+import { SpecialOfferPage } from "./Pages/SpecialOfferPage.jsx";
 
 const App = () => {
   return (
@@ -33,6 +34,7 @@ const App = () => {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/offers" element={<OffersPage />} />
+      <Route path="/special-offers" element={<SpecialOfferPage />} />
       <Route path="/orders" element={<OrdersPage />} />
       <Route path="/customers" element={<CustomersPage />} />
       <Route path="/products" element={<ProductsPage />} />

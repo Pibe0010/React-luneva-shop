@@ -13,10 +13,10 @@ export const Timer = ({ endTime }) => {
 
       if (difference > 0) {
         return {
-          días: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          horas: Math.floor((difference / (1000 * 60 * 60)) % 24),
-          minutos: Math.floor((difference / (1000 * 60)) % 60),
-          segundos: Math.floor((difference / 1000) % 60),
+          D: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          H: Math.floor((difference / (1000 * 60 * 60)) % 24),
+          M: Math.floor((difference / (1000 * 60)) % 60),
+          S: Math.floor((difference / 1000) % 60),
         };
       }
 
@@ -31,8 +31,8 @@ export const Timer = ({ endTime }) => {
   }, [endTime]);
 
   const timerComponents = Object.entries(timeLeft).map(([key, value]) => (
-    <span key={key}>
-      {value} {key}{" "}
+    <span key={key} className="timer-item">
+      {value < 10 ? `0${value}` : value}
     </span>
   ));
 
