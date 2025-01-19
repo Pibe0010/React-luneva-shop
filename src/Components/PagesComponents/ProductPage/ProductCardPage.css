@@ -1,0 +1,129 @@
+.product-card {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 380px;
+  border: 1px solid #323232;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  background-color: #323232;
+}
+
+.product-card:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  scale: 1.01;
+  transition: all 0.3s ease-in-out;
+}
+
+.productPage-image {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  position: relative;
+  border: 0.5px solid #929292;
+  border-radius: 5px;
+}
+
+.productPage-stock {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(146, 146, 146, 0.5);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  z-index: 1;
+  font-size: clamp(1.2rem, 3vw, 1.2em);
+}
+
+.productPage-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.productPage-image img.active {
+  opacity: 1;
+}
+
+.product-card h3 {
+  margin: 0 0 10px 0;
+  font-size: clamp(1.6rem, 3.7vw, 2em);
+  color: #fff;
+}
+
+.product-card p {
+  margin: 0 0 15px 0;
+  color: #fff;
+  font-size: clamp(1.3rem, 2.8vw, 1.5em);
+}
+
+.product-card .productPage-price {
+  font-weight: bold;
+  color: #4caf50;
+  font-size: clamp(1.6rem, 3vw, 1.9em);
+  margin-bottom: 0;
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  justify-content: space-between;
+  position: relative;
+}
+
+.quantity-selector label {
+  color: #fff;
+  position: absolute;
+  top: 9px;
+  bottom: 0;
+  left: 75px;
+  font-size: clamp(0.8rem, 3vw, 1.2em);
+}
+
+.quantity-selector input {
+  width: 60px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+
+.product-card button {
+  width: 100%;
+  padding: 10px;
+  background-color: #7a4caf;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: clamp(1.2rem, 3vw, 1em);
+}
+
+.product-card button:hover {
+  background-color: rgba(116, 3, 245, 0.5);
+}
+
+@media (max-width: 758px) {
+  .product-card {
+    width: calc(50% - 10px);
+    margin-top: 3rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .product-card {
+    width: calc(100% - 20px);
+  }
+}
