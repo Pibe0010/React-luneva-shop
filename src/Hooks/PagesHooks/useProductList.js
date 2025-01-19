@@ -146,6 +146,12 @@ export const useProductList = (token) => {
       case "stock-desc":
         sortedList.sort((a, b) => b.Stock - a.Stock);
         break;
+      case "price-asc":
+        sortedList.sort((a, b) => a.price - b.price);
+        break;
+      case "price-desc":
+        sortedList.sort((a, b) => b.price - a.price);
+        break;
       default:
         break;
     }

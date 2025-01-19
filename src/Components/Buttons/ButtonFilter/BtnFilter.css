@@ -1,0 +1,21 @@
+.btn-filters-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-filters {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+  margin: 1.9rem 0;
+}
+
+@media (max-width: 758px) {
+  .btn-filters {
+    margin: 0;
+  }
+}
