@@ -57,16 +57,6 @@
   .special-offer-card-title {
     text-align: center;
   }
-  .special-offer {
-    width: 630px;
-    height: 430px;
-    margin-bottom: 2rem;
-    margin-top: 4rem;
-  }
-  .special-card-image {
-    width: 280px;
-    height: 430px;
-  }
 }
 
 @media (max-width: 450px) {
