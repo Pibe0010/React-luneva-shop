@@ -71,8 +71,7 @@
 .btnCart-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
 }
 
 .btnCart {
@@ -80,10 +79,7 @@
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  position: absolute;
-  top: 1;
-  bottom: 0;
-  margin: 10px;
+  margin-top: 20px;
 }
 
 .menuCartNav.open {
@@ -107,6 +103,7 @@
   font-weight: bold;
   top: 0;
   bottom: 0;
+  left: 7.6rem;
   position: absolute;
 }
 
@@ -173,9 +170,10 @@
   }
 
   .menuCartNav {
-    width: 260px;
-    height: 420px;
+    width: 360px;
+    height: 620px;
     translate: -10px 0;
+    overflow: hidden;
   }
 
   .menuCartNav.open {

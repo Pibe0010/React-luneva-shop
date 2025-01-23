@@ -71,10 +71,12 @@
   color: #4caf50;
   font-size: clamp(1.6rem, 3vw, 1.9em);
   margin-bottom: 0;
+  position: absolute;
+  top: 0.3rem;
+  left: 16rem;
 }
 
 .quantity-selector {
-  display: flex;
   align-items: center;
   margin-bottom: 15px;
   justify-content: space-between;
@@ -97,6 +99,7 @@
   border-radius: 10px;
   font-size: 1.5rem;
   margin-right: 10px;
+  margin-bottom: 1rem;
 }
 
 .product-card button {
@@ -120,10 +123,16 @@
     width: calc(50% - 10px);
     margin-top: 3rem;
   }
+  .product-card .productPage-price {
+    left: 14rem;
+  }
 }
 
 @media (max-width: 450px) {
   .product-card {
     width: calc(100% - 20px);
+  }
+  .product-card .productPage-price {
+    left: 16rem;
   }
 }

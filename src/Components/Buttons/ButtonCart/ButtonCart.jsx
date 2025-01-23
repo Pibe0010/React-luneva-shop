@@ -1,5 +1,9 @@
 import "./ButtonCart.css";
 
-export const ButtonCart = ({ name, className }) => {
-  return <button className={`Btn ${className}`}>{name}</button>;
+export const ButtonCart = ({ name, className, onClick }) => {
+  return (
+    <button className={`Btn ${className}`} onClick={onClick}>
+      {name}
+    </button>
+  );
 };

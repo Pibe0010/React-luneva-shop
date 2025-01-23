@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { Loader } from "../../Animations/Loader.jsx";
 import { ProductCardPage } from "./ProductCardPage.jsx";
+import { useUser } from "../../../Context/AutContext.jsx";
 
-export const ProductListPage = ({ filter, products }) => {
+export const ProductListPage = ({ filter, products, onAddProduct }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [showNotFound, setShowNotFound] = useState(false);
+  const token = useUser();
 
   useEffect(() => {
     if (!products || !Array.isArray(products) || products.length === 0) {
@@ -53,7 +55,13 @@ export const ProductListPage = ({ filter, products }) => {
       {!isLoading && !showNotFound && (
         <>
           {filteredProductsPage.map((product) => (
-            <ProductCardPage key={product.ID_product} product={product} />
+            <ProductCardPage
+              id={product.ID_product}
+              key={product.ID_product}
+              product={product}
+              onAddProduct={onAddProduct}
+              token={token}
+            />
           ))}
         </>
       )}
