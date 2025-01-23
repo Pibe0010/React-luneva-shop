@@ -102,7 +102,7 @@
   border: 1px solid #eae9e9;
   border-radius: 15px;
   overflow: hidden;
-  max-width: 850px;
+  max-width: 870px;
   height: 470px;
   margin: 40px auto;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -151,19 +151,19 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: calc(100% - 200px);
+  width: 590px;
 }
 
 .home-card-title {
   margin: 0 0 10px;
-  font-size: clamp(1.7rem, 3vw, 3em);
+  font-size: clamp(1.9rem, 3vw, 3em);
   color: #fff;
 }
 
 .home-offer-description {
   margin: 0 0 15px;
   color: #fff;
-  font-size: clamp(1.2rem, 3vw, 1.5em);
+  font-size: clamp(1.2rem, 2.5vw, 1.5em);
   font-weight: bold;
 }
 
@@ -185,7 +185,25 @@
   color: #0ab03f;
 }
 
+.home-card-form {
+  position: relative;
+}
+
+.home-card-input {
+  position: absolute;
+  right: 0;
+  top: -4.2rem;
+  width: 60px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  margin-right: 10px;
+  margin-bottom: 1rem;
+}
+
 .home-offer-button {
+  width: 100%;
   padding: 10px 15px;
   background-color: rgba(95, 103, 255, 0.133);
   color: white;
@@ -213,7 +231,7 @@
 }
 
 /* Product List Styles */
-.product-list {
+.home-product-list {
   margin-bottom: 40px;
   margin-top: 8rem;
 }
@@ -230,7 +248,7 @@
   justify-content: space-between;
   gap: 2rem;
   width: 100%;
-  height: 600px;
+  height: 650px;
   max-width: 1895px;
   border: 1px solid #212121;
   border-radius: 15px;
@@ -458,24 +476,30 @@
 
 @media (max-width: 750px) {
   .home-container {
-    width: 720px;
+    width: 730px;
     height: auto;
+    padding: 5px 2rem;
   }
 
   .home-offer-card {
-    height: 360px;
+    height: 400px;
   }
 
   .home-offer-image {
     width: 270px;
-    height: 360px;
+    height: 400px;
   }
 
   .home-offer-prices {
     margin-bottom: 8px;
   }
 
-  .product-list {
+  .home-card-input {
+    top: -3.5rem;
+    right: -0.9rem;
+  }
+
+  .home-product-list {
     margin-bottom: 40px;
     margin-top: 0;
   }
@@ -485,7 +509,7 @@
   }
 
   .home-search-bar {
-    width: 50%;
+    width: 100%;
   }
 
   .products {
@@ -531,7 +555,7 @@
   }
 
   .home-offer-card {
-    height: 550px;
+    height: 640px;
     flex-direction: column;
   }
 
@@ -541,14 +565,19 @@
 
   .home-offer-image {
     width: 100%;
-    height: 220px;
+    height: 300px;
   }
 
   .home-offer-prices {
-    margin-bottom: 8px;
+    margin-bottom: 15px;
   }
 
-  .product-list {
+  .home-card-input {
+    top: -2rem;
+    right: -0.8rem;
+  }
+
+  .home-product-list {
     margin-bottom: 40px;
     margin-top: 0;
   }
@@ -586,7 +615,7 @@
   }
 
   .home-product-card-title {
-    margin-top: 13rem;
+    margin-top: 19rem;
   }
 
   .home-search-bar {
