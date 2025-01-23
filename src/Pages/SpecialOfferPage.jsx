@@ -8,10 +8,6 @@ export const SpecialOfferPage = () => {
   const token = useUser();
   const { filteredOfferList } = useOfferList(token);
 
-  const handleAddToCart = () => {
-    console.log("Producto añadido al carrito");
-  };
-
   return (
     <MainLayout>
       <section className="special-offer-container">
@@ -28,10 +24,13 @@ export const SpecialOfferPage = () => {
         </h2>
         <section className="special-offer-card">
           <div className="special-offer-card-container">
-            <SpecialCard
-              products={filteredOfferList}
-              addToCart={handleAddToCart}
-            />
+            {filteredOfferList.map((offer) => (
+              <SpecialCard
+                key={offer.ID_Product}
+                id={offer.ID_Product}
+                products={offer}
+              />
+            ))}
           </div>
         </section>
       </section>

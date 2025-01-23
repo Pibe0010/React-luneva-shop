@@ -8,6 +8,7 @@
 
 .special-card-container {
   position: relative;
+  width: 100%;
   height: auto;
   overflow: hidden;
 }
@@ -20,7 +21,7 @@
   border: 1px solid #eae9e9;
   border-radius: 15px;
   overflow: hidden;
-  max-width: 850px;
+  max-width: 870px;
   height: 490px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   background-color: #18181b;
@@ -50,7 +51,7 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width: calc(100% - 200px);
 }
 
@@ -85,7 +86,25 @@
   color: #0ab03f;
 }
 
+.special-card-form {
+  position: relative;
+}
+
+.special-card-input {
+  position: absolute;
+  right: 0;
+  top: -4rem;
+  width: 60px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  margin-right: 10px;
+  margin-bottom: 1rem;
+}
+
 .special-card-button {
+  width: 100%;
   padding: 10px 15px;
   background-color: rgba(95, 103, 255, 0.133);
   color: white;
@@ -98,6 +117,7 @@
     0px 10px 10px rgb(187, 188, 253) inset,
     0px 5px 10px rgba(5, 5, 5, 0.212),
     0px -10px 10px rgba(54, 61, 255, 0.119) inset;
+  margin-top: 1.5rem;
 }
 
 .special-card-button:hover {
@@ -114,12 +134,19 @@
 
 @media (max-width: 750px) {
   .special-offer {
-    width: 520px;
-    height: 400px;
+    width: 690px;
+    height: 430px;
+    margin-bottom: 2rem;
+    margin-top: 4rem;
+  }
+  .special-card-input {
+    right: 0;
+    top: -3.4rem;
+    width: 60px;
   }
   .special-card-image {
-    width: 220px;
-    height: 400px;
+    width: 340px;
+    height: 430px;
   }
 }
 
