@@ -70,7 +70,7 @@ export const ProductList = ({ product = [], search }) => {
   };
 
   return (
-    <section className="product-list">
+    <section className="home-product-list">
       <h2 className="home-product-card-title">Jabònes</h2>
       <SearchBar onSearch={search} />
       <div className="products">
@@ -109,6 +109,7 @@ export const ProductList = ({ product = [], search }) => {
                       ? `${URL}/uploads/products/${itemProduct.ID_product}/${itemProduct.image_one}`
                       : defaultProduct
                   }
+                  id={itemProduct.ID_product}
                 />
               ))}
             </div>

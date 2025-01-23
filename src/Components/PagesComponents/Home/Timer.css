@@ -1,6 +1,6 @@
 .offer-timer {
   margin-bottom: 15px;
-  font-size: clamp(1.7rem, 2vw, 1.9rem);
+  font-size: clamp(1.7rem, 1.8vw, 1.9rem);
   color: #f1f1f1;
 }
 
@@ -20,6 +20,6 @@
 
 @media (max-width: 750px) {
   .offer-timer span {
-    padding: 0.4rem 18px;
+    padding: 0.1rem 5px;
   }
 }
