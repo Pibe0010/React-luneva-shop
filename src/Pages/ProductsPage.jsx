@@ -8,13 +8,8 @@ import { useCart } from "../Context/CartContext.jsx";
 
 export const ProductsPage = () => {
   const [filter, setFilter] = useState("all");
-  const {
-    filteredProductList,
-    handleSortChange,
-    sortOptions,
-    defaultSort,
-    addProduct,
-  } = useCart();
+  const { filteredProductList, handleSortChange, sortOptions, defaultSort } =
+    useCart();
 
   return (
     <MainLayout>
@@ -25,11 +20,7 @@ export const ProductsPage = () => {
           onSort={handleSortChange}
           defaultSort={defaultSort}
         />
-        <ProductListPage
-          filter={filter}
-          products={filteredProductList}
-          onAddProduct={addProduct}
-        />
+        <ProductListPage filter={filter} products={filteredProductList} />
       </section>
     </MainLayout>
   );
