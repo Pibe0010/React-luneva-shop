@@ -3,8 +3,9 @@ import "./ProductCardPage.css";
 import defaultProduct from "/Icons/imageProduct.svg";
 import { newTrolleySchema } from "../../../Schema/Error/CreateSchema.js";
 import { useCart } from "../../../Context/CartContext.jsx";
+const URL = import.meta.env.VITE_URL;
 
-export const ProductCardPage = ({ product, id, onAddProduct }) => {
+export const ProductCardPage = ({ product, id }) => {
   const [currentProduct, setCurrentProduct] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
@@ -13,7 +14,7 @@ export const ProductCardPage = ({ product, id, onAddProduct }) => {
   const { addToCart } = useCart();
 
   const handleAddToCart = async (data) => {
-    await addToCart(data, onAddProduct);
+    await addToCart(data);
   };
 
   // Verificamos si las propiedades de imagen están definidas y las filtramos

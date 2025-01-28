@@ -8,7 +8,7 @@ export const useTrolleyList = (token) => {
   useEffect(() => {
     getTrolleyList();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [token]);
+  }, []);
 
   const getTrolleyList = async () => {
     try {

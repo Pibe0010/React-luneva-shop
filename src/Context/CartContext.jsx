@@ -11,7 +11,9 @@ export const CartProvider = ({ children }) => {
   const token = useUser();
   const [cart, setCart] = useState([]);
 
-  const { listTrolley, addTrolley, deleteTrolley } = useTrolleyList(token);
+  const { listTrolley, addTrolley, deleteTrolley, updateTrolley } =
+    useTrolleyList(token);
+
   const {
     filteredProductList,
     handleSortChange,
@@ -21,88 +23,132 @@ export const CartProvider = ({ children }) => {
   } = useProductList(token);
 
   useEffect(() => {
-    setCart(
-      listTrolley.map((item) => ({
-        ...item,
-        products_amount: item.products_amount || 1,
-      }))
-    );
+    setCart(listTrolley);
   }, [listTrolley]);
 
-  const addToCart = async (data, onAddProduct) => {
+  const addToCart = async (data) => {
     try {
-      const response = await fetch(`${URL}/trolley`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `${token}`,
-        },
-        body: JSON.stringify(data),
-      });
+      const existingProduct = cart.find(
+        (item) => item.ID_product === data.ID_product
+      );
+      if (existingProduct) {
+        // Si el producto ya existe, actualiza solo la cantidad localmente
+        const updatedCart = cart.map((item) =>
+          item.ID_product === data.ID_product
+            ? { ...item, quantity: item.products_amount + data.products_amount }
+            : item
+        );
 
-      if (response.ok) {
-        const responseData = await response.json();
-        console.log("Producto creado sastifactorio:", responseData.message);
-
-        onAddProduct(responseData.data);
-
-        setCart((prevCart) => {
-          const existingProductIndex = prevCart.findIndex(
-            (item) => item.ID_trolley === responseData.data.ID_trolley
-          );
-
-          if (existingProductIndex >= 0) {
-            const updatedCart = [...prevCart];
-            updatedCart[existingProductIndex] = {
-              ...updatedCart[existingProductIndex],
-              products_amount: responseData.data.products_amount, // Usa el valor actualizado del backend
-            };
-            return updatedCart;
-          } else {
-            return [...prevCart, { ...responseData.data }];
-          }
-        });
-
-        addTrolley(responseData.data);
-
-        console.log("Producto agregado a la lista:", responseData.data);
-
-        const Toast = Swal.mixin({
-          toast: true,
-          position: "top-end",
-          showConfirmButton: false,
-          timer: 3000,
-          timerProgressBar: true,
-          didOpen: (toast) => {
-            toast.addEventListener("mouseenter", Swal.stopTimer);
-            toast.addEventListener("mouseleave", Swal.resumeTimer);
+        setCart(updatedCart);
+        const response = await fetch(`${URL}/trolley/update`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `${token}`,
           },
+          body: JSON.stringify(data),
         });
 
-        Toast.fire({
-          icon: "success",
-          title: `Producto añadido con exito.`,
-        });
+        if (response.ok) {
+          const responseData = await response.json();
+          console.log("Producto creado sastifactorio:", responseData.message);
+
+          updateTrolley(responseData.data);
+
+          console.log("Producto actualizado a la lista:", responseData.data);
+
+          const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener("mouseenter", Swal.stopTimer);
+              toast.addEventListener("mouseleave", Swal.resumeTimer);
+            },
+          });
+
+          Toast.fire({
+            icon: "success",
+            title: `Producto anadirdo con exito.`,
+          });
+        } else {
+          const errorData = await response.json();
+          console.error("Error al actualizar el producto:", errorData);
+
+          const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener("mouseenter", Swal.stopTimer);
+              toast.addEventListener("mouseleave", Swal.resumeTimer);
+            },
+          });
+
+          Toast.fire({
+            icon: "error",
+            title: errorData.message,
+          });
+        }
       } else {
-        const errorData = await response.json();
-        console.error("Error al añadir el producto:", errorData);
-
-        const Toast = Swal.mixin({
-          toast: true,
-          position: "top-end",
-          showConfirmButton: false,
-          timer: 3000,
-          timerProgressBar: true,
-          didOpen: (toast) => {
-            toast.addEventListener("mouseenter", Swal.stopTimer);
-            toast.addEventListener("mouseleave", Swal.resumeTimer);
+        const response = await fetch(`${URL}/trolley`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `${token}`,
           },
+          body: JSON.stringify(data),
         });
 
-        Toast.fire({
-          icon: "error",
-          title: errorData.message,
-        });
+        if (response.ok) {
+          const responseData = await response.json();
+          console.log("Producto creado sastifactorio:", responseData.message);
+
+          addTrolley(responseData.data);
+
+          console.log("Producto agregado a la lista:", responseData.data);
+
+          const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener("mouseenter", Swal.stopTimer);
+              toast.addEventListener("mouseleave", Swal.resumeTimer);
+            },
+          });
+
+          Toast.fire({
+            icon: "success",
+            title: `Producto añadido con exito.`,
+          });
+        } else {
+          const errorData = await response.json();
+          console.error("Error al añadir el producto:", errorData);
+
+          const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener("mouseenter", Swal.stopTimer);
+              toast.addEventListener("mouseleave", Swal.resumeTimer);
+            },
+          });
+
+          Toast.fire({
+            icon: "error",
+            title: errorData.message,
+          });
+        }
       }
     } catch (error) {
       console.error("Error durante la inserciòn del producto:", error);
@@ -130,13 +176,7 @@ export const CartProvider = ({ children }) => {
       if (response.ok) {
         const responseData = await response.json();
         console.log("Producto eliminado correctamente", responseData);
-        setCart((prevCart) =>
-          prevCart.filter(
-            (item) => item.ID_trolley !== responseData.data.ID_trolley
-          )
-        );
-        deleteTrolley(responseData.data.ID_trolley);
-        addProduct(responseData.data);
+        deleteTrolley(responseData.data);
 
         const successMessage = `Producto eliminado con éxito`;
 

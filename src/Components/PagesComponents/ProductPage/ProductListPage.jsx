@@ -3,7 +3,7 @@ import { Loader } from "../../Animations/Loader.jsx";
 import { ProductCardPage } from "./ProductCardPage.jsx";
 import { useUser } from "../../../Context/AutContext.jsx";
 
-export const ProductListPage = ({ filter, products, onAddProduct }) => {
+export const ProductListPage = ({ filter, products }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [showNotFound, setShowNotFound] = useState(false);
   const token = useUser();
@@ -55,13 +55,15 @@ export const ProductListPage = ({ filter, products, onAddProduct }) => {
       {!isLoading && !showNotFound && (
         <>
           {filteredProductsPage.map((product) => (
-            <ProductCardPage
-              id={product.ID_product}
-              key={product.ID_product}
-              product={product}
-              onAddProduct={onAddProduct}
-              token={token}
-            />
+            <ol key={product.ID_product} style={{ listStyle: "none" }}>
+              <li>
+                <ProductCardPage
+                  id={product.ID_product}
+                  product={product}
+                  token={token}
+                />
+              </li>
+            </ol>
           ))}
         </>
       )}
