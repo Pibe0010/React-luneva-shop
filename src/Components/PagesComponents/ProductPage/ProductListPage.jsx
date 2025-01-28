@@ -55,15 +55,12 @@ export const ProductListPage = ({ filter, products }) => {
       {!isLoading && !showNotFound && (
         <>
           {filteredProductsPage.map((product) => (
-            <ol key={product.ID_product} style={{ listStyle: "none" }}>
-              <li>
-                <ProductCardPage
-                  id={product.ID_product}
-                  product={product}
-                  token={token}
-                />
-              </li>
-            </ol>
+            <ProductCardPage
+              key={product.ID_product}
+              id={product.ID_product}
+              product={product}
+              token={token}
+            />
           ))}
         </>
       )}

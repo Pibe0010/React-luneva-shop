@@ -19,6 +19,7 @@ export const ProductsPage = () => {
           options={sortOptions}
           onSort={handleSortChange}
           defaultSort={defaultSort}
+          products={filteredProductList}
         />
         <ProductListPage filter={filter} products={filteredProductList} />
       </section>

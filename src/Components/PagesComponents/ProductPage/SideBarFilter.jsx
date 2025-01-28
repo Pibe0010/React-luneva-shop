@@ -3,7 +3,7 @@ import { BtnFilters } from "../../Buttons/ButtonFilter/BtnFilters.jsx";
 import "./SideBarFilter.css";
 import { BtnFilterAction } from "../../Buttons/ButtonFilter/btnFilterAction.jsx";
 
-export const SideBarFilter = ({ setFilter, onSort, defaultSort }) => {
+export const SideBarFilter = ({ setFilter, onSort, defaultSort, products }) => {
   const [priceRange, setPriceRange] = useState(100);
 
   const handleRangeChange = (e) => {
@@ -20,10 +20,12 @@ export const SideBarFilter = ({ setFilter, onSort, defaultSort }) => {
     { name: "Precio desendente", value: "price-desc" },
   ];
 
+  const addClass = products.length >= 5 ? "" : "filterFixed";
+
   return (
     <section className="sidebar-filter">
       <h1 className="slider-title">Productos</h1>
-      <div className="sidebar-menu-container">
+      <div className={`sidebar-menu-container ${addClass}`}>
         <div>
           <h2>Filtros</h2>
           <ul>
@@ -32,19 +34,19 @@ export const SideBarFilter = ({ setFilter, onSort, defaultSort }) => {
             </li>
             <li>
               <BtnFilterAction
-                onClick={() => setFilter("jabones")}
+                onClick={() => setFilter("Jabones")}
                 name="Jabones"
               />
             </li>
             <li>
               <BtnFilterAction
-                onClick={() => setFilter("perfumes")}
+                onClick={() => setFilter("Perfumes")}
                 name="Perfumes"
               />
             </li>
             <li>
               <BtnFilterAction
-                onClick={() => setFilter("books")}
+                onClick={() => setFilter("Libros")}
                 name="Libros"
               />
             </li>

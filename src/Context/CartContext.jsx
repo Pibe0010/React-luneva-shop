@@ -54,6 +54,7 @@ export const CartProvider = ({ children }) => {
           console.log("Producto creado sastifactorio:", responseData.message);
 
           updateTrolley(responseData.data);
+          addProduct();
 
           console.log("Producto actualizado a la lista:", responseData.data);
 
@@ -109,6 +110,7 @@ export const CartProvider = ({ children }) => {
           console.log("Producto creado sastifactorio:", responseData.message);
 
           addTrolley(responseData.data);
+          addProduct();
 
           console.log("Producto agregado a la lista:", responseData.data);
 
@@ -177,6 +179,7 @@ export const CartProvider = ({ children }) => {
         const responseData = await response.json();
         console.log("Producto eliminado correctamente", responseData);
         deleteTrolley(responseData.data);
+        addProduct();
 
         const successMessage = `Producto eliminado con éxito`;
 
