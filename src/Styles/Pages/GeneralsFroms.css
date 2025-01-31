@@ -127,6 +127,11 @@
   font-weight: 600;
 }
 
+.inside {
+  color: #e2dfdf;
+  font-weight: bold;
+}
+
 .font-bold {
   font-weight: 600;
 }

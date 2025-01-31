@@ -85,7 +85,7 @@ export const ProfileNav = ({
         <NavLink
           exact="true"
           to="/Profile"
-          className="btn-home navli btn-perfilNav"
+          className="btn-home navli btn-perfilNav inside"
           key="profile"
         >
           <p className="textProfileNav">Settings</p>

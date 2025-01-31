@@ -47,3 +47,34 @@ export const updatePaymentStatusSchema = joi.object({
       "any.only": "Introduce un estado válido (pending, paid, cancelled)",
     }),
 });
+
+export const updateUserSchema = joi.object({
+  user_name: joi
+    .string()
+    .min(3)
+    .max(30)
+    .optional()
+    .strip()
+    .messages(joiErrorMessages),
+  last_name: joi
+    .string()
+    .min(3)
+    .max(30)
+    .optional()
+    .strip()
+    .messages(joiErrorMessages),
+  email: joi
+    .string()
+    .email({ tlds: { allow: false } })
+    .optional()
+    .strip()
+    .messages(joiErrorMessages),
+  phone: joi
+    .string()
+    .min(9)
+    .max(30)
+    .optional()
+    .strip()
+    .messages(joiErrorMessages),
+  avatar: imgSchema.optional().allow("").strip(),
+});
