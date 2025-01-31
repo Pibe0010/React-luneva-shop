@@ -199,7 +199,7 @@
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #ddd;
-  border-radius: 4px;
+  border-radius: 5px;
   font-size: 16px;
 }
 
@@ -212,14 +212,24 @@
   transition: background-color 0.3s ease;
   margin-right: 10px;
 }
-
+.contac-textarea {
+  resize: vertical;
+  outline: none;
+  height: 200px;
+  width: 100%;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow: auto;
+  font-size: 1.5rem;
+  padding: 10px;
+}
 .modal button:first-of-type {
   background-color: #774caf;
   color: white;
 }
 
 .modal button:last-of-type {
-  background-color: #f44336;
+  background-color: #4336f4;
   color: white;
 }
 
