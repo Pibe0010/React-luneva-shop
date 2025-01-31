@@ -107,13 +107,7 @@ export const UserProfile = ({ token }) => {
           />
         );
       case "contact":
-        return (
-          <Contact
-            setActiveModal={setActiveModal}
-            setPhone={setPhone}
-            handleChange={handleChange}
-          />
-        );
+        return <Contact setActiveModal={setActiveModal} token={token} />;
       default:
         return null;
     }
@@ -173,7 +167,7 @@ export const UserProfile = ({ token }) => {
           description="Contactanos"
           name="Enviar"
           url="/Icons/contact_mail_60dp_666666_FILL0_wght400_GRAD0_opsz48.svg"
-          alt="Enviar e-mail"
+          alt="Contactanos"
         />
       </div>
 
