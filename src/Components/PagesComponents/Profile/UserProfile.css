@@ -1,0 +1,250 @@
+.user-profile {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+  gap: 9rem;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.photo-container {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.profile-photo {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  border: 3px solid #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header h1 {
+  font-size: clamp(2rem, 3vw, 1.8em);
+  color: #333;
+  margin: 20px 0;
+}
+
+.profile-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  width: 100%;
+  height: 200px;
+  max-width: 700px;
+  margin-top: 7rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-buttons button {
+  margin-bottom: 15px;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-color: #ffffff;
+  color: #333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-buttons button:hover {
+  background-color: #f0f0f0;
+}
+
+.edit-button {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.profile-title {
+  position: absolute;
+  top: 6rem;
+  left: 55%;
+  bottom: 0;
+  font-size: clamp(1.7rem, 3vw, 1.8em);
+  color: #333;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.profile-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 20px;
+}
+.profile-info span {
+  font-size: clamp(1.8rem, 3vw, 1.4em);
+  font-weight: bold;
+}
+.profile-email {
+  font-size: clamp(1.6rem, 3vw, 1.3em);
+  margin: 1px;
+}
+.profile-phone {
+  font-size: clamp(1.6rem, 3vw, 1.3em);
+  margin: 1px;
+}
+.profile-status {
+  font-size: clamp(1.6rem, 3vw, 1.3em);
+  margin: 1px;
+}
+
+.profile-status-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 20px;
+}
+
+.profile-status-container span {
+  font-size: clamp(1.8rem, 3vw, 1.4em);
+  font-weight: bold;
+}
+
+.edit-button:hover {
+  background-color: #45a049;
+}
+
+.contact-button {
+  background-color: #2196f3;
+  color: white;
+}
+
+.contact-button:hover {
+  background-color: #1e87db;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 3s ease-in-out;
+}
+
+.modal {
+  background-color: rgb(35, 35, 35);
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  animation: modal 0.3s ease-in-out;
+}
+@keyframes modal {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  45% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  80% {
+    opacity: 1;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.profile-select {
+  padding: 10px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  margin: 20px 0;
+  font-size: 1rem;
+}
+
+.modal h2 {
+  margin-top: 0;
+  color: #ffffff;
+}
+
+.modal input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.modal button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 10px;
+}
+
+.modal button:first-of-type {
+  background-color: #774caf;
+  color: white;
+}
+
+.modal button:last-of-type {
+  background-color: #f44336;
+  color: white;
+}
+
+@media (max-width: 750px) {
+  .user-profile {
+    width: 97%;
+    gap: 0;
+    height: 100rem;
+  }
+  .profile-header {
+    height: 0;
+  }
+  .profile-title {
+    top: 47rem;
+    left: 3.5rem;
+  }
+  .profile-info {
+    flex-direction: column;
+  }
+  .profile-buttons {
+    margin-top: 0;
+    height: 0;
+  }
+
+  .modal {
+    width: 95%;
+  }
+}

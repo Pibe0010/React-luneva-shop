@@ -55,7 +55,7 @@
   flex-direction: column;
   background-color: #3f3f3f;
   border-radius: 5px;
-  padding: 5px 10px;
+  padding: 15px 10px;
   position: absolute;
   z-index: 3;
   right: 0;
@@ -67,6 +67,7 @@
   translate: -10px 0;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
   color: #ffffff;
+  gap: 0.5rem;
 }
 
 .menuProfileNav.open {
@@ -89,6 +90,11 @@
   font-size: 1rem;
   color: #ffffff;
   font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.489);
+  padding-bottom: 15px;
 }
 
 .roleProfileNav {
@@ -105,9 +111,8 @@
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
-  gap: 0.6rem;
   letter-spacing: 1px;
-  text-align: end;
+  text-align: center;
   text-decoration: none;
   font-size: 1rem;
   width: 100%;
@@ -123,8 +128,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 19px;
-  height: 19px;
+  width: 30px;
+  height: 30px;
 }
 
 /* Efecto de los botones de settings y logout */
@@ -170,7 +175,7 @@
 
 @media screen and (min-width: 600px) {
   .nameProfileNav {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
 
   .roleProfileNav {
