@@ -1,0 +1,82 @@
+.cartPage-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem;
+  font-size: clamp(2.1rem, 7.4vw, 2em);
+  height: 100px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.cartPage-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 4rem;
+  gap: 2rem;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.cartPage-list {
+  border: 1px solid #131313;
+  border-radius: 5px;
+  box-shadow: 1px 0 1px 1px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  list-style: none;
+}
+
+.cartPage-img {
+  width: 100px;
+  height: 60px;
+  object-fit: cover;
+  border: 1px solid #131313;
+  border-radius: 5px;
+  box-shadow: 1px 0 1px 1px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+.cartPage-card {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 1rem;
+  border-bottom: 1px solid #040404;
+}
+
+.cartPage-data {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+  font-size: clamp(1.5rem, 5vw, 1.6em);
+  font-weight: bold;
+  margin-bottom: 1rem;
+  gap: 2rem;
+}
+
+.cartPage-data p {
+  width: 18rem;
+}
+
+.cartPage-name {
+  font-size: clamp(1.5rem, 5vw, 1.3em);
+  font-weight: bold;
+  width: 300px;
+}
+
+.cartPage-total {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  font-size: clamp(1.5rem, 5vw, 1.7em);
+  font-weight: bold;
+}
+
+.cartPage-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}

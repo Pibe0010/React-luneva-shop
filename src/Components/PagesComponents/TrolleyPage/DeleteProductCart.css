@@ -1,0 +1,41 @@
+.cartPage-delete {
+  position: relative;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: #e8e8e8;
+  padding: 15px 30px;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.cartPage-delete:before {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  width: 100%;
+  height: 20%;
+  background-color: #e8e8e8;
+  translate: -100% 0;
+  rotate: 45deg;
+  transition: all 0.4s ease;
+}
+
+.cartPage-delete:hover {
+  color: #e8e8e8;
+  background-color: #cb2020;
+  box-shadow: 0 0 24px 8px rgba(232, 100, 100, 0.4);
+}
+
+.cartPage-delete:hover:before {
+  translate: 100%;
+}
+
+.cartPage-delete:active {
+  scale: 0.95;
+  box-shadow: 0 0 16px 4px rgba(131, 100, 232, 0.4);
+}

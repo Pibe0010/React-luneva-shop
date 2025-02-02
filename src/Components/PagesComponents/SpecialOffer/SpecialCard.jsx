@@ -35,6 +35,7 @@ export const SpecialCard = ({ products, id }) => {
     <section className="special-card" key={products.ID_Product}>
       <div className="special-card-container">
         <div className="special-offer ">
+          <span className="special-card-badge"></span>
           <img
             src={
               products.image_one
@@ -45,7 +46,7 @@ export const SpecialCard = ({ products, id }) => {
             className="special-card-image"
           />
           <div className="special-card-content">
-            <h2 className="special-card-title">Jabòn de {products.name}</h2>
+            <h2 className="special-card-title">Jabón de {products.name}</h2>
             <p className="special-card-description">{products.description}</p>
             <div className="special-card-prices">
               <span className="special-card-price-current">
