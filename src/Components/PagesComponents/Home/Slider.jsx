@@ -9,7 +9,6 @@ export const Slider = () => {
       </div>
       <div className="home-text">
         <HomeTitle />
-
         <p className="home-paragraph"></p>
         <div className="home-logo-img"></div>
       </div>

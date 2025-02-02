@@ -17,7 +17,7 @@ export const HomeTitle = () => {
       </div>
       <span className="card-init-title">LUNEVA SHOP</span>
       <p className="card-init-paragraph">
-        ofrecemos una exclusiva selección de jabones artesanales 100% naturales,
+        Ofrecemos una exclusiva selección de jabones artesanales 100% naturales,
         elaborados a mano con ingredientes cuidadosamente seleccionados. Cada
         jabón es creado con técnicas tradicionales, utilizando aceites
         esenciales, y extractos naturales. Haz de tu cuidado personal un ritual

@@ -71,7 +71,7 @@ export const ProductList = ({ product = [], search }) => {
 
   return (
     <section className="home-product-list">
-      <h2 className="home-product-card-title">Jabònes</h2>
+      <h2 className="home-product-card-title">Jabónes</h2>
       <SearchBar onSearch={search} />
       <div className="products">
         {isLoading && (
