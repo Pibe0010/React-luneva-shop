@@ -20,12 +20,14 @@
   font-size: clamp(1.7rem, 4vw, 1.8em);
   font-weight: bold;
   margin-bottom: 2.6rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .sidebar-filter h2 {
   margin-bottom: 10px;
   font-size: clamp(1.5rem, 3vw, 1.2em);
   color: #333;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .sidebar-filter ul {
@@ -64,6 +66,7 @@
 }
 .price-range-value {
   font-size: clamp(1.3rem, 1vw, 1em);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 input[type="range"] {
   -webkit-appearance: none;

@@ -8,28 +8,42 @@
 }
 
 .singUpForOffer-title {
-  font-size: clamp(1.3rem, 3.5vw, 1.5rem);
+  font-size: clamp(1.5rem, 3vw, 1.2em);
   color: #ffffff;
   font-weight: bold;
   margin-bottom: 0.5rem;
   margin-top: 1rem;
   width: 30rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .singUpForOffer-button {
   margin-bottom: 0.2rem;
   margin-left: 10px;
 }
-@media (max-width: 450px) {
+
+@media (max-width: 750px) {
   .singUpForOffer-container {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin: 0.5rem;
+    margin-left: 4.5rem;
+    margin-right: 2rem;
     gap: 1rem;
     margin-bottom: 2rem;
   }
   .singUpForOffer-title {
     width: 100%;
+  }
+}
+@media (max-width: 450px) {
+  .singUpForOffer-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    gap: 1rem;
+    margin-bottom: 2rem;
   }
 }

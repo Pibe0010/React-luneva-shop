@@ -36,7 +36,7 @@ export const Card = ({ title, btnName, src, alt, description, price, id }) => {
         <img className="image" src={src} alt={alt} />
       </div>
       <div className="card-title">
-        <span>Jabòn de {title}</span>
+        <span>Jabón de {title}</span>
       </div>
       <form className="card-form" onSubmit={handleSubmit}>
         <div className="container-description">

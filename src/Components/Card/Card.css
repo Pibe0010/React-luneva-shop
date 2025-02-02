@@ -47,11 +47,13 @@
   text-transform: capitalize;
   text-wrap: nowrap;
   text-overflow: ellipsis;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 .container-description {
   font-size: clamp(1.3rem, 2vw, 1em);
   color: var(--light);
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 .cardInput {

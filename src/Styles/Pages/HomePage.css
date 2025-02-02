@@ -131,6 +131,7 @@
   font-size: clamp(2rem, 4.4vw, 2.5rem);
   margin-bottom: 30px;
   margin-top: 40px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .home-card-line-top {
@@ -158,6 +159,7 @@
   margin: 0 0 10px;
   font-size: clamp(1.9rem, 3vw, 3em);
   color: #fff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .home-offer-description {
@@ -165,12 +167,14 @@
   color: #fff;
   font-size: clamp(1.2rem, 2.5vw, 1.5em);
   font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .home-offer-prices {
   display: flex;
   align-items: center;
   margin-bottom: 15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .home-offer-price-current {
@@ -178,11 +182,13 @@
   font-weight: bold;
   color: #fff;
   margin-right: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .home-offer-price-discounted {
   font-size: clamp(1rem, 3vw, 1.1em);
   color: #0ab03f;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .home-card-form {
@@ -240,6 +246,7 @@
   font-size: clamp(2rem, 4.4vw, 2.5rem);
   margin-bottom: 30px;
   margin-top: 7rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .products {
@@ -361,6 +368,7 @@
   font-size: clamp(2rem, 4.4vw, 2.5rem);
   margin-bottom: 30px;
   margin-top: 2rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .info-cards {
@@ -393,6 +401,7 @@
 .product-info-title {
   font-size: clamp(2rem, 4.4vw, 2.5rem);
   margin-bottom: 30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .product-info-paragraph {

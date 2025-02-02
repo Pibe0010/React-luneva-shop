@@ -3,6 +3,8 @@ import { MainLayout } from "../Layout/MainLayout.jsx";
 import "../Styles/Pages/SpecialOfferPage.css";
 import { useOfferList } from "../Hooks/PagesHooks/useOfferList.js";
 import { useUser } from "../Context/AutContext.jsx";
+import { OffertitleAnimation } from "../Components/PagesComponents/SpecialOffer/OffertitleAnimation.jsx";
+import { SubTitleAnimate } from "../Components/PagesComponents/SpecialOffer/SubTitleanimate.jsx";
 
 export const SpecialOfferPage = () => {
   const token = useUser();
@@ -11,7 +13,9 @@ export const SpecialOfferPage = () => {
   return (
     <MainLayout>
       <section className="special-offer-container">
-        <h1 className="special-title">Ofertas Especiales</h1>
+        <h1 className="special-title">
+          <OffertitleAnimation />
+        </h1>
         <section>
           <p className="special-offer-description">
             No pierdas la opurtinadad de adquirir nuestros productos especiales
@@ -20,7 +24,7 @@ export const SpecialOfferPage = () => {
           </p>
         </section>
         <h2 className="special-offer-card-title">
-          Luneva Shop, ¡Ofertas exclusivas para ti!
+          <SubTitleAnimate />
         </h2>
         <section className="special-offer-card">
           <div className="special-offer-card-container">
