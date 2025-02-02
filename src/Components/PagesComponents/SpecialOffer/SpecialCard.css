@@ -13,6 +13,57 @@
   overflow: hidden;
 }
 
+.special-card-badge {
+  position: absolute;
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
+  top: -10px;
+  left: -10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.special-card-badge::before {
+  content: "OFERTA";
+  position: absolute;
+  width: 150%;
+  height: 50px;
+  background-image: linear-gradient(
+    45deg,
+    #ff6547 0%,
+    #ffb144 51%,
+    #ff7053 100%
+  );
+  transform: rotate(-45deg) translateY(-20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.23);
+}
+
+.special-card-badge::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  bottom: 0;
+  left: 0;
+  height: 10px;
+  z-index: -1;
+  box-shadow: 140px -140px #cc3f47;
+  background-image: linear-gradient(
+    45deg,
+    #ff512f 0%,
+    #f09819 51%,
+    #ff512f 100%
+  );
+}
+
 .special-offer {
   width: 100%;
   top: 0;
@@ -26,6 +77,7 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   background-color: #18181b;
   margin: 4rem auto;
+  position: relative;
 }
 
 .special-title {
