@@ -1,0 +1,110 @@
+.selected-pay-method {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 2rem;
+}
+.selected-pay-method-title {
+  font-size: clamp(2rem, 4.4vw, 2.5em);
+  font-family: "Times New Roman", Times, serif;
+  margin: 1rem;
+}
+.selected-pay-method-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: hsl(0, 0%, 0%);
+  width: 20%;
+  gap: 2rem;
+  border: 1px solid #848484;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  margin: 30px;
+}
+.selected-pay-method-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 1rem;
+}
+.selected-pay-method-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem;
+  gap: 1rem;
+  border: 1px solid #848484;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px 2px rgba(255, 255, 255, 0.3);
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+  color: #00bfff;
+  font-size: clamp(1rem, 3vw, 1.3em);
+}
+.selected-pay-method-list li:hover {
+  background-color: #04334a;
+  transition: all 0.3s ease-in-out;
+}
+.selected-pay-method-list li p {
+  display: none;
+  transition: all 0.3s ease-in-out;
+}
+.selected-pay-method-list li:has(input:checked) p {
+  display: block;
+  transition: all 0.3s ease-in-out;
+  animation: fadeSlide 0.3s ease-in-out;
+}
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.selected-pay-method-list input {
+  z-index: 1;
+  cursor: pointer;
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 1px 1px 1px 1px rgba(255, 255, 255, 0.5);
+}
+.selected-pay-method-text {
+  font-size: 1.8rem;
+  font-family: "Times New Roman", Times, serif;
+  margin: 30px auto;
+}
+.selected-pay-method-button {
+  border: none;
+  color: #fff;
+  background-color: #00bfff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: 0.3s ease;
+  font-size: 1.2rem;
+  margin: 10px;
+  cursor: pointer;
+}
+.selected-pay-method-btn_inactive {
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: 0.3s ease;
+  font-size: 1.2rem;
+  margin: 10px;
+  background-color: #939393;
+  cursor: pointer;
+}

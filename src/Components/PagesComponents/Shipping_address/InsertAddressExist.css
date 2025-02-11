@@ -1,0 +1,101 @@
+.shipping-address-container {
+  display: flex;
+  gap: 1rem;
+  border: 1px solid #f9f9f9;
+  border-radius: 20px;
+  box-shadow: 1px 0 1px 1px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  background-color: #1a1a1a;
+  color: #00bfff;
+  width: 90%;
+  height: auto;
+  position: absolute;
+}
+.shipping-address {
+  width: 100%;
+  list-style: none;
+}
+.shipping-address-list {
+  display: flex;
+  gap: 1rem;
+  font-size: clamp(1rem, 3vw, 1.3em);
+  font-family: "Times New Roman", Times, serif;
+  margin: 10px;
+  font-weight: bold;
+}
+.shipping-address-list p {
+  width: 80rem;
+}
+.shipping-address-body {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: clamp(1rem, 3vw, 1.3em);
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  background-color: #333;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px;
+}
+.shipping-address-body p {
+  width: 80rem;
+}
+.shipping-address-actions {
+  display: flex;
+  gap: 1rem;
+  width: 82rem;
+}
+.shipping-address-delete {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: none;
+}
+.shipping-address-delete-icon {
+  width: 1.7rem;
+  cursor: pointer;
+}
+.shipping-address-delete-icon:hover {
+  transform: scale(1.2);
+  transition: all 0.3s;
+}
+.shipping-address-noResult {
+  font-size: clamp(1rem, 3vw, 1.3em);
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  color: aliceblue;
+}
+.shipping-address-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.shipping-address-button {
+  font-size: clamp(1rem, 3vw, 1.3em);
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  color: aliceblue;
+  cursor: pointer;
+  background-color: #00bfff;
+  border-radius: 5px;
+  padding: 5px 15px;
+  text-align: center;
+  margin: 10px;
+}
+.modal-add {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+.hidden {
+  display: none;
+}

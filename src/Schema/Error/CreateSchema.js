@@ -58,7 +58,7 @@ export const newShippingAddressSchema = joi.object({
   street_number: joi.string().required().messages(joiErrorMessages),
   floor: joi.string().optional().messages(joiErrorMessages),
   ladder_door: joi
-    .number()
+    .string()
     .optional()
     .min(1)
     .max(10)

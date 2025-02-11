@@ -37,7 +37,7 @@ export const TrolleyPage = () => {
           <p>Precio total: {totalPrice}.00 €</p>
         </div>
         <div className="cartPage-actions">
-          <TrolleyPageBtn url="/checkout" name="Pagar" />
+          <TrolleyPageBtn url="/payments/address" name="Pagar" />
           <TrolleyBackBtn url="/products" />
         </div>
       </section>
