@@ -26,6 +26,10 @@ import { CustomersPage } from "./Pages/CustomersPage.jsx";
 import { ActivateAccount } from "./Pages/activateAccount.jsx";
 import "./Styles/Pages/GeneralsFroms.css";
 import { SpecialOfferPage } from "./Pages/SpecialOfferPage.jsx";
+import { InsertAddress } from "./Components/PagesComponents/Shipping_address/InsertAddress.jsx";
+import { SelectedPayMethod } from "./Components/PagesComponents/Stripe.jsx/SelectedPayMethod.jsx";
+import { CheckoutForm } from "./Components/PagesComponents/Stripe.jsx/CheckoutForm.jsx";
+import { Success } from "./Components/PagesComponents/Stripe.jsx/Success.jsx";
 
 const App = () => {
   return (
@@ -42,6 +46,10 @@ const App = () => {
       <Route path="/tickets" element={<TicketPurchasesPage />} />
       <Route path="/shipment" element={<ShipmentsPage />} />
       <Route path="/payment" element={<PaymentsPage />} />
+      <Route path="/payments/address" element={<InsertAddress />} />
+      <Route path="/payments/method" element={<SelectedPayMethod />} />
+      <Route path="/checkout" element={<CheckoutForm />} />
+      <Route path="/success" element={<Success />} />
       <Route path="/trolley" element={<TrolleyPage />} />
       <Route path="/profile" element={<UserProfilePage />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
