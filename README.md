@@ -18,6 +18,7 @@ Realizar pedidos, agregar productos para su venta y realizar compras.
 - React-ruter-dom: Para manejar las rutas.
 - Sweetalert2: Para alertas para el usuario.
 - React-flatpicker: Para manejar las fechas.
+- Stripe para metodo de pagos online.
 
 # React + Vite
 
