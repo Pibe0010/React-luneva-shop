@@ -200,17 +200,10 @@ export const CartProvider = ({ children }) => {
           text: successMessage,
         });
       } else {
-        Swal.fire({
-          icon: "error",
-          text: "Hubo un problema al eliminar el producto",
-        });
+        console.error("Error al realizar la operación:");
       }
     } catch (error) {
       console.error("Error al realizar la operación:", error);
-      Swal.fire({
-        icon: "error",
-        text: "Hubo un problema al realizar la operación",
-      });
     }
   };
 
@@ -255,17 +248,10 @@ export const CartProvider = ({ children }) => {
           text: successMessage,
         });
       } else {
-        Swal.fire({
-          icon: "error",
-          text: "Hubo un problema al eliminar el producto",
-        });
+        console.error("Error al realizar la operación:");
       }
     } catch (error) {
       console.error("Error al realizar la operación:", error);
-      Swal.fire({
-        icon: "error",
-        text: "Hubo un problema al realizar la operación",
-      });
     }
   };
 
