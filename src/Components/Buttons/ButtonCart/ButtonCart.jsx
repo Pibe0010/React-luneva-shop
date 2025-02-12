@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom";
 import "./ButtonCart.css";
 
-export const ButtonCart = ({ name, className, onClick }) => {
+export const ButtonCart = ({ name, className }) => {
   return (
-    <button className={`Btn ${className}`} onClick={onClick}>
+    <Link to="/payments/address" className={`Btn ${className}`}>
       {name}
-    </button>
+    </Link>
   );
 };
