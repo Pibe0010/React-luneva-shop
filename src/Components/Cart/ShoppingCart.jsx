@@ -14,7 +14,7 @@ export const ShoppingCart = ({
 }) => {
   const token = useUser();
   const [isClicked, setIsClicked] = useState(false);
-  const { cart, clearCart } = useCart();
+  const { cart } = useCart();
 
   const toggleDropdown = () => {
     setIsCartOpen(!isCartOpen);
@@ -69,11 +69,6 @@ export const ShoppingCart = ({
             <div className="btnCart">
               <ButtonCart className="btnSell" name="Comprar" />
               <MoreTrolley trolley={cart} />
-              <ButtonCart
-                className="btnClear"
-                name="Vaciar "
-                onClick={clearCart}
-              />
             </div>
           </div>
         </li>
