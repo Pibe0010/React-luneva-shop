@@ -25,7 +25,7 @@ export const CheckoutForm = () => {
         ID_payment: product.ID_payment,
         name: product.name,
         quantity: product.product_amount,
-        price: product.price,
+        price: product.product_price,
       }));
 
       const response = await fetch(`${URL}/api/checkout`, {

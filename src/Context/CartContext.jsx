@@ -72,7 +72,7 @@ export const CartProvider = ({ children }) => {
 
           Toast.fire({
             icon: "success",
-            title: `Producto anadirdo con exito.`,
+            title: `Producto añadido con exito.`,
           });
         } else {
           const errorData = await response.json();

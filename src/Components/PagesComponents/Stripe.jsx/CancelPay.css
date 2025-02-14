@@ -1,0 +1,128 @@
+.cancelPay-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100vh;
+  gap: 2rem;
+  background-color: rgb(26, 26, 26);
+}
+.cancelPay-title {
+  font-size: clamp(2rem, 4.4vw, 2.5em);
+  font-family: "Times New Roman", Times, serif;
+  margin: 1rem;
+  color: aliceblue;
+}
+.cancelPay-button {
+  font-size: clamp(1rem, 3vw, 1.3em);
+  font-family: "Times New Roman", Times, serif;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.cancelPay-btn {
+  font-size: clamp(1rem, 3vw, 1.3em);
+  font-family: "Times New Roman", Times, serif;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  padding: 5px 20px;
+  background-color: blueviolet;
+  color: aliceblue;
+  border-radius: 10px;
+  text-decoration: none;
+}
+.cancelPay-btn-home {
+  font-size: clamp(1rem, 3vw, 1.3em);
+  font-family: "Times New Roman", Times, serif;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  padding: 5px 40px;
+  background-color: blueviolet;
+  color: aliceblue;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.cancel-pyramid-loader {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: block;
+  transform-style: preserve-3d;
+  transform: rotateX(-20deg);
+}
+
+.cancel-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.cancel-pyramid-loader .cancel-wrapper .side {
+  width: 70px;
+  height: 70px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  transform-origin: center top;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.cancel-pyramid-loader .cancel-wrapper .side1 {
+  transform: rotateZ(-30deg) rotateY(90deg);
+  background: conic-gradient(#2bdeac, #f028fd, #d8cce6, #2f2585);
+}
+
+.cancel-pyramid-loader .cancel-wrapper .side2 {
+  transform: rotateZ(30deg) rotateY(90deg);
+  background: conic-gradient(#2f2585, #d8cce6, #f028fd, #2bdeac);
+}
+
+.cancel-pyramid-loader .cancel-wrapper .side3 {
+  transform: rotateX(30deg);
+  background: conic-gradient(#2f2585, #d8cce6, #f028fd, #2bdeac);
+}
+
+.cancel-pyramid-loader .cancel-wrapper .side4 {
+  transform: rotateX(-30deg);
+  background: conic-gradient(#2bdeac, #f028fd, #d8cce6, #2f2585);
+}
+
+.cancel-pyramid-loader .cancel-wrapper .shadow {
+  width: 60px;
+  height: 60px;
+  background: #8b5ad5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  transform: rotateX(90deg) translateZ(-40px);
+  filter: blur(12px);
+}
