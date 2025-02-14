@@ -13,6 +13,7 @@ export const SelectedPayMethod = () => {
   const [nextAccess, setNextAccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
   const [payment_method, setPayment_method] = useState("");
+  const [isConfirmed, setIsConfirmed] = useState(false);
   console.log(payment_method);
 
   const methods = [
@@ -129,6 +130,9 @@ export const SelectedPayMethod = () => {
 
     // Limpiar los campos del formulario
     setPayment_method("");
+
+    // Activo el botón de seguinte
+    setIsConfirmed(true);
   };
 
   // Limpiar los errores
@@ -175,10 +179,8 @@ export const SelectedPayMethod = () => {
           Selecciónar
         </button>
         <Link
-          to={nextAccess === false ? "#" : "/Checkout"}
-          className={
-            nextAccess === false ? "btn_inactive" : "form-insert-address-next"
-          }
+          to={isConfirmed ? "/Checkout" : "#"}
+          className={isConfirmed ? "form-insert-address-next" : "btn_inactive"}
         >
           Siguiente
         </Link>
