@@ -30,6 +30,7 @@ import { InsertAddress } from "./Components/PagesComponents/Shipping_address/Ins
 import { SelectedPayMethod } from "./Components/PagesComponents/Stripe.jsx/SelectedPayMethod.jsx";
 import { CheckoutForm } from "./Components/PagesComponents/Stripe.jsx/CheckoutForm.jsx";
 import { Success } from "./Components/PagesComponents/Stripe.jsx/Success.jsx";
+import { CancelPay } from "./Components/PagesComponents/Stripe.jsx/CancelPay.jsx";
 
 const App = () => {
   return (
@@ -50,6 +51,7 @@ const App = () => {
       <Route path="/payments/method" element={<SelectedPayMethod />} />
       <Route path="/checkout" element={<CheckoutForm />} />
       <Route path="/success" element={<Success />} />
+      <Route path="/cancel" element={<CancelPay />} />
       <Route path="/trolley" element={<TrolleyPage />} />
       <Route path="/profile" element={<UserProfilePage />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
