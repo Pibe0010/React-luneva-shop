@@ -9,6 +9,7 @@ import { PhoneUserUpdated } from "./PhoneUserUpdated.jsx";
 import { EmailUserUpdated } from "./EmailUserUpdated.jsx";
 import { UserNameUpdated } from "./UserNameUpdated.jsx";
 import { Contact } from "./Contact.jsx";
+import { TickectUser } from "../TickectUser/TickectUser.jsx";
 const URL = import.meta.env.VITE_URL;
 
 export const UserProfile = ({ token }) => {
@@ -42,7 +43,7 @@ export const UserProfile = ({ token }) => {
         delete data[key];
       }
     });
-    console.log(data);
+
     // Validar los datos con Joi
     const { error } = updateUserSchema.validate(data);
 
@@ -106,6 +107,8 @@ export const UserProfile = ({ token }) => {
             handleChange={handleChange}
           />
         );
+      case "ticket":
+        return <TickectUser setActiveModal={setActiveModal} />;
       case "contact":
         return <Contact setActiveModal={setActiveModal} token={token} />;
       default:
@@ -161,7 +164,6 @@ export const UserProfile = ({ token }) => {
           url="/Icons/phone_iphone_60dp_666666_FILL0_wght400_GRAD0_opsz48.svg"
           alt="Editar telefono"
         />
-
         <ProfileCard
           onClick={() => setActiveModal("contact")}
           description="Contactanos"
@@ -169,8 +171,14 @@ export const UserProfile = ({ token }) => {
           url="/Icons/contact_mail_60dp_666666_FILL0_wght400_GRAD0_opsz48.svg"
           alt="Contactanos"
         />
+        <ProfileCard
+          onClick={() => setActiveModal("ticket")}
+          description="Mis tickets"
+          name="Ver"
+          url="/Icons/receipt_long_40dp_666666_FILL0_wght400_GRAD0_opsz40.svg"
+          alt="tickets"
+        />
       </div>
-
       {activeModal && <div className="modal-overlay">{renderModal()}</div>}
     </section>
   );
