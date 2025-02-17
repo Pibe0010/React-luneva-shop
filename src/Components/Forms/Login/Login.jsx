@@ -70,7 +70,7 @@ export const Login = ({ onSubmit }) => {
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
-              <EyePassword idInput="password" />
+              <EyePassword className="container-eye" idInput="password" />
             </label>
           </div>
           <span className="forgot-password">

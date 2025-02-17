@@ -87,3 +87,20 @@ export const userSupportSchema = joi.object({
     .messages(joiErrorMessages),
   message: joi.string().min(10).max(100).required().messages(joiErrorMessages),
 });
+
+export const changePasswordSchema = joi.object({
+  currentPassword: joi.string().required(),
+  newPassword: joi
+    .string()
+    .regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]+$/)
+    .required()
+    .messages(joiErrorMessages),
+});
+
+export const recoveryPasswordSchema = joi.object({
+  email: joi
+    .string()
+    .email({ tlds: { allow: false } })
+    .required()
+    .messages(joiErrorMessages), // Correo electrónico válido y obligatorio
+});

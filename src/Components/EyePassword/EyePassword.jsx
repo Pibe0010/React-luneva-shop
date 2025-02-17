@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./EyePassword.css";
 
-export const EyePassword = ({ idInput }) => {
+export const EyePassword = ({ idInput, className }) => {
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
@@ -16,7 +16,7 @@ export const EyePassword = ({ idInput }) => {
   };
 
   return (
-    <label className="container-eye" onClick={togglePasswordVisibility}>
+    <label className={className} onClick={togglePasswordVisibility}>
       {showPassword ? (
         <svg
           className="eye-slash"
