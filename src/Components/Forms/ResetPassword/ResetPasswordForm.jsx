@@ -58,7 +58,7 @@ export const ResetPasswordForm = ({ onSubmit }) => {
                 value={newPassword}
                 required
               />
-              <EyePassword idInput="newPassword" />
+              <EyePassword className="container-eye" idInput="newPassword" />
             </label>
           </div>
           <div className="input-container">
@@ -73,7 +73,7 @@ export const ResetPasswordForm = ({ onSubmit }) => {
                 onChange={(e) => setRepeatPassword(e.target.value)}
                 required
               />
-              <EyePassword idInput="repeatPassword" />
+              <EyePassword className="container-eye" idInput="repeatPassword" />
             </label>
           </div>
           {errorMessages && <p className="resetPass-error">{errorMessages}</p>}

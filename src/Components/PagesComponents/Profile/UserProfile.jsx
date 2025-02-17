@@ -10,6 +10,8 @@ import { EmailUserUpdated } from "./EmailUserUpdated.jsx";
 import { UserNameUpdated } from "./UserNameUpdated.jsx";
 import { Contact } from "./Contact.jsx";
 import { TickectUser } from "../TickectUser/TickectUser.jsx";
+import { ProfileHeader } from "./ProfileHeader.jsx";
+import { ChangePassword } from "./ChangePassword.jsx";
 const URL = import.meta.env.VITE_URL;
 
 export const UserProfile = ({ token }) => {
@@ -111,6 +113,8 @@ export const UserProfile = ({ token }) => {
         return <TickectUser setActiveModal={setActiveModal} />;
       case "contact":
         return <Contact setActiveModal={setActiveModal} token={token} />;
+      case "password":
+        return <ChangePassword setActiveModal={setActiveModal} token={token} />;
       default:
         return null;
     }
@@ -118,29 +122,12 @@ export const UserProfile = ({ token }) => {
 
   return (
     <section className="user-profile">
-      <div className="profile-header">
-        <div className="photo-container">
-          <img src={imageUrl} alt="Foto de perfil" className="profile-photo" />
-          <button
-            className="edit-button"
-            onClick={() => setActiveModal("avatar")}
-          >
-            Cambiar foto
-          </button>
-        </div>
-        <h1>{`${user.user_name} ${user.last_name}`}</h1>
-        <div className="profile-info">
-          <span>E-mail:</span>
-          <p className="profile-email">{user.email}</p>
-          <span>Teléfono:</span>
-          <p className="profile-phone"> +34 {user.phone}</p>
-        </div>
-        <div className="profile-status-container">
-          <span>Estado de la cuenta</span>
-          <p className="profile-status">{statusTranslete}</p>
-        </div>
-      </div>
-
+      <ProfileHeader
+        user={user}
+        statusTranslete={statusTranslete}
+        imageUrl={imageUrl}
+        setActiveModal={setActiveModal}
+      />
       <h2 className="profile-title">Configuraciones</h2>
       <div className="profile-buttons">
         <ProfileCard
@@ -176,6 +163,13 @@ export const UserProfile = ({ token }) => {
           description="Mis tickets"
           name="Ver"
           url="/Icons/receipt_long_40dp_666666_FILL0_wght400_GRAD0_opsz40.svg"
+          alt="tickets"
+        />
+        <ProfileCard
+          onClick={() => setActiveModal("password")}
+          description="cambiar contraseña"
+          name="Cambiar"
+          url="/Icons/password_40dp_666666_FILL0_wght400_GRAD0_opsz40.svg"
           alt="tickets"
         />
       </div>

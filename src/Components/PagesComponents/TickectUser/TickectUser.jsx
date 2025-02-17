@@ -57,24 +57,27 @@ export const TickectUser = ({ setActiveModal }) => {
         </div>
       ) : (
         <>
-          <select
-            onChange={(e) => setSelectedDate(e.target.value)}
-            className="ticketUser-select"
-          >
-            <option value="">Selecciona una fecha</option>
-            {uniqueDates.map((date) => (
-              <option key={date} value={date}>
-                {date}
+          <div className="ticketUser-select-container">
+            <select
+              onChange={(e) => setSelectedDate(e.target.value)}
+              className="ticketUser-select"
+            >
+              <option value="" className="ticketUser-option">
+                Selecciona una fecha
               </option>
-            ))}
-          </select>
+              {uniqueDates.map((date) => (
+                <option key={date} value={date} className="ticketUser-option">
+                  {date}
+                </option>
+              ))}
+            </select>
+          </div>
 
           {currentOrderTickets.length > 0 && (
             <section className="ticketUser-container">
               <h1 className="ticketUser-title">Factura de compra</h1>
               <ol className="ticketUser-list">
                 <li className="ticketUser-item">
-                  <div className="ticketUser-item-head"></div>
                   {currentOrderTickets.map((ticket) => (
                     <div
                       key={ticket.ID_ticket}
