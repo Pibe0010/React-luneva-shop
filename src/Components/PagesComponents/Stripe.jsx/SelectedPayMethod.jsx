@@ -184,9 +184,6 @@ export const SelectedPayMethod = () => {
         >
           Siguiente
         </Link>
-        <Link to="/products" className="form-insert-address-next">
-          Productos
-        </Link>
       </div>
       <p className="selected-pay-method-text">2/3</p>
     </section>
