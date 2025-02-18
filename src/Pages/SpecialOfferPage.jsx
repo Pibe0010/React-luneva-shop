@@ -28,13 +28,22 @@ export const SpecialOfferPage = () => {
         </h2>
         <section className="special-offer-card">
           <div className="special-offer-card-container">
-            {filteredOfferList.map((offer) => (
-              <SpecialCard
-                key={offer.ID_Product}
-                id={offer.ID_Product}
-                products={offer}
-              />
-            ))}
+            {filteredOfferList.length > 0 ? (
+              filteredOfferList.map((offer) => (
+                <SpecialCard
+                  key={offer.ID_Product}
+                  id={offer.ID_Product}
+                  products={offer}
+                />
+              ))
+            ) : (
+              <div>
+                <p className="special-offer-card-empty">
+                  No hay ofertas disponibles en estos momentos. Registrate para
+                  saber más de nuestras ofertas cuando esten disponibles.
+                </p>
+              </div>
+            )}
           </div>
         </section>
       </section>

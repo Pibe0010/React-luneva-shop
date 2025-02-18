@@ -4,6 +4,7 @@ import { Timer } from "./Timer.jsx";
 import { Loader } from "../../Animations/Loader.jsx";
 import { useCart } from "../../../Context/CartContext.jsx";
 import { newTrolleySchema } from "../../../Schema/Error/CreateSchema.js";
+import { CircularText } from "../../Animations/CircularText.jsx";
 const URL = import.meta.env.VITE_URL;
 
 export const Futuredproduct = ({ products }) => {
@@ -13,6 +14,17 @@ export const Futuredproduct = ({ products }) => {
   const [products_amount, setProducts_amount] = useState("1");
   const intervalRef = useRef(null);
   const { addToCart, addProduct } = useCart();
+  const [loading, setLoading] = useState(true);
+  const [hasOffers, setHasOffers] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+      setHasOffers(false); // Cambia esto si obtienes ofertas dinámicamente
+    }, 3000);
+
+    return () => clearTimeout(timer); // Limpiar el timeout cuando el componente se desmonta
+  }, []);
 
   const handleAddToCart = async (data) => {
     await addToCart(data, addProduct);
@@ -64,7 +76,20 @@ export const Futuredproduct = ({ products }) => {
           }}
         >
           <div className="not-found-offer">
-            <Loader />
+            {loading ? (
+              <Loader />
+            ) : (
+              !hasOffers && (
+                <p className="not-found-offer-text">
+                  <CircularText
+                    text=" * NO * HAY * OFERTAS * DISPONIBLES"
+                    onHover="pause"
+                    spinDuration={20}
+                    className="custom-class"
+                  />
+                </p>
+              )
+            )}
           </div>
         </div>
       </section>
