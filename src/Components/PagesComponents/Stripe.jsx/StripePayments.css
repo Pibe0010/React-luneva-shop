@@ -1,8 +1,20 @@
+.checkout-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #d5d5d5;
+}
 .master-container {
-  display: grid;
-  grid-template-columns: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   gap: 5px;
   margin: 5rem 30rem;
+  width: 100%;
 }
 
 .checkout-card {
@@ -28,22 +40,9 @@
   padding-left: 20px;
   border-bottom: 1px solid #efeff3;
   font-weight: 700;
-  font-size: clamp(1rem, 3vw, 1.5em);
+  font-size: clamp(1.3rem, 3vw, 1.5em);
   color: #63656b;
   justify-content: space-between;
-}
-
-.ckeckout-back {
-  text-decoration: none;
-  margin-right: 1rem;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  font-size: 1.2rem;
-  transition: 0.3s ease-in-out;
-}
-.ckeckout-back:hover {
-  scale: 1.1;
-  color: #0550ed;
 }
 
 /* cart */
@@ -65,11 +64,12 @@
 }
 
 .checkout-cart .checkout-products .checkout-product ol {
-  font-size: 13px;
+  font-size: clamp(8px, 10px, 13px);
   font-weight: 600;
   color: #47484b;
   margin-bottom: 8px;
   display: block;
+  width: 100%;
 }
 
 .checkout-cart .checkout-products .checkout-product .checkout-product-card {
@@ -208,14 +208,14 @@
 }
 
 .checkout .details span:nth-child(odd) {
-  font-size: clamp(1rem, 3vw, 1.1em);
+  font-size: clamp(1.1rem, 3vw, 1.1em);
   font-weight: 700;
   color: #707175;
   margin: auto auto auto 0;
 }
 
 .checkout .details span:nth-child(even) {
-  font-size: clamp(1rem, 3vw, 1.3em);
+  font-size: clamp(1.2rem, 3vw, 1.3em);
   font-weight: 600;
   color: #47484b;
   margin: auto 0 auto auto;
@@ -231,7 +231,7 @@
 
 .chackout-price {
   position: relative;
-  font-size: clamp(1rem, 3vw, 1.7em);
+  font-size: clamp(1.5rem, 3vw, 1.7em);
   color: #2b2b2f;
   font-weight: 900;
 }
@@ -264,8 +264,13 @@
   border: 0;
   outline: none;
   color: #ffffff;
-  font-size: clamp(1rem, 3vw, 1.3em);
+  font-size: clamp(1.1rem, 3vw, 1.3em);
   font-weight: 600;
   transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
   cursor: pointer;
+}
+@media (max-width: 750px) {
+  .checkout-card {
+    width: 95%;
+  }
 }

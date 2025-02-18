@@ -4,10 +4,12 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  height: 100vh;
   padding: 2rem;
+  background-color: #d5d5d5;
 }
 .selected-pay-method-title {
-  font-size: clamp(2rem, 4.4vw, 2.5em);
+  font-size: clamp(2.2rem, 4.4vw, 2.5em);
   font-family: "Times New Roman", Times, serif;
   margin: 1rem;
 }
@@ -17,7 +19,8 @@
   flex-direction: column;
   justify-content: center;
   background-color: hsl(0, 0%, 0%);
-  width: 20%;
+  width: 100%;
+  max-width: 400px;
   gap: 2rem;
   border: 1px solid #848484;
   border-radius: 15px;

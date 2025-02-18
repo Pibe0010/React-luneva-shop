@@ -178,9 +178,6 @@ export const InsertAddress = () => {
         >
           Siguiente
         </Link>
-        <Link to="/products" className="form-insert-address-next">
-          Productos
-        </Link>
       </div>
       <p className="form-insert-address-page">1/3</p>
     </section>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { CheckoutLoader } from "../../Animations/CheckoutLoader.jsx";
 
 export const CheckoutCard = ({
   handlerSubmit,
@@ -69,69 +69,71 @@ export const CheckoutCard = ({
   ]);
 
   return (
-    <form className="master-container" onSubmit={handlerSubmit}>
-      <div className="checkout-card checkout-cart">
-        <label className="title">
-          Productos
-          <Link className="ckeckout-back" to="/products">
-            Atras
-          </Link>
-        </label>
-        <div className="checkout-products">
-          <div className="checkout-product">
-            <ol>
-              {product.map((products) => (
-                <li key={products.ID_payment} className="checkout-product-card">
-                  <h2 className="checkout-title">Jabón de {products.name}</h2>
-                  <p>Precio: {products.price}€</p>
-                  <p>Cantidad: {products.product_amount}uds</p>
-                  <p>Descuento: {discount} </p>
-                </li>
-              ))}
-            </ol>
+    <section className="checkout-container">
+      <form className="master-container" onSubmit={handlerSubmit}>
+        <div className="checkout-card checkout-cart">
+          <label className="title">Productos</label>
+          <div className="checkout-products">
+            <div className="checkout-product">
+              <ol>
+                {product.map((products) => (
+                  <li
+                    key={products.ID_payment}
+                    className="checkout-product-card"
+                  >
+                    <h2 className="checkout-title">Jabón {products.name}</h2>
+                    <p>Precio: {products.price}€</p>
+                    <p>Cantidad: {products.product_amount}uds</p>
+                    <p>Descuento: {discount} </p>
+                  </li>
+                ))}
+              </ol>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="checkout-card coupons">
-        <label className="title">Cúpon de descuento</label>
-        <div className="checkout-form">
-          <input
-            type="text"
-            placeholder="Aplica tu cúpon"
-            onChange={(e) => setCupon(e.target.value)}
-            className="input_field"
-          />
-          <button>Aplicar</button>
+        <div className="checkout-card coupons">
+          <label className="title">Cúpon de descuento</label>
+          <div className="checkout-form">
+            <input
+              type="text"
+              placeholder="Aplica tu cúpon"
+              onChange={(e) => setCupon(e.target.value)}
+              className="input_field"
+            />
+            <button>Aplicar</button>
+          </div>
         </div>
-      </div>
 
-      <div className="checkout-card checkout">
-        <label className="title">Checkout</label>
-        <div className="details">
-          <span>Subtotal carrito:</span>
-          <span>{subtotal}.00€</span>
-          <span>Descuento por cúpon:</span>
-          <span>{addDiscountCupon}</span>
-          <span>Descuento por oferta:</span>
-          <span>{addDiscountPrice}</span>
-          <span>Envio fees:</span>
-          <span>{addShipping}</span>
-          <span>IVA fees:</span>
-          <span>{addIva}</span>
-        </div>
-        <div className="checkout--footer">
-          <label className="chackout-price">
-            <sup>€</sup>
-            {addTotal}
-          </label>
+        <div className="checkout-card checkout">
+          <label className="title">Checkout</label>
+          <div className="details">
+            <span>Subtotal carrito:</span>
+            <span>{subtotal}.00€</span>
+            <span>Descuento por cúpon:</span>
+            <span>{addDiscountCupon}</span>
+            <span>Descuento por oferta:</span>
+            <span>{addDiscountPrice}</span>
+            <span>Envio fees:</span>
+            <span>{addShipping}</span>
+            <span>IVA fees:</span>
+            <span>{addIva}</span>
+          </div>
+          <div className="checkout--footer">
+            <label className="chackout-price">
+              <sup>€</sup>
+              {addTotal}
+            </label>
 
-          <button className="checkout-btn">
-            {loading ? "Cargando..." : "Pagar"}
-          </button>
+            {loading ? (
+              <CheckoutLoader />
+            ) : (
+              <button className="checkout-btn">Pagar</button>
+            )}
+          </div>
         </div>
-      </div>
-      <p className="form-insert-address-page">3/3</p>
-    </form>
+        <p className="form-insert-address-page">3/3</p>
+      </form>
+    </section>
   );
 };
