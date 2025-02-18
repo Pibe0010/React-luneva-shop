@@ -13,7 +13,7 @@ export const TickectUser = ({ setActiveModal }) => {
   const uniqueDates = [
     ...new Set(
       (listTicketUser || []).map((ticket) =>
-        new Date(ticket.createdAt).toLocaleDateString()
+        new Date(ticket.createdAt).toLocaleString()
       )
     ),
   ];
@@ -21,8 +21,7 @@ export const TickectUser = ({ setActiveModal }) => {
   // Filtrar tickets según la fecha seleccionada
   const currentOrderTickets = selectedDate
     ? listTicketUser.filter(
-        (ticket) =>
-          new Date(ticket.createdAt).toLocaleDateString() === selectedDate
+        (ticket) => new Date(ticket.createdAt).toLocaleString() === selectedDate
       )
     : [];
 
