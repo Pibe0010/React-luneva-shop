@@ -98,6 +98,12 @@ export const InsertAddress = () => {
       country,
     };
 
+    Object.keys(data).forEach((key) => {
+      if (data[key] === "" || data[key] === undefined) {
+        delete data[key];
+      }
+    });
+
     // Validar los datos con Joi
     const { error } = newShippingAddressSchema.validate(data);
 
