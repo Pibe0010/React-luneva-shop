@@ -236,6 +236,12 @@
   height: 570px;
 }
 
+.not-found-offer-text {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+}
+
 /* Product List Styles */
 .home-product-list {
   margin-bottom: 40px;

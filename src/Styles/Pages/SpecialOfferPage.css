@@ -51,7 +51,16 @@
   font-size: clamp(1.7rem, 5vw, 2.5em);
   margin: 3rem;
 }
-
+.special-offer-card-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(1.7rem, 5vw, 2.5em);
+  margin: 3rem;
+  color: #ffffff;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+}
 .special-offer-card-container {
   width: 100%;
   display: flex;
