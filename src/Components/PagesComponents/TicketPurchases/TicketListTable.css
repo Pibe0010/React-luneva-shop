@@ -69,7 +69,7 @@
 }
 
 .ticketTableHeadRowPrice {
-  padding-left: 18px;
+  padding-left: 22px;
 }
 
 .ticketTableHeadRowCuantity,
@@ -79,6 +79,15 @@
 
 .ticketTableBodyRowCuantity {
   padding-left: 13px;
+}
+
+.TicketTableHeadRowTotalPrice,
+.ticketTableBodyRowTotalPrice {
+  width: 100px;
+}
+
+.TicketTableHeadRowTotalPrice {
+  padding-left: 10px;
 }
 
 .ticketTableHeadRowCreate,

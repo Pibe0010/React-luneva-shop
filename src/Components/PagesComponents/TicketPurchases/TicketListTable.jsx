@@ -7,6 +7,12 @@ import "./TicketListTable.css";
 export const TicketListTable = ({ ticket, deleteTicket }) => {
   const token = useUser();
 
+  const statusTranslations = {
+    pending: "Pendiente",
+    sent: "Enviado",
+    cancelled: "Cancelado",
+  };
+
   return (
     <section id="customer_table" className="ticketTable">
       <div className="ticketTableHead">
@@ -15,6 +21,8 @@ export const TicketListTable = ({ ticket, deleteTicket }) => {
         <div className="ticketTableHeadRowProduct headRow">Producto</div>
         <div className="ticketTableHeadRowPrice headRow">Precio</div>
         <div className="ticketTableHeadRowCuantity headRow">Cantidad</div>
+        <div className="TicketTableHeadRowTotalPrice headRow">Total</div>
+        <div className="orderTableHeadRowStatus headRow">Estado</div>
         <div className="ticketTableHeadRowCreate headRow">Creado</div>
         <div className="ticketTableHeadRowActions headRow">Acciones</div>
       </div>
@@ -30,10 +38,19 @@ export const TicketListTable = ({ ticket, deleteTicket }) => {
                 {ticketItems.name}
               </div>
               <div className="ticketTableBodyRowPrice">
-                {ticketItems.price} €
+                {ticketItems.product_price} €
               </div>{" "}
               <div className="ticketTableBodyRowCuantity">
                 {ticketItems.product_amount} u
+              </div>
+              <div className="ticketTableBodyRowTotalPrice">
+                {ticketItems.total_amount} €
+              </div>
+              <div
+                className={`orderTableBodyRowStatus ${ticketItems.status.toLowerCase()}`}
+              >
+                {statusTranslations[ticketItems.status.toLowerCase()] ||
+                  ticketItems.status}
               </div>
               <div className="ticketTableBodyRowCreate">
                 {GetNormalizaDate(ticketItems.createdAt).toLocaleDateString()}
