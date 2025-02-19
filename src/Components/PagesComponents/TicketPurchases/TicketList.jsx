@@ -17,7 +17,7 @@ export const TicketList = ({ ticket }) => {
       </p>
 
       <p className="mainTicketInsideSub">
-        <strong>Precio: </strong> {ticket.price} €
+        <strong>Precio: </strong> {ticket.product_price} €
       </p>
       <p className="mainTicketInsideSub">
         <strong>Cantidad: </strong> {ticket.product_amount} u
