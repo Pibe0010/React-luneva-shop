@@ -4,7 +4,7 @@ import { NavLinks } from "../NavLinks/NavLinks.jsx";
 
 export const NavbarCustomer = ({ toggleMenu }) => {
   const role = useRole();
-  const [isLogged, setIsLogged] = useState(false);
+  const [isLogged, setIsLogged] = useState(null);
 
   useEffect(() => {
     setIsLogged(!!role);

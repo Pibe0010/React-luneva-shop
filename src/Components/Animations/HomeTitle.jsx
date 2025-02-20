@@ -7,8 +7,10 @@ export const HomeTitle = () => {
       <div data-position="top" className="card-init-carousel">
         <span className="card-init-carousel__text">
           • Jabónes Artesanales • Manos Cuerpo Cara • Naturales • Pieles
-          Sensibles • Efectividad • Idrata tu Piel • Apto Para Todo Tipo De Piel
-          • Jabónes Luneva
+          Sensibles • Efectividad • Idrata tu Piel • Apto Para Todo Tipo De
+          Pieles • Jabónes Luneva • Jabónes Artesanales • Manos Cuerpo Cara •
+          Naturales • Pieles Sensibles • Efectividad • Idrata tu Piel • Apto
+          Para Todo Tipo De Pieles • Jabónes Luneva
         </span>
       </div>
       <div className="crad-init-image">
@@ -31,8 +33,10 @@ export const HomeTitle = () => {
       >
         <span className="card-init-carousel__text">
           • Jabónes Artesanales • Manos Cuerpo Cara • Naturales • Pieles
-          Sensibles • Efectividad • Idrata tu Piel • Apto Para Todo Tipo De Piel
-          • Jabónes Luneva
+          Sensibles • Efectividad • Idrata tu Piel • Apto Para Todo Tipo De
+          Pieles • Jabónes Luneva • Jabónes Artesanales • Manos Cuerpo Cara •
+          Naturales • Pieles Sensibles • Efectividad • Idrata tu Piel • Apto
+          Para Todo Tipo De Pieles • Jabónes Luneva
         </span>
       </div>
     </div>
