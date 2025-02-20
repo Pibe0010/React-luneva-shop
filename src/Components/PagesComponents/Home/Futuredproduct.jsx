@@ -5,9 +5,13 @@ import { Loader } from "../../Animations/Loader.jsx";
 import { useCart } from "../../../Context/CartContext.jsx";
 import { newTrolleySchema } from "../../../Schema/Error/CreateSchema.js";
 import { CircularText } from "../../Animations/CircularText.jsx";
+import { ToastAlert } from "../../Alerts/ToastAlert.jsx";
+import { useNavigate } from "react-router-dom";
+import { useUser } from "../../../Context/AutContext.jsx";
 const URL = import.meta.env.VITE_URL;
 
 export const Futuredproduct = ({ products }) => {
+  const user = useUser();
   const [currentProduct, setCurrentProduct] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
@@ -16,6 +20,7 @@ export const Futuredproduct = ({ products }) => {
   const { addToCart, addProduct } = useCart();
   const [loading, setLoading] = useState(true);
   const [hasOffers, setHasOffers] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -99,6 +104,16 @@ export const Futuredproduct = ({ products }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    if (!user) {
+      console.log("Usuario no autenticado. Redirigiendo al login...");
+      ToastAlert.fire({
+        icon: "error",
+        title: "Para comprar debe estar registrado",
+      });
+      navigate("/register");
+      return;
+    }
+
     // Datos a validar
     const data = { ID_product: product.ID_Product, products_amount };
 
@@ -144,7 +159,7 @@ export const Futuredproduct = ({ products }) => {
             className="home-offer-image"
           />
           <div className="home-offer-content">
-            <h2 className="home-card-title">Jabón de {product.name}</h2>
+            <h2 className="home-card-title">Jbn de {product.name}</h2>
             <p className="home-offer-description">{product.description}</p>
             <div className="home-offer-prices">
               <span className="home-offer-price-current">

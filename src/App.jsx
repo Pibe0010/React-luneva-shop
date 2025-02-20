@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router";
+import { Navigate, Route, Routes } from "react-router";
 import "./App.css";
 import { NotFoundPage } from "./Pages/NotFoundPage.jsx";
 import { HomePage } from "./Pages/HomePage.jsx";
@@ -31,6 +31,12 @@ import { SelectedPayMethod } from "./Components/PagesComponents/Stripe.jsx/Selec
 import { CheckoutForm } from "./Components/PagesComponents/Stripe.jsx/CheckoutForm.jsx";
 import { Success } from "./Components/PagesComponents/Stripe.jsx/Success.jsx";
 import { CancelPay } from "./Components/PagesComponents/Stripe.jsx/CancelPay.jsx";
+import { useUser } from "./Context/AutContext.jsx";
+
+const ProtectedRoute = ({ element }) => {
+  const user = useUser();
+  return user ? element : <Navigate to="/login" />;
+};
 
 const App = () => {
   return (
@@ -47,9 +53,18 @@ const App = () => {
       <Route path="/tickets" element={<TicketPurchasesPage />} />
       <Route path="/shipment" element={<ShipmentsPage />} />
       <Route path="/payment" element={<PaymentsPage />} />
-      <Route path="/payments/address" element={<InsertAddress />} />
-      <Route path="/payments/method" element={<SelectedPayMethod />} />
-      <Route path="/checkout" element={<CheckoutForm />} />
+      <Route
+        path="/payments/address"
+        element={<ProtectedRoute element={<InsertAddress />} />}
+      />
+      <Route
+        path="/payments/method"
+        element={<ProtectedRoute element={<SelectedPayMethod />} />}
+      />
+      <Route
+        path="/checkout"
+        element={<ProtectedRoute element={<CheckoutForm />} />}
+      />
       <Route path="/success" element={<Success />} />
       <Route path="/cancel" element={<CancelPay />} />
       <Route path="/trolley" element={<TrolleyPage />} />

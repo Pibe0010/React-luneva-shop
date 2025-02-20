@@ -28,12 +28,17 @@ export const useProductList = (token) => {
 
   const getProductList = async () => {
     try {
+      const headers = {
+        "Content-Type": "application/json",
+      };
+
+      // Agregar el token solo si existe (usuario autenticado)
+      if (token) {
+        headers.Authorization = `${token}`;
+      }
       const response = await fetch(`${URL}/product/list`, {
         method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `${token}`,
-        },
+        headers,
       });
 
       if (response.ok) {
@@ -56,14 +61,19 @@ export const useProductList = (token) => {
 
   const handleSearch = async (searchTerm) => {
     try {
+      const headers = {
+        "Content-Type": "application/json",
+      };
+
+      // Agregar el token solo si existe (usuario autenticado)
+      if (token) {
+        headers.Authorization = `${token}`;
+      }
       const response = await fetch(
         `${URL}/product/search?searchTerm=${searchTerm}`,
         {
           method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `${token}`,
-          },
+          headers,
         }
       );
 
