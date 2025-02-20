@@ -91,6 +91,7 @@ export const Login = ({ onSubmit }) => {
           <Link to="/license-agreement">
             Conozca el acuerdo de licencia de usuario
           </Link>
+          <Link to="/register">Registrarse</Link>
         </span>
       </div>
     </section>

@@ -96,7 +96,7 @@ export const Register = ({ onSubmit }) => {
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
-              <EyePassword idInput="password" />
+              <EyePassword idInput="password" className="container-eye" />
             </label>
           </div>
           {errorMessages && <p className="register-error">{errorMessages}</p>}
@@ -110,6 +110,7 @@ export const Register = ({ onSubmit }) => {
           <Link to="/license-agreement">
             Conozca el acuerdo de licencia de usuario
           </Link>
+          <Link to="/login">Login</Link>
         </span>
       </div>
     </section>
