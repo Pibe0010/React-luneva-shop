@@ -6,8 +6,8 @@ import { useCustomerList } from "../Hooks/PagesHooks/useCustomerList.js";
 import { MainLayout } from "../Layout/MainLayout.jsx";
 import { SortPage } from "../Components/NavPages/SortPage.jsx";
 import { ToggleMode } from "../Components/NavPages/ToggleMode.jsx";
-import { CustomerList } from "../Components/PagesComponents/CustomerList.jsx";
-import { CustomerListTable } from "../Components/PagesComponents/CustomerListTable.jsx";
+import { CustomerList } from "../Components/PagesComponents/Customer/CustomerList.jsx";
+import { CustomerListTable } from "../Components/PagesComponents/Customer/CustomerListTable.jsx";
 import { SearchPage } from "../Components/Navpages/SearchPage.jsx";
 import "../Styles/Pages/CustomerPage.css";
 

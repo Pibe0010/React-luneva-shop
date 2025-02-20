@@ -30,7 +30,7 @@ export const MoreTicket = ({ ticket }) => {
       )
     ),
   ];
-  console.log(uniqueDates);
+
   // Filtrar tickets según la fecha seleccionada
   const currentOrderTickets = listTicketUser.filter(
     (ticket) => new Date(ticket.createdAt).toLocaleString() == uniqueDates

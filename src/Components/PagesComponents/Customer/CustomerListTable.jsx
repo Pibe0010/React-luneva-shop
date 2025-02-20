@@ -1,5 +1,5 @@
+import { GetNormalizaDate } from "../../../Services/GetNormalizaDate.js";
 import "./CustomerListTable.css";
-/* import { MoreCustomer } from "./MoreCustomer.jsx"; */
 
 export const CustomerListTable = ({ customer }) => {
   return (
@@ -10,7 +10,7 @@ export const CustomerListTable = ({ customer }) => {
         <div className="customerTableHeadRowPhone headRow">Telefono</div>
         <div className="customerTableHeadRowEmail headRow">E-mail</div>
         <div className="customerTableHeadRowStatus headRow">Estado</div>
-        <div className="customerTableHeadRowActions headRow">Direccion</div>
+        <div className="customerTableHeadRowCreate headRow">Creado</div>
       </div>
       <div className="customerTableBody">
         {customer && customer.length > 0 ? (
@@ -36,12 +36,8 @@ export const CustomerListTable = ({ customer }) => {
               >
                 {customerItem.active ? "Activo" : "Inactivo"}
               </div>
-              <div className="customerTableBodyRowActions">
-                C/ {customerItem.address} Nro.{customerItem.street_number},
-                Piso. {customerItem.floor}, Puerta. {customerItem.ladder_door},
-                Codigo Postal. {customerItem.postal_code}, Pais.
-                {customerItem.country}, Cuidad. {customerItem.city}
-                {/* <MoreCustomer customer={customerItem} /> */}
+              <div className="customerTableBodyRowCreate">
+                {GetNormalizaDate(customerItem.createdAt).toLocaleDateString()}
               </div>
             </div>
           ))

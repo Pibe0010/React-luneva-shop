@@ -1,4 +1,5 @@
-import { MoreInfo } from "../InfoModal/MoreInfo.jsx";
+import { GetNormalizaDate } from "../../../Services/GetNormalizaDate.js";
+import { MoreInfo } from "../../InfoModal/MoreInfo.jsx";
 import "./CustomerList.css";
 
 export const CustomerList = ({ customer }) => {
@@ -6,24 +7,22 @@ export const CustomerList = ({ customer }) => {
   const active = customer.active ? "Activo" : "Inactivo";
   const activeColor = customer.active ? "green" : "red";
   const activeClass = customer.active ? "active" : "inactive";
-  const addressConcatenated = customer.address
-    ? `C/ ${customer.address} Nro.${customer.street_number}, Piso. ${customer.floor}, Puerta. ${customer.ladder_door}, Codigo Postal. ${customer.postal_code}, Pais. ${customer.country}, Cuidad. ${customer.city}`
-    : "Dirección no disponible";
+  const date = GetNormalizaDate(customer.createdAt).toLocaleDateString();
 
   const moreInfoFields = [
     { label: "Nombre", value: nameComplete, id: "element_customer_name" },
     { label: "Teléfono", value: customer.phone, id: "element_customer_phone" },
     { label: "Email", value: customer.email, id: "element_customer_email" },
     {
-      label: "Dirección",
-      value: addressConcatenated,
-      id: "element_customer_address",
-    },
-    {
       label: "Estado",
       value: active,
       id: "element_customer_active",
       color: activeColor,
+    },
+    {
+      label: "Creado",
+      value: date,
+      id: "element_customer_address",
     },
   ];
 

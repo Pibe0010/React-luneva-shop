@@ -69,16 +69,16 @@
   font-weight: 600;
 }
 
-.customerTableHeadRowActions,
-.customerTableBodyRowActions {
-  width: 600px;
+.customerTableHeadRowCreate,
+.customerTableBodyRowCreate {
+  width: 90px;
 }
 
-.customerTableHeadRowActions {
+.customerTableHeadRowCreate {
   padding-left: 1px;
 }
 
-.customerTableBodyRowActions {
+.customerTableBodyRowCreate {
   display: flex;
   align-items: center;
 }
