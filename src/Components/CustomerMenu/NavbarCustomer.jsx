@@ -1,6 +1,15 @@
+import { useEffect, useState } from "react";
+import { useRole } from "../../Context/AutContext.jsx";
 import { NavLinks } from "../NavLinks/NavLinks.jsx";
 
 export const NavbarCustomer = ({ toggleMenu }) => {
+  const role = useRole();
+  const [isLogged, setIsLogged] = useState(false);
+
+  useEffect(() => {
+    setIsLogged(!!role);
+  }, [role]);
+
   return (
     <>
       <NavLinks className="link" name="HOME" url="/" onClick={toggleMenu} />
@@ -16,12 +25,14 @@ export const NavbarCustomer = ({ toggleMenu }) => {
         url="/products"
         onClick={toggleMenu}
       />
-      <NavLinks
-        className="link"
-        name="REGISTRARSE"
-        url="/register"
-        onClick={toggleMenu}
-      />
+      {!isLogged && (
+        <NavLinks
+          className="link"
+          name="REGISTRARSE"
+          url="/register"
+          onClick={toggleMenu}
+        />
+      )}
       <NavLinks
         className="link"
         name="LOGIN"
