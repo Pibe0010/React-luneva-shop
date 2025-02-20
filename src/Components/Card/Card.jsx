@@ -2,10 +2,15 @@ import { useState } from "react";
 import { useCart } from "../../Context/CartContext.jsx";
 import "./Card.css";
 import { newTrolleySchema } from "../../Schema/Error/CreateSchema.js";
+import { useUser } from "../../Context/AutContext.jsx";
+import { ToastAlert } from "../Alerts/ToastAlert.jsx";
+import { useNavigate } from "react-router-dom";
 
 export const Card = ({ title, btnName, src, alt, description, price, id }) => {
+  const user = useUser();
   const [products_amount, setProducts_amount] = useState("1");
   const { addToCart, addProduct } = useCart();
+  const navigate = useNavigate();
 
   const handleAddToCart = async (data) => {
     await addToCart(data, addProduct);
@@ -13,6 +18,16 @@ export const Card = ({ title, btnName, src, alt, description, price, id }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (!user) {
+      console.log("Usuario no autenticado. Redirigiendo al login...");
+      ToastAlert.fire({
+        icon: "error",
+        title: "Para comprar debe estar registrado",
+      });
+      navigate("/register");
+      return;
+    }
 
     // Datos a validar
     const data = { ID_product: id, products_amount };

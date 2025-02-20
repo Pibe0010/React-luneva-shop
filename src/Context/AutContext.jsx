@@ -7,7 +7,7 @@ export const AuthContext = createContext();
 export const RoleContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useLocalStorage("session", "");
+  const [user, setUser] = useLocalStorage("session", null);
   const [userInfo, setUserInfo] = useState(null);
   const [role, setRole] = useState("");
 
@@ -16,6 +16,8 @@ export const AuthProvider = ({ children }) => {
     if (user) {
       const { role } = getUserDataToken(user);
       setRole(role);
+    } else {
+      setRole("");
     }
 
     return () => {};

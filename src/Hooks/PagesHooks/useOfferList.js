@@ -28,12 +28,17 @@ export const useOfferList = (token) => {
 
   const getOfferList = async () => {
     try {
+      const headers = {
+        "Content-Type": "application/json",
+      };
+
+      // Agregar el token solo si existe (usuario autenticado)
+      if (token) {
+        headers.Authorization = `${token}`;
+      }
       const response = await fetch(`${URL}/offers/list`, {
         method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `${token}`,
-        },
+        headers,
       });
 
       if (response.ok) {

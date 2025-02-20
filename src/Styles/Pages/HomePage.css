@@ -102,8 +102,8 @@
   border: 1px solid #eae9e9;
   border-radius: 15px;
   overflow: hidden;
-  max-width: 870px;
-  height: 470px;
+  max-width: 990px;
+  height: 570px;
   margin: 40px auto;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   background-color: #18181b;
@@ -140,8 +140,8 @@
 }
 
 .home-offer-image {
-  width: 400px;
-  height: 470px;
+  width: 500px;
+  height: 570px;
   object-fit: cover;
   border: 1px solid #d8d8d8;
   border-radius: 5px;
@@ -157,7 +157,7 @@
 
 .home-card-title {
   margin: 0 0 10px;
-  font-size: clamp(1.9rem, 3vw, 3em);
+  font-size: clamp(1.9rem, 3vw, 2.4em);
   color: #fff;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
