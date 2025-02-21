@@ -2,20 +2,17 @@ import { MoreInfo } from "../../InfoModal/MoreInfo.jsx";
 
 export const MoreShipment = ({ shipment }) => {
   const statusTranslations = {
-    earring: "Pendiente",
+    pending: "Pendiente",
     sent: "Enviado",
-    delivered: "Entregado",
     cancelled: "Cancelado",
   };
 
   const getStatusClass = (status) => {
     switch (status) {
-      case "earring":
+      case "pending":
         return "royalblue";
       case "sent":
         return "green";
-      case "delivered":
-        return "grey";
       case "cancelled":
         return "red";
       default:

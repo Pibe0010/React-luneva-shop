@@ -34,7 +34,7 @@ export const MoreOrder = ({ order }) => {
     { label: "E-mail", value: "" + order.email },
     { label: "Producto", value: "" + order.name },
     { label: "Precio", value: "" + order.price + " €" },
-    { label: "Cantidad", value: "" + order.quantity + " u." },
+    { label: "Cantidad", value: "" + order.product_amount + " u." },
     { label: "Descuento", value: "" + discount },
     {
       label: "Estado",

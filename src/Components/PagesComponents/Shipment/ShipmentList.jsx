@@ -6,7 +6,6 @@ export const ShipmentList = ({ shipment }) => {
   const statusTranslations = {
     pending: "Pendiente",
     sent: "Enviado",
-    delivered: "Entregado",
     cancelled: "Cancelado",
   };
 
