@@ -32,6 +32,7 @@ import { CheckoutForm } from "./Components/PagesComponents/Stripe.jsx/CheckoutFo
 import { Success } from "./Components/PagesComponents/Stripe.jsx/Success.jsx";
 import { CancelPay } from "./Components/PagesComponents/Stripe.jsx/CancelPay.jsx";
 import { useUser } from "./Context/AutContext.jsx";
+import { AddressPage } from "./Pages/AddressPage.jsx";
 
 const ProtectedRoute = ({ element }) => {
   const user = useUser();
@@ -52,6 +53,7 @@ const App = () => {
       <Route path="/create-product" element={<CreateProductPage />} />
       <Route path="/tickets" element={<TicketPurchasesPage />} />
       <Route path="/shipment" element={<ShipmentsPage />} />
+      <Route path="/address" element={<AddressPage />} />
       <Route path="/payment" element={<PaymentsPage />} />
       <Route
         path="/payments/address"

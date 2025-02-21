@@ -14,7 +14,6 @@ export const ShipmentListTable = ({
   const statusTranslations = {
     pending: "Pendiente",
     sent: "Enviado",
-    delivered: "Entregado",
     cancelled: "Cancelado",
   };
 
@@ -55,7 +54,9 @@ export const ShipmentListTable = ({
               <div className="shipmentTableBodyRowCuantity">
                 {shipmentItem.product_amount} u
               </div>
-              <div className={`orderTableBodyRowStatus ${shipmentItem.status}`}>
+              <div
+                className={`shipmentTableBodyRowStatus ${shipmentItem.status}`}
+              >
                 {statusTranslations[shipmentItem.status]}
               </div>
               <div className="shipmentTableBodyRowActions">

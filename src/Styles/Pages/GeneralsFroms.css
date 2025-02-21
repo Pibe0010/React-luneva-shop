@@ -143,13 +143,17 @@
 
 /* Clases para el estado  */
 .orderTableBodyRowStatus.earring,
-.orderTableBodyRowStatus.pending {
+.orderTableBodyRowStatus.pending,
+.shipmentTableBodyRowStatus.earring,
+.shipmentTableBodyRowStatus.pending {
   color: royalblue;
   font-weight: 600;
 }
 
 .orderTableBodyRowStatus.sent,
-.orderTableBodyRowStatus.paid {
+.orderTableBodyRowStatus.paid,
+.shipmentTableBodyRowStatus.sent,
+.shipmentTableBodyRowStatus.paid {
   color: green;
   font-weight: 600;
 }
@@ -159,7 +163,8 @@
   font-weight: 600;
 }
 
-.orderTableBodyRowStatus.cancelled {
+.orderTableBodyRowStatus.cancelled,
+.shipmentTableBodyRowStatus.cancelled {
   color: red;
   font-weight: 600;
 }
