@@ -1,0 +1,143 @@
+.addressTable {
+  width: 100%;
+  border-radius: 8px;
+  padding: 10px 15px;
+  margin-top: 15px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+}
+
+.addressTableHead {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+  font-weight: bold;
+  text-align: start;
+  column-gap: 10px;
+  font-size: 1.2rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.addressTableBody {
+  display: flex;
+  flex-direction: column;
+}
+
+.addressTableBodyRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 0;
+  column-gap: 10px;
+  font-size: 1.1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  height: 45px;
+  border-bottom: 1px solid #eee;
+}
+
+.addressTableBodyRow:hover {
+  background-color: rgba(1, 1, 1, 0.2);
+}
+
+/* Puedes ajustar los estilos adicionales según sea necesario */
+
+.addressTableHeadName,
+.addressTableBodyRowName {
+  width: 210px;
+}
+
+.addressTableHeadRowStreet,
+.addressTableBodyRowStreet {
+  width: 210px;
+}
+
+.addressTableHeadRowStreet {
+  padding-left: 0;
+}
+
+.addressTableHeadRowNumber,
+.addressTableBodyRowNumber {
+  width: 100px;
+}
+
+.addressTableHeadRowNumber {
+  padding-left: 0;
+}
+
+.addressTableHeadRowFloor,
+.addressTableBodyRowFloor {
+  width: 100px;
+}
+
+.addressTableHeadRowFloor {
+  padding-left: 0;
+}
+
+.addressTableHeadRowLadderDoor,
+.addressTableBodyRowLadderDoor {
+  width: 150px;
+}
+
+.addressTableHeadRowLadderDoor {
+  padding-left: 0;
+}
+
+.addressTableHeadRowCity,
+.addressTableBodyRowCity {
+  width: 210px;
+}
+
+.addressTableBodyRowCity {
+  padding-left: 1px;
+}
+
+.addressTableHeadRowPostalCode,
+.addressTableBodyRowPostalCode {
+  width: 200px;
+}
+
+.addressTableHeadRowPostalCode {
+  padding-left: 18px;
+}
+
+.addressTableBodyRowPostalCode {
+  padding-left: 20px;
+}
+
+.addressTableHeadRowCountry,
+.addressTableBodyRowCountry {
+  width: 100px;
+}
+
+.addressTableHeadRowCountry {
+  padding-left: 0;
+}
+
+.addressTableHeadRowCreate,
+.addressTableBodyRowCreate {
+  width: 100px;
+}
+
+.addressTableHeadRowCreate {
+  padding-left: 0;
+}
+
+.addressTableBodyRowStatus {
+  font-weight: 600;
+}
+
+.addressTableHeadRowActions,
+.addressTableBodyRowActions {
+  width: 100px;
+}
+
+.addressTableHeadRowActions {
+  padding-left: 5px;
+}
+
+.addressTableBodyRowActions {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}

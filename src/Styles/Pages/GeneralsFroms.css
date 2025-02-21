@@ -146,6 +146,7 @@
 .orderTableBodyRowStatus.pending,
 .ticketTableBodyRowStatus.earring,
 .ticketTableBodyRowStatus.pending {
+
   color: royalblue;
   font-weight: 600;
 }
