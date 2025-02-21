@@ -4,7 +4,6 @@ import { MoreInfo } from "../../InfoModal/MoreInfo.jsx";
 export const MoreOffer = ({ offer }) => {
   const active = offer.active ? "Activo" : "Inactivo";
   const activeClass = offer.active ? "green" : "red";
-  console.log(offer);
 
   const moreInfoFields = [
     { label: "Nombre", value: "" + offer.name },

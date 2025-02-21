@@ -16,6 +16,7 @@
   text-align: start;
   column-gap: 10px;
   font-size: 1.2rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .offerTableBody {
@@ -32,6 +33,7 @@
   font-size: 1.1rem;
   height: 45px;
   border-bottom: 1px solid #eee;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .offerTableBodyRow:hover {

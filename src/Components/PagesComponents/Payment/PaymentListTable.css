@@ -1,5 +1,5 @@
 .paymentTable {
-  width: 100rem;
+  width: 120rem;
   border-radius: 8px;
   padding: 10px 15px;
   margin-top: 15px;
@@ -16,6 +16,7 @@
   text-align: start;
   column-gap: 10px;
   font-size: 1.2rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .paymentTableBody {
@@ -30,6 +31,7 @@
   padding-left: 0;
   column-gap: 10px;
   font-size: 1.1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   height: 45px;
   border-bottom: 1px solid #eee;
 }
@@ -42,30 +44,30 @@
 
 .paymentTableHeadRowRef,
 .paymentTableBodyRowRef {
-  width: 130px;
+  width: 200px;
 }
 
 .paymentTableHeadRowName,
 .paymentTableBodyRowName {
-  width: 150px;
+  width: 250px;
 }
 
 .paymentTableHeadRowName {
-  padding-left: 53px;
+  padding-left: 70px;
 }
 
 .paymentTableHeadRowProduct,
 .paymentTableBodyRowProduct {
-  width: 120px;
+  width: 200px;
 }
 
 .paymentTableHeadRowProduct {
-  padding-left: 43px;
+  padding-left: 53px;
 }
 
 .paymentTableHeadRowCuantity,
 .paymentTableBodyRowCuantity {
-  width: 100px;
+  width: 150px;
 }
 
 .paymentTableHeadRowCuantity {
@@ -78,25 +80,25 @@
 
 .paymentTableHeadRowPrice,
 .paymentTableBodyRowPrice {
-  width: 100px;
+  width: 150px;
 }
 
 .paymentTableHeadRowPrice {
-  padding-left: 39px;
+  padding-left: 37px;
 }
 
 .paymentTableHeadRowPayment,
 .paymentTableBodyRowPayment {
-  width: 100px;
+  width: 150px;
 }
 
 .paymentTableHeadRowPayment {
-  padding-left: 35px;
+  padding-left: 30px;
 }
 
 .paymentTableHeadRowIva,
 .paymentTableBodyRowIva {
-  width: 100px;
+  width: 150px;
 }
 
 .paymentTableHeadRowIva {
@@ -109,29 +111,29 @@
 
 .paymentTableHeadRowTotal,
 .paymentTableBodyRowTotal {
-  width: 110px;
+  width: 150px;
 }
 
 .paymentTableHeadRowTotal {
-  padding-left: 26px;
+  padding-left: 16px;
 }
 
 .paymentTableHeadRowMethod,
 .paymentTableBodyRowMethod {
-  width: 120px;
+  width: 150px;
 }
 
 .paymentTableHeadRowMethod {
-  padding-left: 27px;
+  padding-left: 1px;
 }
 
 .paymentTableHeadRowStatus,
 .paymentTableBodyRowStatus {
-  width: 100px;
+  width: 200px;
 }
 
 .paymentTableHeadRowStatus {
-  padding-left: 25px;
+  padding-left: 6px;
 }
 
 .paymentTableBodyRowStatus {
@@ -140,7 +142,7 @@
 
 .paymentTableHeadRowCreate,
 .paymentTableBodyRowCreate {
-  width: 120px;
+  width: 200px;
 }
 
 .paymentTableHeadRowCreate {
@@ -148,16 +150,16 @@
 }
 
 .paymentTableBodyRowCreate {
-  padding-left: 15px;
+  padding-left: 17px;
 }
 
 .paymentTableHeadRowUpdate,
 .paymentTableBodyRowUpdate {
-  width: 120px;
+  width: 200px;
 }
 
 .paymentTableHeadRowUpdate {
-  padding-left: 27px;
+  padding-left: 18px;
 }
 
 .paymentTableBodyRowUpdate {

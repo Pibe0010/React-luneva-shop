@@ -114,6 +114,8 @@ export const CreateOffer = ({ onAddOffer, token }) => {
     setDiscount_rate("");
     setStart_date("");
     setEnding_date("");
+
+    setShowModal(false);
   };
 
   // Limpiar los errores
