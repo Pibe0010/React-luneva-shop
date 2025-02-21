@@ -2,10 +2,10 @@ import { GetNormalizaDate } from "../../../Services/GetNormalizaDate.js";
 import { MoreInfo } from "../../InfoModal/MoreInfo.jsx";
 
 export const MorePayment = ({ payment }) => {
+  console.log(payment);
   const statusTranslations = {
     pending: "Pendiente",
-    sent: "Enviado",
-    delivered: "Entregado",
+    paid: "Pagado",
     cancelled: "Cancelado",
   };
 
@@ -13,10 +13,8 @@ export const MorePayment = ({ payment }) => {
     switch (status) {
       case "pending":
         return "royalblue";
-      case "sent":
+      case "paid":
         return "green";
-      case "delivered":
-        return "grey";
       case "cancelled":
         return "red";
       default:

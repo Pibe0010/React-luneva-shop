@@ -22,7 +22,7 @@ export const TicketListTable = ({ ticket, deleteTicket }) => {
         <div className="ticketTableHeadRowPrice headRow">Precio</div>
         <div className="ticketTableHeadRowCuantity headRow">Cantidad</div>
         <div className="TicketTableHeadRowTotalPrice headRow">Total</div>
-        <div className="orderTableHeadRowStatus headRow">Estado</div>
+        <div className="ticketTableHeadRowStatus headRow">Estado</div>
         <div className="ticketTableHeadRowCreate headRow">Creado</div>
         <div className="ticketTableHeadRowActions headRow">Acciones</div>
       </div>
@@ -47,7 +47,7 @@ export const TicketListTable = ({ ticket, deleteTicket }) => {
                 {ticketItems.total_amount} €
               </div>
               <div
-                className={`orderTableBodyRowStatus ${ticketItems.status.toLowerCase()}`}
+                className={`ticketTableBodyRowStatus ${ticketItems.status.toLowerCase()}`}
               >
                 {statusTranslations[ticketItems.status.toLowerCase()] ||
                   ticketItems.status}

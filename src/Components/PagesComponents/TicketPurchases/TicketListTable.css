@@ -1,5 +1,5 @@
 .ticketTable {
-  width: 100rem;
+  width: 120rem;
   border-radius: 8px;
   padding: 10px 15px;
   margin-top: 15px;
@@ -16,6 +16,7 @@
   text-align: start;
   column-gap: 10px;
   font-size: 1.2rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .ticketTableBody {
@@ -32,6 +33,7 @@
   font-size: 1.1rem;
   height: 45px;
   border-bottom: 1px solid #eee;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .ticketTableBodyRow:hover {
@@ -42,61 +44,70 @@
 
 .ticketTableHeadRowRef,
 .ticketTableBodyRowRef {
-  width: 110px;
+  width: 200px;
 }
 
 .ticketTableHeadRowName,
 .ticketTableBodyRowName {
-  width: 110px;
+  width: 210px;
 }
 
 .ticketTableHeadRowName {
-  padding-left: 33px;
+  padding-left: 105px;
 }
 
 .ticketTableHeadRowProduct,
 .ticketTableBodyRowProduct {
-  width: 120px;
+  width: 200px;
 }
 
 .ticketTableHeadRowProduct {
-  padding-left: 26px;
+  padding-left: 86px;
 }
 
 .ticketTableHeadRowPrice,
 .ticketTableBodyRowPrice {
-  width: 100px;
+  width: 200px;
 }
 
 .ticketTableHeadRowPrice {
-  padding-left: 22px;
+  padding-left: 72px;
 }
 
 .ticketTableHeadRowCuantity,
 .ticketTableBodyRowCuantity {
-  width: 100px;
+  width: 200px;
 }
 
-.ticketTableBodyRowCuantity {
-  padding-left: 13px;
+.ticketTableHeadRowCuantity {
+  padding-left: 30px;
 }
 
 .TicketTableHeadRowTotalPrice,
 .ticketTableBodyRowTotalPrice {
-  width: 100px;
+  width: 200px;
 }
 
 .TicketTableHeadRowTotalPrice {
-  padding-left: 10px;
+  padding-left: 40px;
+}
+
+.ticketTableHeadRowStatus,
+.ticketTableBodyRowStatus {
+  width: 200px;
+}
+
+.ticketTableHeadRowStatus {
+  padding-left: 30px;
 }
 
 .ticketTableHeadRowCreate,
 .ticketTableBodyRowCreate {
-  width: 100px;
+  width: 200px;
 }
 
 .ticketTableHeadRowCreate {
-  padding-left: 5px;
+  padding-left: 15px;
 }
 
 .ticketTableHeadRowActions,
@@ -105,7 +116,7 @@
 }
 
 .ticketTableHeadRowActions {
-  padding-left: 8px;
+  padding-left: 5px;
 }
 
 .ticketTableBodyRowActions {

@@ -1,8 +1,6 @@
 import { useUser } from "../../../Context/AutContext.jsx";
 import { DeleteOrderModal } from "./DeleteOrderModal.jsx";
 import { MoreOrder } from "./MoreOrder.jsx";
-/* import { StatusOrderController } from "./StatusOrderController.jsx"; */
-/* import { UpdateOrder } from "./UpdateOrder.jsx"; */
 import { GetNormalizaDate } from "../../../Services/GetNormalizaDate.js";
 import "./OrderListTable.css";
 
@@ -60,18 +58,6 @@ export const OrderListTable = ({ order, deleteOrder }) => {
               </div>
               <div className="orderTableBodyRowActions">
                 <MoreOrder order={orderItem} />
-                {/* <StatusOrderController
-                  id={orderItem.ID_order}
-                  isActive={orderItem.active}
-                  activeOrder={activeOrder}
-                  token={token}
-                /> 
-                <UpdateOrder
-                  id={orderItem.ID_order}
-                  onUpdateOrder={updateOrder}
-                  offerData={orderItem}
-                  formTypes="order"
-                />*/}
                 <DeleteOrderModal
                   id={orderItem.ID_order}
                   onDelete={deleteOrder}

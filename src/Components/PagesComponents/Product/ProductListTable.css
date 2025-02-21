@@ -26,6 +26,7 @@
   font-weight: bold;
   border-bottom: 1px solid #ccc;
   font-size: 1.2rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 #productTableBody {
@@ -52,6 +53,7 @@
   height: 45px;
   font-size: 1.1rem;
   border-bottom: 1px solid #eee;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .productTableBodyRow:last-child {

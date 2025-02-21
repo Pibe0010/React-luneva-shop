@@ -111,6 +111,8 @@ export const CreateProduct = ({ onAddProduct, token }) => {
     setStock("");
     setCategory("");
     setActive(false);
+
+    setShowModal(false);
   };
 
   // Limpiar los errores
