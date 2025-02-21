@@ -1,6 +1,6 @@
 #element_ticket_container {
   width: 340px;
-  height: 250px;
+  height: 260px;
   margin: 15px 10px 15px 0;
   padding: 20px 20px 5px 20px;
   border-radius: 8px;
@@ -53,6 +53,7 @@
   font-size: clamp(1.2rem, 3vw, 1.2rem);
   color: #555555;
   margin: 5px 0;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .mainInsideSub strong {

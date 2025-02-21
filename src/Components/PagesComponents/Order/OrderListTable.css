@@ -1,5 +1,5 @@
 .orderTable {
-  width: 100rem;
+  width: 120rem;
   border-radius: 8px;
   padding: 10px 15px;
   margin-top: 15px;
@@ -16,6 +16,7 @@
   text-align: start;
   column-gap: 10px;
   font-size: 1.2rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .orderTableBody {
@@ -32,6 +33,7 @@
   font-size: 1.1rem;
   height: 45px;
   border-bottom: 1px solid #eee;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .orderTableBodyRow:hover {
@@ -42,79 +44,79 @@
 
 .orderTableHeadRowRef,
 .orderTableBodyRowRef {
-  width: 110px;
+  width: 200px;
 }
 
 .orderTableHeadRowName,
 .orderTableBodyRowName {
-  width: 110px;
+  width: 250px;
 }
 
 .orderTableHeadRowName {
-  padding-left: 33px;
+  padding-left: 100px;
 }
 
 .orderTableHeadRowEmail,
 .orderTableBodyRowEmail {
-  width: 120px;
+  width: 270px;
 }
 
 .orderTableHeadRowEmail {
-  padding-left: 30px;
+  padding-left: 80px;
 }
 
 .orderTableHeadRowProduct,
 .orderTableBodyRowProduct {
-  width: 100px;
+  width: 200px;
 }
 
 .orderTableHeadRowProduct {
-  padding-left: 23px;
+  padding-left: 63px;
 }
 
 .orderTableHeadRowPrice,
 .orderTableBodyRowPrice {
-  width: 100px;
+  width: 200px;
 }
 
 .orderTableHeadRowPrice {
-  padding-left: 19px;
+  padding-left: 49px;
 }
 
 .orderTableHeadRowCuantity,
 .orderTableBodyRowCuantity {
-  width: 100px;
+  width: 200px;
 }
 
-.orderTableBodyRowCuantity {
-  padding-left: 15px;
+.orderTableHeadRowCuantity {
+  padding-left: 10px;
 }
 
 .orderTableHeadRowDiscount,
 .orderTableBodyRowDiscount {
-  width: 100px;
+  width: 200px;
 }
 
 .orderTableBodyRowDiscount {
-  padding-left: 20px;
+  padding-left: 10px;
 }
 
 .orderTableHeadRowStatus,
 .orderTableBodyRowStatus {
-  width: 90px;
+  width: 200px;
 }
 
 .orderTableHeadRowStatus {
-  padding-left: 8px;
+  padding-left: 21px;
 }
 
 .orderTableHeadRowCreate,
 .orderTableBodyRowCreate {
-  width: 120px;
+  width: 200px;
 }
 
 .orderTableHeadRowCreate {
-  padding-left: 3px;
+  padding-left: 15px;
 }
 
 .orderTableBodyRowStatus {
@@ -123,7 +125,7 @@
 
 .orderTableHeadRowActions,
 .orderTableBodyRowActions {
-  width: 150px;
+  width: 110px;
 }
 
 .orderTableHeadRowActions {
