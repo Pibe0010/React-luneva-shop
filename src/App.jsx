@@ -23,7 +23,6 @@ import { ForgotPassword } from "./Pages/ForgotPassword.jsx";
 import { UserLicenseAgreement } from "./Pages/UserLicenseAgreement.jsx";
 import { ResetPassword } from "./Pages/ResetPassword.jsx";
 import { CustomersPage } from "./Pages/CustomersPage.jsx";
-import { ActivateAccount } from "./Pages/activateAccount.jsx";
 import "./Styles/Pages/GeneralsFroms.css";
 import { SpecialOfferPage } from "./Pages/SpecialOfferPage.jsx";
 import { InsertAddress } from "./Components/PagesComponents/Shipping_address/InsertAddress.jsx";
@@ -33,6 +32,7 @@ import { Success } from "./Components/PagesComponents/Stripe.jsx/Success.jsx";
 import { CancelPay } from "./Components/PagesComponents/Stripe.jsx/CancelPay.jsx";
 import { useUser } from "./Context/AutContext.jsx";
 import { AddressPage } from "./Pages/AddressPage.jsx";
+import { ActivateAccount } from "./Pages/ActivateAccount.jsx";
 
 const ProtectedRoute = ({ element }) => {
   const user = useUser();
