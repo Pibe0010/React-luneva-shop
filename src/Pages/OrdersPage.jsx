@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useUser } from "../Context/AutContext.jsx";
 import { useOrderList } from "../Hooks/PagesHooks/useOrderList.js";
 import { MainLayout } from "../Layout/MainLayout.jsx";
-import { SearchPage } from "../Components/Navpages/SearchPage.jsx";
+
 import { FilterPage } from "../Components/NavPages/FilterPage.jsx";
 import { SortPage } from "../Components/NavPages/SortPage.jsx";
 import { ToggleMode } from "../Components/NavPages/ToggleMode.jsx";
@@ -10,6 +10,7 @@ import { OrderList } from "../Components/PagesComponents/Order/OrderList.jsx";
 import { MoreOrder } from "../Components/PagesComponents/Order/MoreOrder.jsx";
 import { DeleteOrderModal } from "../Components/PagesComponents/Order/DeleteOrderModal.jsx";
 import { OrderListTable } from "../Components/PagesComponents/Order/OrderListTable.jsx";
+import { SearchPage } from "../Components/Navpages/SearchPage.jsx";
 
 export const OrdersPage = () => {
   const token = useUser();

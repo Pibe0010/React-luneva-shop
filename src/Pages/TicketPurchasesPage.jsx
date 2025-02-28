@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useUser } from "../Context/AutContext.jsx";
 import { MainLayout } from "../Layout/MainLayout.jsx";
 import { useTicketList } from "../Hooks/PagesHooks/useTicketList.js";
-import { SearchPage } from "../Components/Navpages/SearchPage.jsx";
+
 import { FilterPage } from "../Components/NavPages/FilterPage.jsx";
 import { SortPage } from "../Components/NavPages/SortPage.jsx";
 import { ToggleMode } from "../Components/NavPages/ToggleMode.jsx";
@@ -10,6 +10,7 @@ import { TicketList } from "../Components/PagesComponents/TicketPurchases/Ticket
 import { MoreTicket } from "../Components/PagesComponents/TicketPurchases/MoreTicket.jsx";
 import { DeleteTicketModal } from "../Components/PagesComponents/TicketPurchases/DeleteTicketModal.jsx";
 import { TicketListTable } from "../Components/PagesComponents/TicketPurchases/TicketListTable.jsx";
+import { SearchPage } from "../Components/Navpages/SearchPage.jsx";
 
 export const TicketPurchasesPage = () => {
   const token = useUser();

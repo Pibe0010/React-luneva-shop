@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { FilterPage } from "../Components/NavPages/FilterPage.jsx";
-import { SearchPage } from "../Components/Navpages/SearchPage.jsx";
+
 import { SortPage } from "../Components/NavPages/SortPage.jsx";
 import { ToggleMode } from "../Components/NavPages/ToggleMode.jsx";
 import { DeletePaymentModal } from "../Components/PagesComponents/Payment/DeletePaymentModal.jsx";
@@ -11,6 +11,7 @@ import { useUser } from "../Context/AutContext.jsx";
 import { MainLayout } from "../Layout/MainLayout.jsx";
 import { usePaymentList } from "../Hooks/PagesHooks/usePaymentList.js";
 import { UpdatePayment } from "../Components/PagesComponents/Payment/UpdatePayment.jsx";
+import { SearchPage } from "../Components/Navpages/SearchPage.jsx";
 
 export const PaymentsPage = () => {
   const token = useUser();
