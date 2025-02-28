@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useUser } from "../Context/AutContext.jsx";
 import { useOfferList } from "../Hooks/PagesHooks/useOfferList.js";
 import { MainLayout } from "../Layout/MainLayout.jsx";
-import { SearchPage } from "../Components/Navpages/SearchPage.jsx";
+
 import { FilterPage } from "../Components/NavPages/FilterPage.jsx";
 import { SortPage } from "../Components/NavPages/SortPage.jsx";
 import { ToggleMode } from "../Components/NavPages/ToggleMode.jsx";
@@ -13,6 +13,7 @@ import { StatusOfferController } from "../Components/PagesComponents/Offer/Statu
 import { UpdateOffer } from "../Components/PagesComponents/Offer/UpdateOffer.jsx";
 import { DeleteOfferModal } from "../Components/PagesComponents/Offer/DeleteOfferModal.jsx";
 import { MoreOffer } from "../Components/PagesComponents/Offer/MoreOffer.jsx";
+import { SearchPage } from "../Components/Navpages/SearchPage.jsx";
 
 export const OffersPage = () => {
   const token = useUser();
@@ -27,7 +28,6 @@ export const OffersPage = () => {
     activeOffer,
     updateOffer,
   } = useOfferList(token);
-  console.log(filteredOfferList);
 
   const [isListView, setIsListView] = useState(() => window.innerWidth <= 860);
 
