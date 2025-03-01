@@ -13,10 +13,7 @@ export const HomeTitle = () => {
           Para Todo Tipo De Pieles • Jabónes Luneva
         </span>
       </div>
-      <div className="crad-init-image">
-        <img src="/img/luneva.png" alt="Logo" />
-        <img className="card-init-logo" src="/img/luneva.png" alt="Logo" />
-      </div>
+      <div className="crad-init-image"></div>
       <span className="card-init-title">LUNEVA SHOP</span>
       <p className="card-init-paragraph">
         Ofrecemos una exclusiva selección de jabones artesanales 100% naturales,

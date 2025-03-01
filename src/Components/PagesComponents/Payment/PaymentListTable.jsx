@@ -62,7 +62,7 @@ export const PaymentListTable = ({ payment, deletePayment, updatePayment }) => {
                 {paymentItem.payment_method}
               </div>
               <div
-                className={`orderTableBodyRowStatus ${paymentItem.status.toLowerCase()}`}
+                className={`paymentTableBodyRowStatus ${paymentItem.status.toLowerCase()}`}
               >
                 {statusTranslations[paymentItem.status.toLowerCase()] ||
                   paymentItem.status}

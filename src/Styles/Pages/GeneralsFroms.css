@@ -147,7 +147,9 @@
 .ticketTableBodyRowStatus.earring,
 .ticketTableBodyRowStatus.pending,
 .shipmentTableBodyRowStatus.earring,
-.shipmentTableBodyRowStatus.pending {
+.shipmentTableBodyRowStatus.pending,
+.paymentTableBodyRowStatus.earring,
+.paymentTableBodyRowStatus.pending {
   color: royalblue;
   font-weight: 600;
 }
@@ -157,7 +159,9 @@
 .ticketTableBodyRowStatus.sent,
 .ticketTableBodyRowStatus.paid,
 .shipmentTableBodyRowStatus.sent,
-.shipmentTableBodyRowStatus.paid {
+.shipmentTableBodyRowStatus.paid,
+.paymentTableBodyRowStatus.sent,
+.paymentTableBodyRowStatus.paid {
   color: green;
   font-weight: 600;
 }
@@ -170,7 +174,8 @@
 
 .orderTableBodyRowStatus.cancelled,
 .ticketTableBodyRowStatus.cancelled,
-.shipmentTableBodyRowStatus.cancelled {
+.shipmentTableBodyRowStatus.cancelled,
+.paymentTableBodyRowStatus.cancelled {
   color: red;
   font-weight: 600;
 }

@@ -577,7 +577,7 @@
 
 @media (max-width: 450px) {
   .home-container {
-    width: 410px;
+    width: 360px;
     height: auto;
     padding: 5px;
     margin: 0 1px;
@@ -588,7 +588,7 @@
   }
 
   .home-offer-card {
-    height: 640px;
+    height: 700px;
     flex-direction: column;
   }
 
@@ -606,8 +606,8 @@
   }
 
   .home-card-input {
-    top: -2rem;
-    right: -0.8rem;
+    top: -3rem;
+    right: -1.5rem;
   }
 
   .home-product-list {
@@ -682,7 +682,7 @@
   }
 
   .product-info-logo {
-    width: 250px;
+    width: 150px;
   }
   .not-found-offer {
     height: 650px;

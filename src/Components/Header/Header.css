@@ -164,7 +164,7 @@
 }
 @media (max-width: 450px) {
   .hamburger {
-    width: 45%;
+    width: 50%;
   }
   .nav {
     right: 1rem;
@@ -172,6 +172,7 @@
   }
   .navList {
     margin-right: 0;
+    gap: 30px;
   }
   .menuProfileNav {
     right: 1rem;

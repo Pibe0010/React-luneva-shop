@@ -68,6 +68,7 @@
     flex-wrap: wrap;
     align-items: flex-start;
     gap: 2rem;
+    width: 100%;
   }
 
   .footer-copyright {
@@ -79,7 +80,13 @@
   }
 }
 @media (max-width: 450px) {
+  .footer-container {
+    width: 95%;
+  }
   .footer-logo {
-    margin-left: 1.5rem;
+    margin-left: 1rem;
+  }
+  .footer-copyright p {
+    margin: 0 1.1px;
   }
 }
