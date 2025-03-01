@@ -1,5 +1,5 @@
 .paymentTable {
-  width: 120rem;
+  width: 100%;
   border-radius: 8px;
   padding: 10px 15px;
   margin-top: 15px;
@@ -44,61 +44,61 @@
 
 .paymentTableHeadRowRef,
 .paymentTableBodyRowRef {
-  width: 200px;
+  width: 120px;
 }
 
 .paymentTableHeadRowName,
 .paymentTableBodyRowName {
-  width: 250px;
+  width: 130px;
 }
 
 .paymentTableHeadRowName {
-  padding-left: 70px;
+  padding-left: 27px;
 }
 
 .paymentTableHeadRowProduct,
 .paymentTableBodyRowProduct {
-  width: 200px;
+  width: 100px;
 }
 
 .paymentTableHeadRowProduct {
-  padding-left: 53px;
+  padding-left: 13px;
 }
 
 .paymentTableHeadRowCuantity,
 .paymentTableBodyRowCuantity {
-  width: 150px;
+  width: 90px;
 }
 
 .paymentTableHeadRowCuantity {
-  padding-left: 29px;
+  padding-left: 0;
 }
 
 .paymentTableBodyRowCuantity {
-  padding-left: 15px;
+  padding-left: 0;
 }
 
 .paymentTableHeadRowPrice,
 .paymentTableBodyRowPrice {
-  width: 150px;
+  width: 100px;
 }
 
 .paymentTableHeadRowPrice {
-  padding-left: 37px;
+  padding-left: 22px;
 }
 
 .paymentTableHeadRowPayment,
 .paymentTableBodyRowPayment {
-  width: 150px;
+  width: 100px;
 }
 
 .paymentTableHeadRowPayment {
-  padding-left: 30px;
+  padding-left: 20px;
 }
 
 .paymentTableHeadRowIva,
 .paymentTableBodyRowIva {
-  width: 150px;
+  width: 100px;
 }
 
 .paymentTableHeadRowIva {
@@ -111,16 +111,16 @@
 
 .paymentTableHeadRowTotal,
 .paymentTableBodyRowTotal {
-  width: 150px;
+  width: 100px;
 }
 
 .paymentTableHeadRowTotal {
-  padding-left: 16px;
+  padding-left: 12px;
 }
 
 .paymentTableHeadRowMethod,
 .paymentTableBodyRowMethod {
-  width: 150px;
+  width: 80px;
 }
 
 .paymentTableHeadRowMethod {
@@ -129,7 +129,7 @@
 
 .paymentTableHeadRowStatus,
 .paymentTableBodyRowStatus {
-  width: 200px;
+  width: 80px;
 }
 
 .paymentTableHeadRowStatus {
@@ -142,7 +142,7 @@
 
 .paymentTableHeadRowCreate,
 .paymentTableBodyRowCreate {
-  width: 200px;
+  width: 100px;
 }
 
 .paymentTableHeadRowCreate {
@@ -155,7 +155,7 @@
 
 .paymentTableHeadRowUpdate,
 .paymentTableBodyRowUpdate {
-  width: 200px;
+  width: 100px;
 }
 
 .paymentTableHeadRowUpdate {
@@ -168,16 +168,16 @@
 
 .paymentTableHeadRowActions,
 .paymentTableBodyRowActions {
-  width: 150px;
+  width: 100px;
 }
 
 .paymentTableHeadRowActions {
-  padding-left: 45px;
+  padding-left: 15px;
 }
 
 .paymentTableBodyRowActions {
   display: flex;
   align-items: center;
   gap: 0;
-  padding-left: 30px;
+  padding-left: 3px;
 }

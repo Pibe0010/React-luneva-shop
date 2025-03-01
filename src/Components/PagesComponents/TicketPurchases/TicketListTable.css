@@ -1,5 +1,6 @@
 .ticketTable {
   width: 120rem;
+  max-width: 1800px;
   border-radius: 8px;
   padding: 10px 15px;
   margin-top: 15px;
