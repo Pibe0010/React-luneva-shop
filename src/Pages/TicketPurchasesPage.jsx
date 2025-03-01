@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useUser } from "../Context/AutContext.jsx";
 import { MainLayout } from "../Layout/MainLayout.jsx";
 import { useTicketList } from "../Hooks/PagesHooks/useTicketList.js";
-
 import { FilterPage } from "../Components/NavPages/FilterPage.jsx";
 import { SortPage } from "../Components/NavPages/SortPage.jsx";
 import { ToggleMode } from "../Components/NavPages/ToggleMode.jsx";
