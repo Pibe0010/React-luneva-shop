@@ -1,6 +1,6 @@
 import Flatpickr from "react-flatpickr";
 import "flatpickr/dist/flatpickr.css";
-import "./inputDate.css";
+import "./inputDates.css";
 
 export const Inputdate = ({
   value,
