@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { BtnFilters } from "../../Buttons/ButtonFilter/BtnFilters.jsx";
 import "./SideBarFilter.css";
-import { BtnFilterAction } from "../../Buttons/ButtonFilter/btnFilterAction.jsx";
+import { BtnFilterAction } from "../../Buttons/ButtonFilter/BtnFilterActions.jsx";
 
 export const SideBarFilter = ({ setFilter, onSort, defaultSort, products }) => {
   const [priceRange, setPriceRange] = useState(100);
