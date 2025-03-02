@@ -164,7 +164,7 @@
 }
 @media (max-width: 450px) {
   .header {
-    width: 75%;
+    width: 95%;
   }
   .hamburger {
     width: 110px;
@@ -174,7 +174,7 @@
     margin-bottom: 0;
   }
   .nav {
-    right: 0.1rem;
+    right: 1rem;
     top: 84px;
   }
   .menu {
@@ -185,7 +185,7 @@
     gap: 12px;
   }
   .menuProfileNav {
-    right: 0.1rem;
+    right: 1rem;
     top: 74px;
     gap: 10px;
   }
