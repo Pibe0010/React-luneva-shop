@@ -1,4 +1,4 @@
-import { Inputdate } from "../../Inputs/inputdate.jsx";
+import { Inputdate } from "../../Inputs/InputsDate.jsx";
 
 export const UpdateOfferFormModal = ({
   discount_rate,
