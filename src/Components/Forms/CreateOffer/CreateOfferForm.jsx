@@ -1,6 +1,6 @@
 import { useUser } from "../../../Context/AutContext.jsx";
 import { useUnsignedProductOffer } from "../../../Hooks/PagesHooks/useUnsignedProductOffer.js";
-import { Inputdate } from "../../Inputs/InputDate.jsx";
+import { Inputdate } from "../../Inputs/InputsDate.jsx";
 
 export const CreateOfferForm = ({
   products,
