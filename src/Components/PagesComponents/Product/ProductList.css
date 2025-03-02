@@ -1,5 +1,5 @@
 #product_list {
-  width: 100%x;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -29,5 +29,10 @@
 @media screen and (max-width: 645px) {
   #product_list {
     width: 320px;
+  }
+}
+@media screen and (max-width: 450px) {
+  #product_list {
+    margin-right: 1.2rem;
   }
 }
