@@ -1,4 +1,4 @@
-import "./trolleyBackBtns.css";
+import "./TrolleyBackBtn.css";
 export const TrolleyBackBtn = ({ url }) => {
   const handleClick = () => {
     window.location.href = url;
