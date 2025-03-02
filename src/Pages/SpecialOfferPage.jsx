@@ -4,7 +4,7 @@ import "../Styles/Pages/SpecialOfferPage.css";
 import { useOfferList } from "../Hooks/PagesHooks/useOfferList.js";
 import { useUser } from "../Context/AutContext.jsx";
 import { OffertitleAnimation } from "../Components/PagesComponents/SpecialOffer/OffertitleAnimation.jsx";
-import { SubTitleAnimate } from "../Components/PagesComponents/SpecialOffer/SubTitleanimate.jsx";
+import { SubTitleAnimate } from "../Components/PagesComponents/SpecialOffer/SubTitleAnimate.jsx";
 
 export const SpecialOfferPage = () => {
   const token = useUser();
