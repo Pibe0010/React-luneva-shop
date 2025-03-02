@@ -191,12 +191,13 @@
     translate: -10px 16px;
   }
 
-  .avatarProfileNav {
-    width: 25px;
-    height: 25px;
-  }
-
   .btn-perfilNav {
     font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 450px) {
+  .avatarProfileNav {
+    width: 20px;
+    height: 20px;
   }
 }

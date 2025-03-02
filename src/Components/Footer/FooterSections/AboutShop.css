@@ -11,7 +11,7 @@
 }
 
 .aboutText {
-  font-size: clamp(1.1rem, 3vw, 1.1em);
+  font-size: clamp(1rem, 3vw, 1.1em);
   color: #ffffff;
   opacity: 0.8;
   line-height: 1.5rem;
@@ -29,7 +29,7 @@
 }
 
 .aboutContactEmail {
-  font-size: clamp(1.3rem, 3vw, 1.1rem);
+  font-size: clamp(1.1rem, 3vw, 1.1rem);
   color: #ffffff;
   opacity: 0.8;
   line-height: 1.5rem;

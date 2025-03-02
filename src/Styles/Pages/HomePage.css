@@ -146,7 +146,7 @@
 }
 
 .home-offer-title {
-  font-size: clamp(2rem, 4.4vw, 2.5rem);
+  font-size: clamp(1.5rem, 4.4vw, 2.5rem);
   margin-bottom: 30px;
   margin-top: 40px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -175,7 +175,7 @@
 
 .home-card-title {
   margin: 0 0 10px;
-  font-size: clamp(1.9rem, 3vw, 2.4em);
+  font-size: clamp(1.5rem, 3vw, 2.4em);
   color: #fff;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -183,7 +183,7 @@
 .home-offer-description {
   margin: 0 0 15px;
   color: #fff;
-  font-size: clamp(1.2rem, 2.5vw, 1.5em);
+  font-size: clamp(1rem, 2.5vw, 1.5em);
   font-weight: bold;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -196,7 +196,7 @@
 }
 
 .home-offer-price-current {
-  font-size: clamp(1.6rem, 3vw, 1.7em);
+  font-size: clamp(1rem, 3vw, 1.7em);
   font-weight: bold;
   color: #fff;
   margin-right: 10px;
@@ -255,7 +255,7 @@
 }
 
 .not-found-offer-text {
-  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-size: clamp(1.1rem, 4vw, 2rem);
   font-weight: bold;
   font-family: "Times New Roman", Times, serif;
 }
@@ -267,7 +267,7 @@
 }
 
 .home-product-card-title {
-  font-size: clamp(2rem, 4.4vw, 2.5rem);
+  font-size: clamp(1.5rem, 4.4vw, 2.5rem);
   margin-bottom: 30px;
   margin-top: 7rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -389,7 +389,7 @@
 }
 
 .store-info-title {
-  font-size: clamp(2rem, 4.4vw, 2.5rem);
+  font-size: clamp(1.5rem, 4.4vw, 2.5rem);
   margin-bottom: 30px;
   margin-top: 2rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -423,13 +423,13 @@
 }
 
 .product-info-title {
-  font-size: clamp(2rem, 4.4vw, 2.5rem);
+  font-size: clamp(1.5rem, 4.4vw, 2.5rem);
   margin-bottom: 30px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .product-info-paragraph {
-  font-size: clamp(1.3rem, 2.4vw, 1.5rem);
+  font-size: clamp(1rem, 2.4vw, 1.5rem);
   font-weight: bold;
   display: flex;
   align-items: center;
@@ -455,7 +455,7 @@
 
 .product-info li {
   margin-bottom: 4px;
-  font-size: clamp(1.3rem, 1vw, 1.1rem);
+  font-size: clamp(1rem, 1vw, 1.1rem);
   font-weight: bold;
 }
 
@@ -577,7 +577,7 @@
 
 @media (max-width: 450px) {
   .home-container {
-    width: 360px;
+    width: 280px;
     height: auto;
     padding: 5px;
     margin: 0 1px;
@@ -606,6 +606,7 @@
   }
 
   .home-card-input {
+    position: static;
     top: -3rem;
     right: -1.5rem;
   }
@@ -628,15 +629,15 @@
     margin-left: 0;
     flex-direction: column;
     position: absolute;
-    top: 0.4rem;
+    top: 0.2rem;
     bottom: 0;
   }
   .next-btn {
-    right: 7rem;
+    right: 5.5rem;
     z-index: 5;
   }
   .prev-btn {
-    left: 8rem;
+    left: 6.5rem;
     z-index: 8;
   }
   .prev-btn,
@@ -652,7 +653,10 @@
   }
 
   .home-search-bar {
-    width: 90%;
+    width: 100%;
+  }
+  .home-search-bar form {
+    flex-direction: column;
   }
 
   .products {
