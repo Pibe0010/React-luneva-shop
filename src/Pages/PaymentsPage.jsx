@@ -11,7 +11,7 @@ import { useUser } from "../Context/AutContext.jsx";
 import { MainLayout } from "../Layout/MainLayout.jsx";
 import { usePaymentList } from "../Hooks/PagesHooks/usePaymentList.js";
 import { UpdatePayment } from "../Components/PagesComponents/Payment/UpdatePayment.jsx";
-import { SearchPage } from "../Components/Navpages/SearchPage.jsx";
+import { SearchPage } from "../Components/NavPages/SearchPages.jsx";
 
 export const PaymentsPage = () => {
   const token = useUser();

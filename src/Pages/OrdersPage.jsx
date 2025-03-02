@@ -10,7 +10,7 @@ import { OrderList } from "../Components/PagesComponents/Order/OrderList.jsx";
 import { MoreOrder } from "../Components/PagesComponents/Order/MoreOrder.jsx";
 import { DeleteOrderModal } from "../Components/PagesComponents/Order/DeleteOrderModal.jsx";
 import { OrderListTable } from "../Components/PagesComponents/Order/OrderListTable.jsx";
-import { SearchPage } from "../Components/Navpages/SearchPage.jsx";
+import { SearchPage } from "../Components/NavPages/SearchPages.jsx";
 
 export const OrdersPage = () => {
   const token = useUser();
