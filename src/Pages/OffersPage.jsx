@@ -12,7 +12,7 @@ import { StatusOfferController } from "../Components/PagesComponents/Offer/Statu
 import { UpdateOffer } from "../Components/PagesComponents/Offer/UpdateOffer.jsx";
 import { DeleteOfferModal } from "../Components/PagesComponents/Offer/DeleteOfferModal.jsx";
 import { MoreOffer } from "../Components/PagesComponents/Offer/MoreOffer.jsx";
-import { SearchPage } from "../Components/Navpages/SearchPage.jsx";
+import { SearchPage } from "../Components/NavPages/SearchPages.jsx";
 
 export const OffersPage = () => {
   const token = useUser();

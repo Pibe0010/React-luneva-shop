@@ -7,9 +7,8 @@ import { SortPage } from "../Components/NavPages/SortPage.jsx";
 import { ToggleMode } from "../Components/NavPages/ToggleMode.jsx";
 import { CustomerList } from "../Components/PagesComponents/Customer/CustomerList.jsx";
 import { CustomerListTable } from "../Components/PagesComponents/Customer/CustomerListTable.jsx";
-
 import "../Styles/Pages/CustomerPage.css";
-import { SearchPage } from "../Components/Navpages/SearchPage.jsx";
+import { SearchPage } from "../Components/NavPages/SearchPages.jsx";
 
 export const CustomersPage = () => {
   const token = useUser();

@@ -9,7 +9,7 @@ import { TicketList } from "../Components/PagesComponents/TicketPurchases/Ticket
 import { MoreTicket } from "../Components/PagesComponents/TicketPurchases/MoreTicket.jsx";
 import { DeleteTicketModal } from "../Components/PagesComponents/TicketPurchases/DeleteTicketModal.jsx";
 import { TicketListTable } from "../Components/PagesComponents/TicketPurchases/TicketListTable.jsx";
-import { SearchPage } from "../Components/Navpages/SearchPage.jsx";
+import { SearchPage } from "../Components/NavPages/SearchPages.jsx";
 
 export const TicketPurchasesPage = () => {
   const token = useUser();
