@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { updateOfferSchema } from "../../../Schema/Error/UpdateSchema.js";
 import { UpdateOfferFormModal } from "./UpdateOfferFormModal.jsx";
-import "./DinamicOfferFormModal.css";
+import "./DinamicOfferFormModals.css";
 
 export const DinamicOfferFormModal = ({
   onSubmit,
