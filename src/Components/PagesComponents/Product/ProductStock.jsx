@@ -3,7 +3,6 @@ import { useUser } from "../../../Context/AutContext.jsx";
 import { useProductList } from "../../../Hooks/PagesHooks/useProductList.js";
 import { ProductList } from "./ProductList.jsx";
 import { ToggleMode } from "../../NavPages/ToggleMode.jsx";
-import { SearchPage } from "../../Navpages/SearchPages.jsx";
 import { FilterPage } from "../../NavPages/FilterPage.jsx";
 import { SortPage } from "../../NavPages/SortPage.jsx";
 import { ProductListTable } from "./ProductListTable.jsx";
@@ -14,6 +13,7 @@ import { DeleteGenericModal } from "./DeleteGenericModal.jsx";
 import { CreateProduct } from "../../Forms/CreateProduct/CreateProduct.jsx";
 import "./ProductStock.css";
 import { InsertImg } from "./InsertImg.jsx";
+import { SearchPage } from "../../NavPages/SearchPages.jsx";
 
 export const ProductStock = () => {
   const token = useUser();
