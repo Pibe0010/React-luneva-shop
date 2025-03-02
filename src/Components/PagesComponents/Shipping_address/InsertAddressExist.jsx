@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useUser } from "../../../Context/AutContext.jsx";
 import { useAddressList } from "../../../Hooks/PagesHooks/useAddressList.js";
-import { DeleteAddressModal } from "./DeleteaddressModal.jsx";
+import { DeleteAddressModal } from "./DeleteAddressModal.jsx";
 import "./InsertAddressExist.css";
 import { SelectAddress } from "./SelectAddress.jsx";
 
