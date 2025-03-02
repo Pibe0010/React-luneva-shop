@@ -44,14 +44,14 @@
 }
 
 .info-card-content .info-card-title {
-  font-size: clamp(2.3rem, 4vw, 2rem);
+  font-size: clamp(1.5rem, 4vw, 2rem);
   font-weight: 700;
   margin-bottom: 8px;
   text-transform: capitalize;
 }
 
 .info-card-content .info-card-para {
-  font-size: clamp(1.5rem, 2vw, 1.2rem);
+  font-size: clamp(1.1rem, 2vw, 1.2rem);
   opacity: 0.8;
 }
 
@@ -61,7 +61,7 @@
 
 @media (max-width: 450px) {
   .infomation-card {
-    width: 500px;
+    width: 400px;
   }
 }
 

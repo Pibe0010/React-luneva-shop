@@ -14,7 +14,7 @@
 .shopFooter,
 .contactFooter,
 .saleFooter {
-  font-size: clamp(1.1rem, 2vw, 1.1em);
+  font-size: clamp(1rem, 2vw, 1.1em);
   color: #ffffff;
   opacity: 0.8;
   line-height: 2.5rem;
