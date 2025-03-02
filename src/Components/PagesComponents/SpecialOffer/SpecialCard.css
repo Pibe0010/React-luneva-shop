@@ -209,14 +209,21 @@
 
 @media (max-width: 450px) {
   .special-offer-card {
-    width: 400px;
+    width: 100%;
   }
   .special-card-image {
-    width: 220px;
+    width: 350px;
     height: 400px;
   }
   .special-card-content {
-    width: 400px;
+    width: 350px;
     gap: 10px;
+  }
+  .special-card-button {
+    margin-top: 0;
+  }
+  .special-card-input {
+    right: -1rem;
+    top: -3.6rem;
   }
 }

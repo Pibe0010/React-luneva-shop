@@ -84,7 +84,7 @@
 
 @media (max-width: 450px) {
   .special-offer-container {
-    width: 400px;
+    width: 350px;
     padding: 0;
     margin: 5px;
   }
@@ -100,12 +100,11 @@
   .special-offer {
     display: flex;
     flex-direction: column;
-    width: 400px;
+    width: 100%;
     height: 810px;
     margin-bottom: 8rem;
   }
-  .special-card-image {
-    width: 400px;
-    height: 400px;
+  .special-title {
+    margin: 1rem 0;
   }
 }

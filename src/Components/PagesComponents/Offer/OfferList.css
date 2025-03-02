@@ -1,5 +1,5 @@
 #element_offer_container {
-  width: 350px;
+  width: 100%;
   height: 270px;
   margin: 15px 10px 15px 0;
   padding: 20px 20px 5px 20px;
@@ -59,4 +59,9 @@
 .mainInsideSub strong {
   font-weight: bold;
   color: #333333;
+}
+@media screen and (max-width: 450px) {
+  .main_olist {
+    margin-right: 0.7rem;
+  }
 }
