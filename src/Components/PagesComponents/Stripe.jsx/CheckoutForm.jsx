@@ -1,5 +1,5 @@
 import "./StripePayments.css";
-import { CheckoutCard } from "./checkoutCard.jsx";
+import { CheckoutCard } from "./CheckoutCards.jsx";
 import { useUser } from "../../../Context/AutContext.jsx";
 import { useState } from "react";
 import { usePaymentListUser } from "../../../Hooks/PagesHooks/usePaymentListUser.js";
