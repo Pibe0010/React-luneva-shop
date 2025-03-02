@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { EyePassword } from "../../EyePassword/EyePassword.jsx";
-import "./ChangePassword.css";
+import "./ChangePasswords.css";
 import { changePasswordSchema } from "../../../Schema/Error/CreateSchema.js";
 import Swal from "sweetalert2";
 const URL = import.meta.env.VITE_URL;
