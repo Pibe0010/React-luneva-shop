@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { ButtonFooterRegister } from "../../Buttons/ButtonFooter/ButtonFooterRegister.jsx";
-import "./SingUpForOffers.css";
+import "./SingUpForOffer.css";
 import { Social } from "../../Socials/Social.jsx";
 
 export const SingUpForOffer = () => {
