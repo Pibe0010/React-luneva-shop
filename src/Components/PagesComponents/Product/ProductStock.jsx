@@ -3,7 +3,7 @@ import { useUser } from "../../../Context/AutContext.jsx";
 import { useProductList } from "../../../Hooks/PagesHooks/useProductList.js";
 import { ProductList } from "./ProductList.jsx";
 import { ToggleMode } from "../../NavPages/ToggleMode.jsx";
-import { SearchPage } from "../../Navpages/SearchPage.jsx";
+import { SearchPage } from "../../Navpages/SearchPages.jsx";
 import { FilterPage } from "../../NavPages/FilterPage.jsx";
 import { SortPage } from "../../NavPages/SortPage.jsx";
 import { ProductListTable } from "./ProductListTable.jsx";
