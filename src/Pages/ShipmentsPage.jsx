@@ -9,8 +9,8 @@ import { ToggleMode } from "../Components/NavPages/ToggleMode.jsx";
 import { ShipmentList } from "../Components/PagesComponents/Shipment/ShipmentList.jsx";
 import { MoreShipment } from "../Components/PagesComponents/Shipment/MoreShipment.jsx";
 import { DeleteShipmentModel } from "../Components/PagesComponents/Shipment/DeleteShipmentModel.jsx";
-import { UpdateShipment } from "../Components/PagesComponents/Shipment/UpdateShipment.jsx";
 import { SearchPage } from "../Components/Navpages/SearchPage.jsx";
+import { UpdateShipment } from "../Components/PagesComponents/Shipment/UpdateShipment.jsx";
 
 export const ShipmentsPage = () => {
   const token = useUser();
