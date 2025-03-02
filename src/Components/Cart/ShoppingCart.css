@@ -192,7 +192,7 @@
 
 @media (max-width: 450px) {
   .menuCartNav {
-    right: 0.1rem;
+    right: 1rem;
     top: 4.5rem;
     height: 400px;
     width: 270px;
