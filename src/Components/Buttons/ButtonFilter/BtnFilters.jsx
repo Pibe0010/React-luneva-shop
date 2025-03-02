@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./BtnFilter.css";
-import { BtnFilterAction } from "./btnFilterAction.jsx";
+import { BtnFilterAction } from "./BtnFilterActions.jsx";
 
 export const BtnFilters = ({ options, onSort, defaultSort }) => {
   const [selectedOption, setSelectedOption] = useState(defaultSort);
