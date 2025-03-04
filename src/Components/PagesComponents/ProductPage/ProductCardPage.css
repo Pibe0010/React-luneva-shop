@@ -134,9 +134,9 @@
 
 @media (max-width: 450px) {
   .product-card {
-    width: calc(100% - 20px);
+    width: 90%;
   }
   .product-card .productPage-price {
-    left: 14rem;
+    left: 12rem;
   }
 }

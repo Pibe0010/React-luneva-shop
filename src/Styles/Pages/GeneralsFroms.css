@@ -199,3 +199,11 @@
     display: none;
   }
 }
+@media screen and (max-width: 600px) {
+  #user_nav {
+    width: 80%;
+  }
+  .mainNav {
+    column-gap: 10px;
+  }
+}

@@ -24,7 +24,7 @@ export const CreateOfferForm = ({
             id="ID_product"
             name="ID_product"
             type="select"
-            className="createProduct-input"
+            className="createProduct-input-offer"
             onChange={(e) => setProducts(e.target.value)}
             value={products}
             required
@@ -47,7 +47,7 @@ export const CreateOfferForm = ({
             id="discount_rate"
             name="discount_rate"
             type="number"
-            className="createProduct-input"
+            className="createProduct-input-offer"
             value={discount_rate}
             onChange={(e) => setDiscount_rate(e.target.value)}
             required
@@ -63,7 +63,7 @@ export const CreateOfferForm = ({
                 setStart_date(dateArray[0].toLocaleDateString("en-CA"));
               }
             }}
-            className="createProduct-input"
+            className="createProduct-input-offer"
             name="start_date"
             id="start_date"
             placeholder="Fecha inicio"
@@ -79,7 +79,7 @@ export const CreateOfferForm = ({
                 setEnding_date(dateArray[0].toLocaleDateString("en-CA"));
               }
             }}
-            className="createProduct-input"
+            className="createProduct-input-offer"
             id="ending_date"
             name="ending_date"
             placeholder="Fecha final"

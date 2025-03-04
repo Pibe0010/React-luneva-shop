@@ -63,3 +63,10 @@
 .refProductTitle {
   font-size: clamp(1.5rem, 3vw, 1.5rem);
 }
+@media screen and (max-width: 450px) {
+  #element_customer_container {
+    width: 90%;
+    height: 250px;
+    margin-right: 1.3rem;
+  }
+}

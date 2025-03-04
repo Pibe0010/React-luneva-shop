@@ -116,6 +116,6 @@ input[type="range"]::-webkit-slider-thumb:hover {
 }
 @media (max-width: 450px) {
   .sidebar-filter {
-    width: 95%;
+    width: 90%;
   }
 }

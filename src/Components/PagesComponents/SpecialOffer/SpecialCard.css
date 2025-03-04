@@ -148,7 +148,6 @@
 }
 
 .special-card-input {
-  position: absolute;
   right: 0;
   top: -4rem;
   width: 60px;
@@ -212,11 +211,12 @@
     width: 100%;
   }
   .special-card-image {
-    width: 350px;
+    width: 323px;
     height: 400px;
   }
   .special-card-content {
-    width: 350px;
+    width: 322px;
+    height: 700px;
     gap: 10px;
   }
   .special-card-button {
