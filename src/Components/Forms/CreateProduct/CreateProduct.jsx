@@ -138,7 +138,7 @@ export const CreateProduct = ({ onAddProduct, token }) => {
 
       {showModal && (
         <section className="createProduct-container">
-          <div className={`create-container ${animationClas}`}>
+          <div className={`create-container-product ${animationClas}`}>
             <div className="createProduct-heading">Crear Producto</div>
             <form className="createProduct-form" onSubmit={handleSubmit}>
               <CreateProductForm

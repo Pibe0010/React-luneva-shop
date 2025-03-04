@@ -49,3 +49,8 @@
     transform: scale(0.4);
   }
 }
+@media screen and (max-width: 450px) {
+  .addProductBtn {
+    margin-top: 0;
+  }
+}

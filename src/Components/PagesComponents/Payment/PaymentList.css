@@ -64,3 +64,8 @@
 .refPayTitle {
   font-size: clamp(1.5rem, 3.5vw, 1.3em);
 }
+@media screen and (max-width: 450px) {
+  #element_payment_container {
+    height: 450px;
+  }
+}

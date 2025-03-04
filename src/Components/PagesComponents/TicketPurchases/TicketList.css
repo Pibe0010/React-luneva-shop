@@ -64,3 +64,8 @@
 .refTicketTitle {
   font-size: clamp(1.5rem, 4vw, 1.4rem);
 }
+@media screen and (max-width: 450px) {
+  #element_ticket_container {
+    height: 280px;
+  }
+}

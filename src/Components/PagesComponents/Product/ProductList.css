@@ -33,6 +33,7 @@
 }
 @media screen and (max-width: 450px) {
   #product_list {
-    margin-right: 1.2rem;
+    margin-right: 1.7rem;
+    width: 80%;
   }
 }

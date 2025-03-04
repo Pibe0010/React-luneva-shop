@@ -160,10 +160,10 @@ export const CreateOffer = ({ onAddOffer, token }) => {
                 <input
                   value="Crear Oferta"
                   type="submit"
-                  className="createProduct-button"
+                  className="createProduct-button-offer"
                 />
                 <button
-                  className="createProduct-button"
+                  className="createProduct-button-offer"
                   onClick={handleCloseModal}
                 >
                   cancelar
