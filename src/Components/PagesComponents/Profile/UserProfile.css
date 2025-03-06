@@ -108,7 +108,7 @@
   margin-bottom: 20px;
 }
 .profile-info span {
-  font-size: clamp(1.8rem, 3vw, 1.4em);
+  font-size: clamp(1.5rem, 3vw, 1.4em);
   font-weight: bold;
   font-family: Georgia, "Times New Roman", Times, serif;
 }
@@ -154,7 +154,7 @@
 }
 
 .profile-status-container span {
-  font-size: clamp(1.8rem, 3vw, 1.4em);
+  font-size: clamp(1.5rem, 3vw, 1.4em);
   font-weight: bold;
   font-family: Georgia, "Times New Roman", Times, serif;
 }
@@ -302,5 +302,17 @@
   }
   .modal {
     width: 95%;
+  }
+}
+@media (max-width: 450px) {
+  .user-profile {
+    height: 128rem;
+  }
+  .profile-header {
+    width: 90%;
+  }
+  .profile-buttons {
+    width: 90%;
+    height: 500px;
   }
 }
